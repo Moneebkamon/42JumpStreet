@@ -1,0 +1,26 @@
+[project]
+name = "fraudshield-backend"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi",
+  "uvicorn[standard]",
+  "pydantic-settings",
+  "sqlalchemy",
+  "httpx",
+  "pyyaml",
+  "tldextract",
+  "certifi",
+  "beautifulsoup4",
+  "playwright",
+  "numpy",
+  "safetensors",
+  "tokenizers",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

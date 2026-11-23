@@ -1,0 +1,241 @@
+# Brand registry. VERIFY every official domain before relying on it.
+# keywords: words scammers combine with the brand name.
+brands:
+  - id: adcb
+    name_en: Abu Dhabi Commercial Bank
+    name_ar: بنك أبوظبي التجاري
+    category: bank
+    official_domains: [adcb.com]
+    keywords: [adcb, abudhabicommercial, login, secure]
+  - id: fab
+    name_en: First Abu Dhabi Bank
+    name_ar: بنك أبوظبي الأول
+    category: bank
+    official_domains: [bankfab.com]
+    keywords: [fab, bankfab, firstabudhabi, login]
+  - id: enbd
+    name_en: Emirates NBD
+    name_ar: بنك الإمارات دبي الوطني
+    category: bank
+    official_domains: [emiratesnbd.com]
+    keywords: [emiratesnbd, enbd, login, secure]
+  - id: mashreq
+    name_en: Mashreq Bank
+    name_ar: بنك المشرق
+    category: bank
+    official_domains: [mashreq.com]
+    keywords: [mashreq, login]
+  - id: adib
+    name_en: Abu Dhabi Islamic Bank
+    name_ar: مصرف أبوظبي الإسلامي
+    category: bank
+    official_domains: [adib.ae]
+    keywords: [adib, login]
+  - id: dib
+    name_en: Dubai Islamic Bank
+    name_ar: بنك دبي الإسلامي
+    category: bank
+    official_domains: [dib.ae]
+    keywords: [dib, dubaiislamic, login]
+  - id: adpolice
+    name_en: Abu Dhabi Police
+    name_ar: شرطة أبوظبي
+    category: government
+    official_domains: [adpolice.gov.ae]
+    keywords: [adpolice, police, fine, traffic]
+  - id: moi
+    name_en: Ministry of Interior
+    name_ar: وزارة الداخلية
+    category: government
+    official_domains: [moi.gov.ae]
+    keywords: [moi, interior, fine]
+  - id: tamm
+    name_en: TAMM Abu Dhabi
+    name_ar: تم أبوظبي
+    category: government
+    official_domains: [tamm.abudhabi]
+    ignore_words: [tammy, tammie]  # first names, not an impersonation
+    keywords: [tamm, abudhabi, gov]
+  - id: icp
+    name_en: Federal Authority for Identity and Citizenship
+    name_ar: الهيئة الاتحادية للهوية والجنسية
+    category: government
+    official_domains: [icp.gov.ae]
+    keywords: [icp, emiratesid, identity]
+  - id: salik
+    name_en: Salik
+    name_ar: سالك
+    category: government
+    official_domains: [salik.gov.ae]
+    keywords: [salik, toll, recharge]
+  - id: etisalat
+    name_en: e& (Etisalat)
+    name_ar: اتصالات من e&
+    category: telecom
+    official_domains: [etisalat.ae, eand.com]
+    tokens: [etisalat, eand]
+    exact_only: [eand]  # 'eand' inside words (timeanddate, theglobeandmail) is not an impersonation
+    keywords: [etisalat, eand, bill, recharge]
+  - id: du
+    name_en: du
+    name_ar: دو
+    category: telecom
+    official_domains: [du.ae]
+    keywords: [du, bill, recharge]
+  - id: emirates
+    name_en: Emirates Airline
+    name_ar: طيران الإمارات
+    category: airline
+    official_domains: [emirates.com]
+    keywords: [emirates, tickets, skywards]
+  - id: etihad
+    name_en: Etihad Airways
+    name_ar: الاتحاد للطيران
+    category: airline
+    official_domains: [etihad.com]
+    keywords: [etihad, tickets, guest]
+  - id: aramex
+    name_en: Aramex
+    name_ar: أرامكس
+    category: delivery
+    official_domains: [aramex.com]
+    keywords: [aramex, parcel, delivery, tracking]
+  - id: dhl
+    name_en: DHL
+    name_ar: دي إتش إل
+    category: delivery
+    official_domains: [dhl.com]
+    keywords: [dhl, parcel, delivery, tracking]
+
+  # --- Widely impersonated global brands (added 2026-11-23 for the real-data evaluation). VERIFY official domains. ---
+  - id: roblox
+    name_en: Roblox
+    name_ar: ''
+    category: global
+    tokens: [roblox]
+    official_domains: [roblox.com]
+    keywords: [roblox]
+  - id: netflix
+    name_en: Netflix
+    name_ar: ''
+    category: global
+    tokens: [netflix]
+    official_domains: [netflix.com]
+    keywords: [netflix]
+  - id: instagram
+    name_en: Instagram
+    name_ar: ''
+    category: global
+    tokens: [instagram]
+    official_domains: [instagram.com]
+    keywords: [instagram]
+  - id: facebook
+    name_en: Facebook
+    name_ar: ''
+    category: global
+    tokens: [facebook]
+    official_domains: [facebook.com, fb.com]
+    keywords: [facebook]
+  - id: paypal
+    name_en: PayPal
+    name_ar: ''
+    category: global
+    tokens: [paypal]
+    official_domains: [paypal.com, paypal.me]
+    keywords: [paypal]
+  - id: microsoft
+    name_en: Microsoft
+    name_ar: ''
+    category: global
+    tokens: [microsoft, outlook365, office365]
+    official_domains: [microsoft-int.com, microsoft.com, live.com, office.com, outlook.com, microsoftonline.com, windows.com, azure.com, msn.com, bing.com]
+    keywords: [microsoft]
+  - id: apple
+    name_en: Apple
+    name_ar: ''
+    category: global
+    tokens: [apple]
+    exact_only: [apple]
+    official_domains: [apple.com, icloud.com]
+    keywords: [apple]
+  - id: google
+    name_en: Google
+    name_ar: ''
+    category: global
+    tokens: [google, gmail]
+    exact_only: [google]
+    official_domains: [google.com, google.ae, gmail.com, googleapis.com, gstatic.com, googleusercontent.com, googlevideo.com, googletagmanager.com, google-analytics.com, googlesyndication.com, googleadservices.com, googledomains.com]
+    keywords: [google]
+  - id: amazon
+    name_en: Amazon
+    name_ar: ''
+    category: global
+    tokens: [amazon]
+    exact_only: [amazon]
+    official_domains: [amazon.com, amazon.ae, amazon.co.uk, amazon.de, amazon.in, amazonaws.com, amazon.sa, amazon.eg, amazon.fr, amazon.it, amazon.es, amazon.ca, amazon.co.jp, amazon.com.au, amazon.com.br, amazon.com.mx, amazon.nl, amazon.pl, amazon.se, amazon.sg, amazon.com.tr, amazon.cn, amazontrust.com, amazonvideo.com, amazonbusiness.com, amazon.dev, amazon.science, amazon.jobs]
+    keywords: [amazon]
+  - id: whatsapp
+    name_en: WhatsApp
+    name_ar: ''
+    category: global
+    tokens: [whatsapp]
+    official_domains: [whatsapp.com, whatsapp.net]
+    keywords: [whatsapp]
+  - id: binance
+    name_en: Binance
+    name_ar: ''
+    category: global
+    tokens: [binance]
+    ignore_words: [finance]  # one letter from 'binance' but an ordinary word
+    official_domains: [binance.com, binance.us]
+    keywords: [binance]
+  - id: metamask
+    name_en: MetaMask
+    name_ar: ''
+    category: global
+    tokens: [metamask]
+    official_domains: [metamask.io]
+    keywords: [metamask]
+  - id: coinbase
+    name_en: Coinbase
+    name_ar: ''
+    category: global
+    tokens: [coinbase]
+    official_domains: [coinbase.com]
+    keywords: [coinbase]
+  - id: shopee
+    name_en: Shopee
+    name_ar: ''
+    category: global
+    tokens: [shopee]
+    official_domains: [shopee.com, shopee.co.id, shopee.sg, shopee.ph, shopee.vn, shopee.com.my, shopee.co.th, shopee.tw, shopee.com.br]
+    keywords: [shopee]
+  - id: mercadolibre
+    name_en: Mercado Libre
+    name_ar: ''
+    category: global
+    tokens: [mercadolibre, mercadolivre]
+    official_domains: [mercadolibre.com, mercadolivre.com.br, mercadolibre.com.ar, mercadolibre.com.mx, mercadopago.com]
+    keywords: [mercadolibre]
+  - id: vodafone
+    name_en: Vodafone
+    name_ar: ''
+    category: global
+    tokens: [vodafone]
+    official_domains: [vodafone.com, vodafone.co.uk, vodafone.in, vodafone.de, vodafone.es, vodafone.it, vodafone.com.eg, vodafone.qa]
+    keywords: [vodafone]
+  - id: docusign
+    name_en: DocuSign
+    name_ar: ''
+    category: global
+    tokens: [docusign]
+    official_domains: [docusign.com, docusign.net]
+    keywords: [docusign]
+  - id: telegram
+    name_en: Telegram
+    name_ar: ''
+    category: global
+    tokens: [telegram]
+    exact_only: [telegram]
+    official_domains: [telegram.org, t.me]
+    keywords: [telegram]

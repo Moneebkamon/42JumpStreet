@@ -1,0 +1,16 @@
+**/.venv
+**/node_modules
+**/.next
+**/__pycache__
+**/.pytest_cache
+.git
+data
+!data/samples/ct_stream.jsonl
+ml/.venv
+ml/artifacts/**/*.onnx
+backend/tests
+frontend/.next
+**/credentials-*.txt
+**/*.key
+.env
+.env.local

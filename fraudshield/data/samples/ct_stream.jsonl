@@ -1,0 +1,986 @@
+{"seq": 1, "issued_at": "2026-11-20T08:00:06Z", "domains": ["forestplumbinghub.ae", "www.forestplumbinghub.ae"], "label": "benign", "simulated": true}
+{"seq": 2, "issued_at": "2026-11-20T08:00:21Z", "domains": ["book-tiny.ae"], "label": "benign", "simulated": true}
+{"seq": 3, "issued_at": "2026-11-20T08:00:22Z", "domains": ["blue-quick360.com", "www.blue-quick360.com"], "label": "benign", "simulated": true}
+{"seq": 4, "issued_at": "2026-11-20T08:00:39Z", "domains": ["novabluehub.com"], "label": "benign", "simulated": true}
+{"seq": 5, "issued_at": "2026-11-20T08:00:55Z", "domains": ["greencinema24.org"], "label": "benign", "simulated": true}
+{"seq": 6, "issued_at": "2026-11-20T08:01:01Z", "domains": ["studio-bike24.co", "www.studio-bike24.co"], "label": "benign", "simulated": true}
+{"seq": 7, "issued_at": "2026-11-20T08:01:13Z", "domains": ["tamm.abudhabi.secure-lemon.click"], "label": "lookalike", "simulated": true}
+{"seq": 8, "issued_at": "2026-11-20T08:01:23Z", "domains": ["nova-atlas24.shop", "www.nova-atlas24.shop"], "label": "benign", "simulated": true}
+{"seq": 9, "issued_at": "2026-11-20T08:01:40Z", "domains": ["orbitflower360.com", "www.orbitflower360.com"], "label": "benign", "simulated": true}
+{"seq": 10, "issued_at": "2026-11-20T08:01:42Z", "domains": ["cedar-book360.com"], "label": "benign", "simulated": true}
+{"seq": 11, "issued_at": "2026-11-20T08:01:55Z", "domains": ["atlasquick24.com"], "label": "benign", "simulated": true}
+{"seq": 12, "issued_at": "2026-11-20T08:01:56Z", "domains": ["gardenquick360.com"], "label": "benign", "simulated": true}
+{"seq": 13, "issued_at": "2026-11-20T08:02:05Z", "domains": ["4dcb-support.site", "www.4dcb-support.site"], "label": "lookalike", "simulated": true}
+{"seq": 14, "issued_at": "2026-11-20T08:02:16Z", "domains": ["fox-cloudhub.com"], "label": "benign", "simulated": true}
+{"seq": 15, "issued_at": "2026-11-20T08:02:21Z", "domains": ["rivertailor24.com", "www.rivertailor24.com"], "label": "benign", "simulated": true}
+{"seq": 16, "issued_at": "2026-11-20T08:02:34Z", "domains": ["emirat3snbd-wallet.online"], "label": "lookalike", "simulated": true}
+{"seq": 17, "issued_at": "2026-11-20T08:02:54Z", "domains": ["adpolice.gov.ae.verify-summit.icu"], "label": "lookalike", "simulated": true}
+{"seq": 18, "issued_at": "2026-11-20T08:03:02Z", "domains": ["yogakidshub.com"], "label": "benign", "simulated": true}
+{"seq": 19, "issued_at": "2026-11-20T08:03:21Z", "domains": ["travelsolarhub.com", "www.travelsolarhub.com"], "label": "benign", "simulated": true}
+{"seq": 20, "issued_at": "2026-11-20T08:03:31Z", "domains": ["stonemusic360.com"], "label": "benign", "simulated": true}
+{"seq": 21, "issued_at": "2026-11-20T08:03:42Z", "domains": ["solardental24.net"], "label": "benign", "simulated": true}
+{"seq": 22, "issued_at": "2026-11-20T08:03:47Z", "domains": ["travel-cinema24.org", "www.travel-cinema24.org"], "label": "benign", "simulated": true}
+{"seq": 23, "issued_at": "2026-11-20T08:03:52Z", "domains": ["tinyplumbinghub.net"], "label": "benign", "simulated": true}
+{"seq": 24, "issued_at": "2026-11-20T08:03:59Z", "domains": ["flowernorthhub.ae"], "label": "benign", "simulated": true}
+{"seq": 25, "issued_at": "2026-11-20T08:04:09Z", "domains": ["bakeryblue360.org"], "label": "benign", "simulated": true}
+{"seq": 26, "issued_at": "2026-11-20T08:04:26Z", "domains": ["adib.ae"], "label": "official", "simulated": true}
+{"seq": 27, "issued_at": "2026-11-20T08:04:40Z", "domains": ["travel-atlas360.org"], "label": "benign", "simulated": true}
+{"seq": 28, "issued_at": "2026-11-20T08:04:45Z", "domains": ["orbitmusic360.online"], "label": "benign", "simulated": true}
+{"seq": 29, "issued_at": "2026-11-20T08:05:04Z", "domains": ["orbitstone.io"], "label": "benign", "simulated": true}
+{"seq": 30, "issued_at": "2026-11-20T08:05:15Z", "domains": ["pixelpeakhub.com", "www.pixelpeakhub.com"], "label": "benign", "simulated": true}
+{"seq": 31, "issued_at": "2026-11-20T08:05:33Z", "domains": ["solarcoffee.net"], "label": "benign", "simulated": true}
+{"seq": 32, "issued_at": "2026-11-20T08:05:37Z", "domains": ["furniturebook360.com", "www.furniturebook360.com"], "label": "benign", "simulated": true}
+{"seq": 33, "issued_at": "2026-11-20T08:05:42Z", "domains": ["harbor-atlas.online"], "label": "benign", "simulated": true}
+{"seq": 34, "issued_at": "2026-11-20T08:05:53Z", "domains": ["trailgardenhub.site"], "label": "benign", "simulated": true}
+{"seq": 35, "issued_at": "2026-11-20T08:06:07Z", "domains": ["summitnorthhub.site"], "label": "benign", "simulated": true}
+{"seq": 36, "issued_at": "2026-11-20T08:06:17Z", "domains": ["orbitsummithub.co"], "label": "benign", "simulated": true}
+{"seq": 37, "issued_at": "2026-11-20T08:06:26Z", "domains": ["forest-furniture360.co", "www.forest-furniture360.co"], "label": "benign", "simulated": true}
+{"seq": 38, "issued_at": "2026-11-20T08:06:33Z", "domains": ["tinytrailhub.com", "www.tinytrailhub.com"], "label": "benign", "simulated": true}
+{"seq": 39, "issued_at": "2026-11-20T08:06:39Z", "domains": ["harbortravel24.online", "www.harbortravel24.online"], "label": "benign", "simulated": true}
+{"seq": 40, "issued_at": "2026-11-20T08:06:59Z", "domains": ["bike-hobby24.org"], "label": "benign", "simulated": true}
+{"seq": 41, "issued_at": "2026-11-20T08:07:19Z", "domains": ["blue-trail24.co"], "label": "benign", "simulated": true}
+{"seq": 42, "issued_at": "2026-11-20T08:07:27Z", "domains": ["tiny-coffee24.com"], "label": "benign", "simulated": true}
+{"seq": 43, "issued_at": "2026-11-20T08:07:35Z", "domains": ["rivercedar360.org"], "label": "benign", "simulated": true}
+{"seq": 44, "issued_at": "2026-11-20T08:07:47Z", "domains": ["craft-stonehub.ae", "www.craft-stonehub.ae"], "label": "benign", "simulated": true}
+{"seq": 45, "issued_at": "2026-11-20T08:08:03Z", "domains": ["studioriver360.com", "www.studioriver360.com"], "label": "benign", "simulated": true}
+{"seq": 46, "issued_at": "2026-11-20T08:08:23Z", "domains": ["travel-cedar24.online"], "label": "benign", "simulated": true}
+{"seq": 47, "issued_at": "2026-11-20T08:08:35Z", "domains": ["ad1b.vip", "www.ad1b.vip"], "label": "lookalike", "simulated": true}
+{"seq": 48, "issued_at": "2026-11-20T08:08:48Z", "domains": ["gardenforesthub.com"], "label": "benign", "simulated": true}
+{"seq": 49, "issued_at": "2026-11-20T08:08:53Z", "domains": ["yoga-confirm.vip", "www.yoga-confirm.vip"], "label": "keyword", "simulated": true}
+{"seq": 50, "issued_at": "2026-11-20T08:09:01Z", "domains": ["riverstudio360.com", "www.riverstudio360.com"], "label": "benign", "simulated": true}
+{"seq": 51, "issued_at": "2026-11-20T08:09:02Z", "domains": ["dental-bike24.com"], "label": "benign", "simulated": true}
+{"seq": 52, "issued_at": "2026-11-20T08:09:16Z", "domains": ["harborcedar24.online", "www.harborcedar24.online"], "label": "benign", "simulated": true}
+{"seq": 53, "issued_at": "2026-11-20T08:09:23Z", "domains": ["bluetiny24.co"], "label": "benign", "simulated": true}
+{"seq": 54, "issued_at": "2026-11-20T08:09:26Z", "domains": ["northyoga24.com", "www.northyoga24.com"], "label": "benign", "simulated": true}
+{"seq": 55, "issued_at": "2026-11-20T08:09:41Z", "domains": ["pets-plumbing.io"], "label": "benign", "simulated": true}
+{"seq": 56, "issued_at": "2026-11-20T08:09:57Z", "domains": ["traveltrail24.com"], "label": "benign", "simulated": true}
+{"seq": 57, "issued_at": "2026-11-20T08:10:12Z", "domains": ["printtrail.com"], "label": "benign", "simulated": true}
+{"seq": 58, "issued_at": "2026-11-20T08:10:26Z", "domains": ["forest-summit360.com"], "label": "benign", "simulated": true}
+{"seq": 59, "issued_at": "2026-11-20T08:10:28Z", "domains": ["lemoncloud.com"], "label": "benign", "simulated": true}
+{"seq": 60, "issued_at": "2026-11-20T08:10:41Z", "domains": ["photo-lemon360.site"], "label": "benign", "simulated": true}
+{"seq": 61, "issued_at": "2026-11-20T08:10:54Z", "domains": ["printphoto.site"], "label": "benign", "simulated": true}
+{"seq": 62, "issued_at": "2026-11-20T08:11:13Z", "domains": ["ad1b-payment.site"], "label": "lookalike", "simulated": true}
+{"seq": 63, "issued_at": "2026-11-20T08:11:30Z", "domains": ["plumbing-bike24.org"], "label": "benign", "simulated": true}
+{"seq": 64, "issued_at": "2026-11-20T08:11:32Z", "domains": ["www.mashreq.com"], "label": "official", "simulated": true}
+{"seq": 65, "issued_at": "2026-11-20T08:11:47Z", "domains": ["pixel-cinema.co"], "label": "benign", "simulated": true}
+{"seq": 66, "issued_at": "2026-11-20T08:11:49Z", "domains": ["dib-verify.icu"], "label": "lookalike", "simulated": true}
+{"seq": 67, "issued_at": "2026-11-20T08:11:57Z", "domains": ["print-book360.site"], "label": "benign", "simulated": true}
+{"seq": 68, "issued_at": "2026-11-20T08:12:10Z", "domains": ["gardenhobby.online"], "label": "benign", "simulated": true}
+{"seq": 69, "issued_at": "2026-11-20T08:12:12Z", "domains": ["garden-trail.com"], "label": "benign", "simulated": true}
+{"seq": 70, "issued_at": "2026-11-20T08:12:29Z", "domains": ["harbor-riverhub.ae"], "label": "benign", "simulated": true}
+{"seq": 71, "issued_at": "2026-11-20T08:12:31Z", "domains": ["print-book24.com", "www.print-book24.com"], "label": "benign", "simulated": true}
+{"seq": 72, "issued_at": "2026-11-20T08:12:46Z", "domains": ["plumbing-lemon360.com"], "label": "benign", "simulated": true}
+{"seq": 73, "issued_at": "2026-11-20T08:12:56Z", "domains": ["flowerdental360.com"], "label": "benign", "simulated": true}
+{"seq": 74, "issued_at": "2026-11-20T08:13:06Z", "domains": ["solar-cloudhub.net"], "label": "benign", "simulated": true}
+{"seq": 75, "issued_at": "2026-11-20T08:13:20Z", "domains": ["kids-peak.com", "www.kids-peak.com"], "label": "benign", "simulated": true}
+{"seq": 76, "issued_at": "2026-11-20T08:13:22Z", "domains": ["stonebike24.site"], "label": "benign", "simulated": true}
+{"seq": 77, "issued_at": "2026-11-20T08:13:27Z", "domains": ["riverquickhub.com"], "label": "benign", "simulated": true}
+{"seq": 78, "issued_at": "2026-11-20T08:13:42Z", "domains": ["stonehobby360.site", "www.stonehobby360.site"], "label": "benign", "simulated": true}
+{"seq": 79, "issued_at": "2026-11-20T08:13:59Z", "domains": ["peaktailor24.shop", "www.peaktailor24.shop"], "label": "benign", "simulated": true}
+{"seq": 80, "issued_at": "2026-11-20T08:14:18Z", "domains": ["plumbingpixel360.com"], "label": "benign", "simulated": true}
+{"seq": 81, "issued_at": "2026-11-20T08:14:36Z", "domains": ["musichobby360.com", "www.musichobby360.com"], "label": "benign", "simulated": true}
+{"seq": 82, "issued_at": "2026-11-20T08:14:50Z", "domains": ["xn--tmm-6cd.com"], "label": "homoglyph", "simulated": true}
+{"seq": 83, "issued_at": "2026-11-20T08:14:51Z", "domains": ["coffeefoxhub.com", "www.coffeefoxhub.com"], "label": "benign", "simulated": true}
+{"seq": 84, "issued_at": "2026-11-20T08:15:10Z", "domains": ["lightingphoto.co"], "label": "benign", "simulated": true}
+{"seq": 85, "issued_at": "2026-11-20T08:15:17Z", "domains": ["river-quick360.com"], "label": "benign", "simulated": true}
+{"seq": 86, "issued_at": "2026-11-20T08:15:20Z", "domains": ["atlasgreenhub.online", "www.atlasgreenhub.online"], "label": "benign", "simulated": true}
+{"seq": 87, "issued_at": "2026-11-20T08:15:26Z", "domains": ["nova-nova360.site"], "label": "benign", "simulated": true}
+{"seq": 88, "issued_at": "2026-11-20T08:15:30Z", "domains": ["kidstailor360.net", "www.kidstailor360.net"], "label": "benign", "simulated": true}
+{"seq": 89, "issued_at": "2026-11-20T08:15:45Z", "domains": ["tailor-tiny360.shop"], "label": "benign", "simulated": true}
+{"seq": 90, "issued_at": "2026-11-20T08:15:48Z", "domains": ["dentaltailor24.net"], "label": "benign", "simulated": true}
+{"seq": 91, "issued_at": "2026-11-20T08:16:01Z", "domains": ["novatiny24.com"], "label": "benign", "simulated": true}
+{"seq": 92, "issued_at": "2026-11-20T08:16:18Z", "domains": ["stoneforest360.com"], "label": "benign", "simulated": true}
+{"seq": 93, "issued_at": "2026-11-20T08:16:24Z", "domains": ["novahobby24.org"], "label": "benign", "simulated": true}
+{"seq": 94, "issued_at": "2026-11-20T08:16:37Z", "domains": ["novapeak.com", "www.novapeak.com"], "label": "benign", "simulated": true}
+{"seq": 95, "issued_at": "2026-11-20T08:16:43Z", "domains": ["online.dib.ae"], "label": "official", "simulated": true}
+{"seq": 96, "issued_at": "2026-11-20T08:17:02Z", "domains": ["cinemabook24.com"], "label": "benign", "simulated": true}
+{"seq": 97, "issued_at": "2026-11-20T08:17:07Z", "domains": ["cinemaforest360.com", "www.cinemaforest360.com"], "label": "benign", "simulated": true}
+{"seq": 98, "issued_at": "2026-11-20T08:17:12Z", "domains": ["pixel-dental.ae", "www.pixel-dental.ae"], "label": "benign", "simulated": true}
+{"seq": 99, "issued_at": "2026-11-20T08:17:14Z", "domains": ["tinyatlas24.com"], "label": "benign", "simulated": true}
+{"seq": 100, "issued_at": "2026-11-20T08:17:24Z", "domains": ["dib.ae.secure-atlas.online"], "label": "lookalike", "simulated": true}
+{"seq": 101, "issued_at": "2026-11-20T08:17:39Z", "domains": ["northpixel.io", "www.northpixel.io"], "label": "benign", "simulated": true}
+{"seq": 102, "issued_at": "2026-11-20T08:17:45Z", "domains": ["print-stonehub.org", "www.print-stonehub.org"], "label": "benign", "simulated": true}
+{"seq": 103, "issued_at": "2026-11-20T08:17:50Z", "domains": ["hobby-coffeehub.net"], "label": "benign", "simulated": true}
+{"seq": 104, "issued_at": "2026-11-20T08:17:51Z", "domains": ["quick-bakeryhub.site"], "label": "benign", "simulated": true}
+{"seq": 105, "issued_at": "2026-11-20T08:18:00Z", "domains": ["summithobby24.shop", "www.summithobby24.shop"], "label": "benign", "simulated": true}
+{"seq": 106, "issued_at": "2026-11-20T08:18:16Z", "domains": ["novaphoto360.com"], "label": "benign", "simulated": true}
+{"seq": 107, "issued_at": "2026-11-20T08:18:34Z", "domains": ["travelcraft24.com"], "label": "benign", "simulated": true}
+{"seq": 108, "issued_at": "2026-11-20T08:18:54Z", "domains": ["pixelmusic24.com"], "label": "benign", "simulated": true}
+{"seq": 109, "issued_at": "2026-11-20T08:19:02Z", "domains": ["northtailor24.com", "www.northtailor24.com"], "label": "benign", "simulated": true}
+{"seq": 110, "issued_at": "2026-11-20T08:19:18Z", "domains": ["pixel-kidshub.com"], "label": "benign", "simulated": true}
+{"seq": 111, "issued_at": "2026-11-20T08:19:33Z", "domains": ["adpolice-verify.xyz", "www.adpolice-verify.xyz"], "label": "lookalike", "simulated": true}
+{"seq": 112, "issued_at": "2026-11-20T08:19:53Z", "domains": ["cinemamusic.online", "www.cinemamusic.online"], "label": "benign", "simulated": true}
+{"seq": 113, "issued_at": "2026-11-20T08:20:11Z", "domains": ["bakery-harbor24.com", "www.bakery-harbor24.com"], "label": "benign", "simulated": true}
+{"seq": 114, "issued_at": "2026-11-20T08:20:29Z", "domains": ["summitorbit360.co"], "label": "benign", "simulated": true}
+{"seq": 115, "issued_at": "2026-11-20T08:20:36Z", "domains": ["river-hobby360.net", "www.river-hobby360.net"], "label": "benign", "simulated": true}
+{"seq": 116, "issued_at": "2026-11-20T08:20:41Z", "domains": ["green-craft.com", "www.green-craft.com"], "label": "benign", "simulated": true}
+{"seq": 117, "issued_at": "2026-11-20T08:20:53Z", "domains": ["cedar-atlas.io", "www.cedar-atlas.io"], "label": "benign", "simulated": true}
+{"seq": 118, "issued_at": "2026-11-20T08:20:55Z", "domains": ["furniture-travel24.com"], "label": "benign", "simulated": true}
+{"seq": 119, "issued_at": "2026-11-20T08:21:15Z", "domains": ["pixel-north24.com", "www.pixel-north24.com"], "label": "benign", "simulated": true}
+{"seq": 120, "issued_at": "2026-11-20T08:21:18Z", "domains": ["emiratesairline-verify.shop", "www.emiratesairline-verify.shop"], "label": "lookalike", "simulated": true}
+{"seq": 121, "issued_at": "2026-11-20T08:21:32Z", "domains": ["bikegarden360.com"], "label": "benign", "simulated": true}
+{"seq": 122, "issued_at": "2026-11-20T08:21:38Z", "domains": ["garden-pixel24.ae"], "label": "benign", "simulated": true}
+{"seq": 123, "issued_at": "2026-11-20T08:21:58Z", "domains": ["hobbygarden.com"], "label": "benign", "simulated": true}
+{"seq": 124, "issued_at": "2026-11-20T08:22:18Z", "domains": ["printorbithub.co"], "label": "benign", "simulated": true}
+{"seq": 125, "issued_at": "2026-11-20T08:22:36Z", "domains": ["tinyharborhub.shop", "www.tinyharborhub.shop"], "label": "benign", "simulated": true}
+{"seq": 126, "issued_at": "2026-11-20T08:22:51Z", "domains": ["forest-harbor24.io"], "label": "benign", "simulated": true}
+{"seq": 127, "issued_at": "2026-11-20T08:23:03Z", "domains": ["foxfurniture360.com"], "label": "benign", "simulated": true}
+{"seq": 128, "issued_at": "2026-11-20T08:23:06Z", "domains": ["trailmaple.com"], "label": "benign", "simulated": true}
+{"seq": 129, "issued_at": "2026-11-20T08:23:17Z", "domains": ["orbitfox360.com"], "label": "benign", "simulated": true}
+{"seq": 130, "issued_at": "2026-11-20T08:23:30Z", "domains": ["summit-stone360.net"], "label": "benign", "simulated": true}
+{"seq": 131, "issued_at": "2026-11-20T08:23:44Z", "domains": ["forestcrafthub.com"], "label": "benign", "simulated": true}
+{"seq": 132, "issued_at": "2026-11-20T08:23:47Z", "domains": ["cinemacloud24.co", "www.cinemacloud24.co"], "label": "benign", "simulated": true}
+{"seq": 133, "issued_at": "2026-11-20T08:23:52Z", "domains": ["photo-travel360.online", "www.photo-travel360.online"], "label": "benign", "simulated": true}
+{"seq": 134, "issued_at": "2026-11-20T08:24:01Z", "domains": ["craft-foxhub.co"], "label": "benign", "simulated": true}
+{"seq": 135, "issued_at": "2026-11-20T08:24:15Z", "domains": ["cloudorbit.com"], "label": "benign", "simulated": true}
+{"seq": 136, "issued_at": "2026-11-20T08:24:22Z", "domains": ["solarharborhub.shop"], "label": "benign", "simulated": true}
+{"seq": 137, "issued_at": "2026-11-20T08:24:26Z", "domains": ["peak-forest360.site"], "label": "benign", "simulated": true}
+{"seq": 138, "issued_at": "2026-11-20T08:24:43Z", "domains": ["bluenova360.com"], "label": "benign", "simulated": true}
+{"seq": 139, "issued_at": "2026-11-20T08:24:59Z", "domains": ["maple-coffee.com"], "label": "benign", "simulated": true}
+{"seq": 140, "issued_at": "2026-11-20T08:25:19Z", "domains": ["cloudtinyhub.com"], "label": "benign", "simulated": true}
+{"seq": 141, "issued_at": "2026-11-20T08:25:29Z", "domains": ["summit-blue24.org"], "label": "benign", "simulated": true}
+{"seq": 142, "issued_at": "2026-11-20T08:25:40Z", "domains": ["river-bakeryhub.com", "www.river-bakeryhub.com"], "label": "benign", "simulated": true}
+{"seq": 143, "issued_at": "2026-11-20T08:25:59Z", "domains": ["summit-pixel24.com"], "label": "benign", "simulated": true}
+{"seq": 144, "issued_at": "2026-11-20T08:26:11Z", "domains": ["secure-login-craft.com"], "label": "keyword", "simulated": true}
+{"seq": 145, "issued_at": "2026-11-20T08:26:31Z", "domains": ["cinema-cinema360.com"], "label": "benign", "simulated": true}
+{"seq": 146, "issued_at": "2026-11-20T08:26:48Z", "domains": ["kidsmaplehub.com"], "label": "benign", "simulated": true}
+{"seq": 147, "issued_at": "2026-11-20T08:27:04Z", "domains": ["riverpetshub.com"], "label": "benign", "simulated": true}
+{"seq": 148, "issued_at": "2026-11-20T08:27:10Z", "domains": ["quick-tailor.shop"], "label": "benign", "simulated": true}
+{"seq": 149, "issued_at": "2026-11-20T08:27:18Z", "domains": ["happytailor.io"], "label": "benign", "simulated": true}
+{"seq": 150, "issued_at": "2026-11-20T08:27:25Z", "domains": ["cinemacedar.io", "www.cinemacedar.io"], "label": "benign", "simulated": true}
+{"seq": 151, "issued_at": "2026-11-20T08:27:26Z", "domains": ["solar-harbor24.com"], "label": "benign", "simulated": true}
+{"seq": 152, "issued_at": "2026-11-20T08:27:30Z", "domains": ["peakbakery24.com"], "label": "benign", "simulated": true}
+{"seq": 153, "issued_at": "2026-11-20T08:27:37Z", "domains": ["4ramex-verify.com"], "label": "lookalike", "simulated": true}
+{"seq": 154, "issued_at": "2026-11-20T08:27:51Z", "domains": ["photocloud360.shop"], "label": "benign", "simulated": true}
+{"seq": 155, "issued_at": "2026-11-20T08:28:02Z", "domains": ["tinypixel.com"], "label": "benign", "simulated": true}
+{"seq": 156, "issued_at": "2026-11-20T08:28:09Z", "domains": ["book-trailhub.com", "www.book-trailhub.com"], "label": "benign", "simulated": true}
+{"seq": 157, "issued_at": "2026-11-20T08:28:16Z", "domains": ["plumbing-tiny.com"], "label": "benign", "simulated": true}
+{"seq": 158, "issued_at": "2026-11-20T08:28:25Z", "domains": ["bookgarden24.org"], "label": "benign", "simulated": true}
+{"seq": 159, "issued_at": "2026-11-20T08:28:35Z", "domains": ["plumbing-orbit24.org"], "label": "benign", "simulated": true}
+{"seq": 160, "issued_at": "2026-11-20T08:28:53Z", "domains": ["lightingkids.com"], "label": "benign", "simulated": true}
+{"seq": 161, "issued_at": "2026-11-20T08:28:54Z", "domains": ["blueyoga.com", "www.blueyoga.com"], "label": "benign", "simulated": true}
+{"seq": 162, "issued_at": "2026-11-20T08:29:05Z", "domains": ["bakery-book.com"], "label": "benign", "simulated": true}
+{"seq": 163, "issued_at": "2026-11-20T08:29:24Z", "domains": ["mapletinyhub.shop"], "label": "benign", "simulated": true}
+{"seq": 164, "issued_at": "2026-11-20T08:29:25Z", "domains": ["lighting-stone.co"], "label": "benign", "simulated": true}
+{"seq": 165, "issued_at": "2026-11-20T08:29:32Z", "domains": ["furniturecoffee360.org"], "label": "benign", "simulated": true}
+{"seq": 166, "issued_at": "2026-11-20T08:29:43Z", "domains": ["photonorthhub.com"], "label": "benign", "simulated": true}
+{"seq": 167, "issued_at": "2026-11-20T08:29:59Z", "domains": ["summitblue360.com"], "label": "benign", "simulated": true}
+{"seq": 168, "issued_at": "2026-11-20T08:30:01Z", "domains": ["flowercedar360.site"], "label": "benign", "simulated": true}
+{"seq": 169, "issued_at": "2026-11-20T08:30:17Z", "domains": ["gardentravel24.ae", "www.gardentravel24.ae"], "label": "benign", "simulated": true}
+{"seq": 170, "issued_at": "2026-11-20T08:30:32Z", "domains": ["print-printhub.com"], "label": "benign", "simulated": true}
+{"seq": 171, "issued_at": "2026-11-20T08:30:50Z", "domains": ["music-bikehub.com"], "label": "benign", "simulated": true}
+{"seq": 172, "issued_at": "2026-11-20T08:31:05Z", "domains": ["pixel-orbit360.com"], "label": "benign", "simulated": true}
+{"seq": 173, "issued_at": "2026-11-20T08:31:19Z", "domains": ["tinynova.com"], "label": "benign", "simulated": true}
+{"seq": 174, "issued_at": "2026-11-20T08:31:21Z", "domains": ["dental-photohub.com"], "label": "benign", "simulated": true}
+{"seq": 175, "issued_at": "2026-11-20T08:31:31Z", "domains": ["travel-crafthub.com"], "label": "benign", "simulated": true}
+{"seq": 176, "issued_at": "2026-11-20T08:31:42Z", "domains": ["kids-print24.org"], "label": "benign", "simulated": true}
+{"seq": 177, "issued_at": "2026-11-20T08:31:43Z", "domains": ["cedarprint.com", "www.cedarprint.com"], "label": "benign", "simulated": true}
+{"seq": 178, "issued_at": "2026-11-20T08:31:54Z", "domains": ["printcedar.com"], "label": "benign", "simulated": true}
+{"seq": 179, "issued_at": "2026-11-20T08:32:06Z", "domains": ["trail-plumbinghub.co", "www.trail-plumbinghub.co"], "label": "benign", "simulated": true}
+{"seq": 180, "issued_at": "2026-11-20T08:32:11Z", "domains": ["lightingdental24.com", "www.lightingdental24.com"], "label": "benign", "simulated": true}
+{"seq": 181, "issued_at": "2026-11-20T08:32:12Z", "domains": ["rivercoffee.co"], "label": "benign", "simulated": true}
+{"seq": 182, "issued_at": "2026-11-20T08:32:25Z", "domains": ["solar-orbit360.net"], "label": "benign", "simulated": true}
+{"seq": 183, "issued_at": "2026-11-20T08:32:31Z", "domains": ["coffeepeak.com"], "label": "benign", "simulated": true}
+{"seq": 184, "issued_at": "2026-11-20T08:32:44Z", "domains": ["plumbing-account.online", "www.plumbing-account.online"], "label": "keyword", "simulated": true}
+{"seq": 185, "issued_at": "2026-11-20T08:32:48Z", "domains": ["happycoffee24.com"], "label": "benign", "simulated": true}
+{"seq": 186, "issued_at": "2026-11-20T08:32:58Z", "domains": ["bakeryquick24.com"], "label": "benign", "simulated": true}
+{"seq": 187, "issued_at": "2026-11-20T08:33:09Z", "domains": ["hobby-fox.org"], "label": "benign", "simulated": true}
+{"seq": 188, "issued_at": "2026-11-20T08:33:18Z", "domains": ["hobbystudio360.org"], "label": "benign", "simulated": true}
+{"seq": 189, "issued_at": "2026-11-20T08:33:34Z", "domains": ["pets-music24.com"], "label": "benign", "simulated": true}
+{"seq": 190, "issued_at": "2026-11-20T08:33:46Z", "domains": ["north-furniture.co"], "label": "benign", "simulated": true}
+{"seq": 191, "issued_at": "2026-11-20T08:33:56Z", "domains": ["bike-coffeehub.net", "www.bike-coffeehub.net"], "label": "benign", "simulated": true}
+{"seq": 192, "issued_at": "2026-11-20T08:34:06Z", "domains": ["quick-crafthub.com", "www.quick-crafthub.com"], "label": "benign", "simulated": true}
+{"seq": 193, "issued_at": "2026-11-20T08:34:18Z", "domains": ["solar-atlas.online"], "label": "benign", "simulated": true}
+{"seq": 194, "issued_at": "2026-11-20T08:34:25Z", "domains": ["book-cedarhub.org"], "label": "benign", "simulated": true}
+{"seq": 195, "issued_at": "2026-11-20T08:34:40Z", "domains": ["studio-happyhub.co"], "label": "benign", "simulated": true}
+{"seq": 196, "issued_at": "2026-11-20T08:34:56Z", "domains": ["travelriver.com"], "label": "benign", "simulated": true}
+{"seq": 197, "issued_at": "2026-11-20T08:35:01Z", "domains": ["fox-printhub.com", "www.fox-printhub.com"], "label": "benign", "simulated": true}
+{"seq": 198, "issued_at": "2026-11-20T08:35:17Z", "domains": ["northatlas360.net"], "label": "benign", "simulated": true}
+{"seq": 199, "issued_at": "2026-11-20T08:35:34Z", "domains": ["atlassummithub.com"], "label": "benign", "simulated": true}
+{"seq": 200, "issued_at": "2026-11-20T08:35:45Z", "domains": ["pets-plumbing360.com", "www.pets-plumbing360.com"], "label": "benign", "simulated": true}
+{"seq": 201, "issued_at": "2026-11-20T08:35:49Z", "domains": ["cloud-support.shop"], "label": "keyword", "simulated": true}
+{"seq": 202, "issued_at": "2026-11-20T08:36:06Z", "domains": ["cloudmaple360.com"], "label": "benign", "simulated": true}
+{"seq": 203, "issued_at": "2026-11-20T08:36:11Z", "domains": ["payment-support-maple.com", "www.payment-support-maple.com"], "label": "keyword", "simulated": true}
+{"seq": 204, "issued_at": "2026-11-20T08:36:13Z", "domains": ["yoganorth.com"], "label": "benign", "simulated": true}
+{"seq": 205, "issued_at": "2026-11-20T08:36:30Z", "domains": ["maple-photohub.ae", "www.maple-photohub.ae"], "label": "benign", "simulated": true}
+{"seq": 206, "issued_at": "2026-11-20T08:36:40Z", "domains": ["northtrail.io"], "label": "benign", "simulated": true}
+{"seq": 207, "issued_at": "2026-11-20T08:37:00Z", "domains": ["harborstudiohub.io"], "label": "benign", "simulated": true}
+{"seq": 208, "issued_at": "2026-11-20T08:37:11Z", "domains": ["foxcoffee24.com"], "label": "benign", "simulated": true}
+{"seq": 209, "issued_at": "2026-11-20T08:37:13Z", "domains": ["green-cedarhub.com", "www.green-cedarhub.com"], "label": "benign", "simulated": true}
+{"seq": 210, "issued_at": "2026-11-20T08:37:23Z", "domains": ["furniture-tailor.com", "www.furniture-tailor.com"], "label": "benign", "simulated": true}
+{"seq": 211, "issued_at": "2026-11-20T08:37:33Z", "domains": ["atlas-nova360.com"], "label": "benign", "simulated": true}
+{"seq": 212, "issued_at": "2026-11-20T08:37:40Z", "domains": ["cloudtiny24.co"], "label": "benign", "simulated": true}
+{"seq": 213, "issued_at": "2026-11-20T08:37:47Z", "domains": ["blue-studio.com", "www.blue-studio.com"], "label": "benign", "simulated": true}
+{"seq": 214, "issued_at": "2026-11-20T08:38:05Z", "domains": ["printyogahub.org"], "label": "benign", "simulated": true}
+{"seq": 215, "issued_at": "2026-11-20T08:38:20Z", "domains": ["kids-stone360.co"], "label": "benign", "simulated": true}
+{"seq": 216, "issued_at": "2026-11-20T08:38:29Z", "domains": ["orbit-trailhub.org", "www.orbit-trailhub.org"], "label": "benign", "simulated": true}
+{"seq": 217, "issued_at": "2026-11-20T08:38:38Z", "domains": ["hobby-furniturehub.site", "www.hobby-furniturehub.site"], "label": "benign", "simulated": true}
+{"seq": 218, "issued_at": "2026-11-20T08:38:58Z", "domains": ["photo-maplehub.org"], "label": "benign", "simulated": true}
+{"seq": 219, "issued_at": "2026-11-20T08:39:02Z", "domains": ["greencoffeehub.io", "www.greencoffeehub.io"], "label": "benign", "simulated": true}
+{"seq": 220, "issued_at": "2026-11-20T08:39:14Z", "domains": ["petstailor.io"], "label": "benign", "simulated": true}
+{"seq": 221, "issued_at": "2026-11-20T08:39:23Z", "domains": ["lightinghappy24.site", "www.lightinghappy24.site"], "label": "benign", "simulated": true}
+{"seq": 222, "issued_at": "2026-11-20T08:39:33Z", "domains": ["photo-happy24.co"], "label": "benign", "simulated": true}
+{"seq": 223, "issued_at": "2026-11-20T08:39:39Z", "domains": ["musicbike24.shop", "www.musicbike24.shop"], "label": "benign", "simulated": true}
+{"seq": 224, "issued_at": "2026-11-20T08:39:59Z", "domains": ["nova-furniture360.co"], "label": "benign", "simulated": true}
+{"seq": 225, "issued_at": "2026-11-20T08:40:17Z", "domains": ["dentalpeak24.ae"], "label": "benign", "simulated": true}
+{"seq": 226, "issued_at": "2026-11-20T08:40:22Z", "domains": ["foxgreen24.org", "www.foxgreen24.org"], "label": "benign", "simulated": true}
+{"seq": 227, "issued_at": "2026-11-20T08:40:24Z", "domains": ["studiophoto24.com", "www.studiophoto24.com"], "label": "benign", "simulated": true}
+{"seq": 228, "issued_at": "2026-11-20T08:40:26Z", "domains": ["studionova360.org", "www.studionova360.org"], "label": "benign", "simulated": true}
+{"seq": 229, "issued_at": "2026-11-20T08:40:39Z", "domains": ["cloudtiny.org", "www.cloudtiny.org"], "label": "benign", "simulated": true}
+{"seq": 230, "issued_at": "2026-11-20T08:40:59Z", "domains": ["northbook360.online"], "label": "benign", "simulated": true}
+{"seq": 231, "issued_at": "2026-11-20T08:41:14Z", "domains": ["cedar-print.online"], "label": "benign", "simulated": true}
+{"seq": 232, "issued_at": "2026-11-20T08:41:24Z", "domains": ["cedarlemon360.com"], "label": "benign", "simulated": true}
+{"seq": 233, "issued_at": "2026-11-20T08:41:31Z", "domains": ["lightingstudiohub.com"], "label": "benign", "simulated": true}
+{"seq": 234, "issued_at": "2026-11-20T08:41:49Z", "domains": ["river-river24.io", "www.river-river24.io"], "label": "benign", "simulated": true}
+{"seq": 235, "issued_at": "2026-11-20T08:42:04Z", "domains": ["musiccedarhub.net"], "label": "benign", "simulated": true}
+{"seq": 236, "issued_at": "2026-11-20T08:42:07Z", "domains": ["cinema-support.click"], "label": "keyword", "simulated": true}
+{"seq": 237, "issued_at": "2026-11-20T08:42:22Z", "domains": ["craftcinema24.net", "www.craftcinema24.net"], "label": "benign", "simulated": true}
+{"seq": 238, "issued_at": "2026-11-20T08:42:32Z", "domains": ["yoga-north.org"], "label": "benign", "simulated": true}
+{"seq": 239, "issued_at": "2026-11-20T08:42:47Z", "domains": ["tiny-dental24.com"], "label": "benign", "simulated": true}
+{"seq": 240, "issued_at": "2026-11-20T08:42:55Z", "domains": ["plumbingyogahub.site", "www.plumbingyogahub.site"], "label": "benign", "simulated": true}
+{"seq": 241, "issued_at": "2026-11-20T08:43:15Z", "domains": ["bankfab.com.wallet-studio.icu", "www.bankfab.com.wallet-studio.icu"], "label": "lookalike", "simulated": true}
+{"seq": 242, "issued_at": "2026-11-20T08:43:27Z", "domains": ["atlastrail360.co"], "label": "benign", "simulated": true}
+{"seq": 243, "issued_at": "2026-11-20T08:43:38Z", "domains": ["furniture-verify.online"], "label": "keyword", "simulated": true}
+{"seq": 244, "issued_at": "2026-11-20T08:43:49Z", "domains": ["trail-forest360.com"], "label": "benign", "simulated": true}
+{"seq": 245, "issued_at": "2026-11-20T08:43:50Z", "domains": ["furnitureharbor360.net", "www.furnitureharbor360.net"], "label": "benign", "simulated": true}
+{"seq": 246, "issued_at": "2026-11-20T08:43:54Z", "domains": ["trailmusic.io"], "label": "benign", "simulated": true}
+{"seq": 247, "issued_at": "2026-11-20T08:44:09Z", "domains": ["bikepixel360.com"], "label": "benign", "simulated": true}
+{"seq": 248, "issued_at": "2026-11-20T08:44:19Z", "domains": ["musicpeak.shop"], "label": "benign", "simulated": true}
+{"seq": 249, "issued_at": "2026-11-20T08:44:39Z", "domains": ["petscoffee.com"], "label": "benign", "simulated": true}
+{"seq": 250, "issued_at": "2026-11-20T08:44:56Z", "domains": ["nova-cloud24.shop", "www.nova-cloud24.shop"], "label": "benign", "simulated": true}
+{"seq": 251, "issued_at": "2026-11-20T08:45:00Z", "domains": ["studiopixel360.online"], "label": "benign", "simulated": true}
+{"seq": 252, "issued_at": "2026-11-20T08:45:03Z", "domains": ["dentaltailorhub.com"], "label": "benign", "simulated": true}
+{"seq": 253, "issued_at": "2026-11-20T08:45:21Z", "domains": ["happy-hobby.site"], "label": "benign", "simulated": true}
+{"seq": 254, "issued_at": "2026-11-20T08:45:40Z", "domains": ["foxharbor24.online"], "label": "benign", "simulated": true}
+{"seq": 255, "issued_at": "2026-11-20T08:46:00Z", "domains": ["lighting-dental360.org", "www.lighting-dental360.org"], "label": "benign", "simulated": true}
+{"seq": 256, "issued_at": "2026-11-20T08:46:06Z", "domains": ["harborcedarhub.com"], "label": "benign", "simulated": true}
+{"seq": 257, "issued_at": "2026-11-20T08:46:19Z", "domains": ["tailor-support.site", "www.tailor-support.site"], "label": "keyword", "simulated": true}
+{"seq": 258, "issued_at": "2026-11-20T08:46:26Z", "domains": ["atlas-happy360.net"], "label": "benign", "simulated": true}
+{"seq": 259, "issued_at": "2026-11-20T08:46:45Z", "domains": ["lemoncinemahub.ae"], "label": "benign", "simulated": true}
+{"seq": 260, "issued_at": "2026-11-20T08:46:59Z", "domains": ["happy-travel360.com"], "label": "benign", "simulated": true}
+{"seq": 261, "issued_at": "2026-11-20T08:47:10Z", "domains": ["blue-tiny360.site"], "label": "benign", "simulated": true}
+{"seq": 262, "issued_at": "2026-11-20T08:47:18Z", "domains": ["tailorhobby.io", "www.tailorhobby.io"], "label": "benign", "simulated": true}
+{"seq": 263, "issued_at": "2026-11-20T08:47:21Z", "domains": ["happybook24.com"], "label": "benign", "simulated": true}
+{"seq": 264, "issued_at": "2026-11-20T08:47:40Z", "domains": ["coffee-novahub.shop"], "label": "benign", "simulated": true}
+{"seq": 265, "issued_at": "2026-11-20T08:47:44Z", "domains": ["kids-studio360.net"], "label": "benign", "simulated": true}
+{"seq": 266, "issued_at": "2026-11-20T08:47:59Z", "domains": ["photo-riverhub.com"], "label": "benign", "simulated": true}
+{"seq": 267, "issued_at": "2026-11-20T08:48:03Z", "domains": ["blue-tailor24.net"], "label": "benign", "simulated": true}
+{"seq": 268, "issued_at": "2026-11-20T08:48:09Z", "domains": ["atlasorbit360.com"], "label": "benign", "simulated": true}
+{"seq": 269, "issued_at": "2026-11-20T08:48:22Z", "domains": ["tailor-north.co", "www.tailor-north.co"], "label": "benign", "simulated": true}
+{"seq": 270, "issued_at": "2026-11-20T08:48:26Z", "domains": ["solar-crafthub.com"], "label": "benign", "simulated": true}
+{"seq": 271, "issued_at": "2026-11-20T08:48:46Z", "domains": ["xn--tislt-6veb8aa.com"], "label": "homoglyph", "simulated": true}
+{"seq": 272, "issued_at": "2026-11-20T08:48:59Z", "domains": ["north-yoga24.com"], "label": "benign", "simulated": true}
+{"seq": 273, "issued_at": "2026-11-20T08:49:01Z", "domains": ["orbitfox.com", "www.orbitfox.com"], "label": "benign", "simulated": true}
+{"seq": 274, "issued_at": "2026-11-20T08:49:06Z", "domains": ["happyforest.co"], "label": "benign", "simulated": true}
+{"seq": 275, "issued_at": "2026-11-20T08:49:07Z", "domains": ["yogapetshub.net"], "label": "benign", "simulated": true}
+{"seq": 276, "issued_at": "2026-11-20T08:49:12Z", "domains": ["mini5tryofinterior.click"], "label": "lookalike", "simulated": true}
+{"seq": 277, "issued_at": "2026-11-20T08:49:22Z", "domains": ["dental-tinyhub.net"], "label": "benign", "simulated": true}
+{"seq": 278, "issued_at": "2026-11-20T08:49:41Z", "domains": ["kids-crafthub.shop"], "label": "benign", "simulated": true}
+{"seq": 279, "issued_at": "2026-11-20T08:49:48Z", "domains": ["cinema-river.com"], "label": "benign", "simulated": true}
+{"seq": 280, "issued_at": "2026-11-20T08:49:59Z", "domains": ["river-login.online", "www.river-login.online"], "label": "keyword", "simulated": true}
+{"seq": 281, "issued_at": "2026-11-20T08:50:09Z", "domains": ["lemontinyhub.co"], "label": "benign", "simulated": true}
+{"seq": 282, "issued_at": "2026-11-20T08:50:23Z", "domains": ["bookcinemahub.com"], "label": "benign", "simulated": true}
+{"seq": 283, "issued_at": "2026-11-20T08:50:35Z", "domains": ["mapleplumbing.io"], "label": "benign", "simulated": true}
+{"seq": 284, "issued_at": "2026-11-20T08:50:54Z", "domains": ["dental-furniturehub.site", "www.dental-furniturehub.site"], "label": "benign", "simulated": true}
+{"seq": 285, "issued_at": "2026-11-20T08:51:11Z", "domains": ["tailorfox24.com"], "label": "benign", "simulated": true}
+{"seq": 286, "issued_at": "2026-11-20T08:51:16Z", "domains": ["stoneharborhub.com"], "label": "benign", "simulated": true}
+{"seq": 287, "issued_at": "2026-11-20T08:51:18Z", "domains": ["travel-plumbing360.ae"], "label": "benign", "simulated": true}
+{"seq": 288, "issued_at": "2026-11-20T08:51:36Z", "domains": ["atlasstudio.com"], "label": "benign", "simulated": true}
+{"seq": 289, "issued_at": "2026-11-20T08:51:37Z", "domains": ["orbitgarden.org"], "label": "benign", "simulated": true}
+{"seq": 290, "issued_at": "2026-11-20T08:51:49Z", "domains": ["foxcraft.com", "www.foxcraft.com"], "label": "benign", "simulated": true}
+{"seq": 291, "issued_at": "2026-11-20T08:51:59Z", "domains": ["lightingdental24.site"], "label": "benign", "simulated": true}
+{"seq": 292, "issued_at": "2026-11-20T08:52:07Z", "domains": ["stone-pixel360.shop"], "label": "benign", "simulated": true}
+{"seq": 293, "issued_at": "2026-11-20T08:52:26Z", "domains": ["pixel-studiohub.com"], "label": "benign", "simulated": true}
+{"seq": 294, "issued_at": "2026-11-20T08:52:37Z", "domains": ["summit-bike.com"], "label": "benign", "simulated": true}
+{"seq": 295, "issued_at": "2026-11-20T08:52:50Z", "domains": ["dental-north360.io"], "label": "benign", "simulated": true}
+{"seq": 296, "issued_at": "2026-11-20T08:53:08Z", "domains": ["cedar-bakery360.com", "www.cedar-bakery360.com"], "label": "benign", "simulated": true}
+{"seq": 297, "issued_at": "2026-11-20T08:53:14Z", "domains": ["xn--rmx-5cdb5a.com"], "label": "homoglyph", "simulated": true}
+{"seq": 298, "issued_at": "2026-11-20T08:53:21Z", "domains": ["coffee-furniture.ae"], "label": "benign", "simulated": true}
+{"seq": 299, "issued_at": "2026-11-20T08:53:33Z", "domains": ["orbitcoffeehub.online"], "label": "benign", "simulated": true}
+{"seq": 300, "issued_at": "2026-11-20T08:53:38Z", "domains": ["studio-tailorhub.com", "www.studio-tailorhub.com"], "label": "benign", "simulated": true}
+{"seq": 301, "issued_at": "2026-11-20T08:53:43Z", "domains": ["riverpixel.shop", "www.riverpixel.shop"], "label": "benign", "simulated": true}
+{"seq": 302, "issued_at": "2026-11-20T08:53:46Z", "domains": ["stoneplumbing360.ae"], "label": "benign", "simulated": true}
+{"seq": 303, "issued_at": "2026-11-20T08:53:51Z", "domains": ["dentalmaplehub.org"], "label": "benign", "simulated": true}
+{"seq": 304, "issued_at": "2026-11-20T08:54:07Z", "domains": ["pixellighting.com"], "label": "benign", "simulated": true}
+{"seq": 305, "issued_at": "2026-11-20T08:54:12Z", "domains": ["adcb.com", "www.adcb.com"], "label": "official", "simulated": true}
+{"seq": 306, "issued_at": "2026-11-20T08:54:26Z", "domains": ["north-coffee24.ae"], "label": "benign", "simulated": true}
+{"seq": 307, "issued_at": "2026-11-20T08:54:46Z", "domains": ["pixel-furniturehub.com"], "label": "benign", "simulated": true}
+{"seq": 308, "issued_at": "2026-11-20T08:55:06Z", "domains": ["firstabudhaibank-payment.com", "www.firstabudhaibank-payment.com"], "label": "lookalike", "simulated": true}
+{"seq": 309, "issued_at": "2026-11-20T08:55:23Z", "domains": ["gardentailorhub.site"], "label": "benign", "simulated": true}
+{"seq": 310, "issued_at": "2026-11-20T08:55:38Z", "domains": ["photopixelhub.com"], "label": "benign", "simulated": true}
+{"seq": 311, "issued_at": "2026-11-20T08:55:46Z", "domains": ["cloudgarden.shop", "www.cloudgarden.shop"], "label": "benign", "simulated": true}
+{"seq": 312, "issued_at": "2026-11-20T08:56:06Z", "domains": ["musictrail.online", "www.musictrail.online"], "label": "benign", "simulated": true}
+{"seq": 313, "issued_at": "2026-11-20T08:56:22Z", "domains": ["pixel-furniture360.site"], "label": "benign", "simulated": true}
+{"seq": 314, "issued_at": "2026-11-20T08:56:30Z", "domains": ["musichobbyhub.com"], "label": "benign", "simulated": true}
+{"seq": 315, "issued_at": "2026-11-20T08:56:39Z", "domains": ["atlas-tailor360.shop"], "label": "benign", "simulated": true}
+{"seq": 316, "issued_at": "2026-11-20T08:56:57Z", "domains": ["bakery-hobbyhub.org"], "label": "benign", "simulated": true}
+{"seq": 317, "issued_at": "2026-11-20T08:56:59Z", "domains": ["bike-book.com"], "label": "benign", "simulated": true}
+{"seq": 318, "issued_at": "2026-11-20T08:57:18Z", "domains": ["adpolice-support.xyz"], "label": "lookalike", "simulated": true}
+{"seq": 319, "issued_at": "2026-11-20T08:57:30Z", "domains": ["maple-forest.com", "www.maple-forest.com"], "label": "benign", "simulated": true}
+{"seq": 320, "issued_at": "2026-11-20T08:57:46Z", "domains": ["harborriver360.shop"], "label": "benign", "simulated": true}
+{"seq": 321, "issued_at": "2026-11-20T08:57:49Z", "domains": ["plumbing-furniture.net", "www.plumbing-furniture.net"], "label": "benign", "simulated": true}
+{"seq": 322, "issued_at": "2026-11-20T08:58:06Z", "domains": ["harbortravel.co"], "label": "benign", "simulated": true}
+{"seq": 323, "issued_at": "2026-11-20T08:58:15Z", "domains": ["coffeecinema.online"], "label": "benign", "simulated": true}
+{"seq": 324, "issued_at": "2026-11-20T08:58:18Z", "domains": ["peakharbor360.site"], "label": "benign", "simulated": true}
+{"seq": 325, "issued_at": "2026-11-20T08:58:38Z", "domains": ["wallet-confirm-dental.com", "www.wallet-confirm-dental.com"], "label": "keyword", "simulated": true}
+{"seq": 326, "issued_at": "2026-11-20T08:58:54Z", "domains": ["book-river.com"], "label": "benign", "simulated": true}
+{"seq": 327, "issued_at": "2026-11-20T08:58:57Z", "domains": ["harbor-kids24.shop"], "label": "benign", "simulated": true}
+{"seq": 328, "issued_at": "2026-11-20T08:59:15Z", "domains": ["kids-coffee.io"], "label": "benign", "simulated": true}
+{"seq": 329, "issued_at": "2026-11-20T08:59:25Z", "domains": ["quickgreen24.com"], "label": "benign", "simulated": true}
+{"seq": 330, "issued_at": "2026-11-20T08:59:36Z", "domains": ["cinema-north.com"], "label": "benign", "simulated": true}
+{"seq": 331, "issued_at": "2026-11-20T08:59:37Z", "domains": ["plumbing-trail24.com"], "label": "benign", "simulated": true}
+{"seq": 332, "issued_at": "2026-11-20T08:59:54Z", "domains": ["book-bakery24.com"], "label": "benign", "simulated": true}
+{"seq": 333, "issued_at": "2026-11-20T09:00:13Z", "domains": ["gardenpixelhub.ae"], "label": "benign", "simulated": true}
+{"seq": 334, "issued_at": "2026-11-20T09:00:27Z", "domains": ["forest-quick360.ae"], "label": "benign", "simulated": true}
+{"seq": 335, "issued_at": "2026-11-20T09:00:37Z", "domains": ["solargreen.com", "www.solargreen.com"], "label": "benign", "simulated": true}
+{"seq": 336, "issued_at": "2026-11-20T09:00:39Z", "domains": ["summitstonehub.com"], "label": "benign", "simulated": true}
+{"seq": 337, "issued_at": "2026-11-20T09:00:59Z", "domains": ["bookpetshub.com"], "label": "benign", "simulated": true}
+{"seq": 338, "issued_at": "2026-11-20T09:01:18Z", "domains": ["pets-book360.com", "www.pets-book360.com"], "label": "benign", "simulated": true}
+{"seq": 339, "issued_at": "2026-11-20T09:01:34Z", "domains": ["musiccinemahub.net"], "label": "benign", "simulated": true}
+{"seq": 340, "issued_at": "2026-11-20T09:01:53Z", "domains": ["lemontiny360.io", "www.lemontiny360.io"], "label": "benign", "simulated": true}
+{"seq": 341, "issued_at": "2026-11-20T09:02:03Z", "domains": ["atlas-fox360.com"], "label": "benign", "simulated": true}
+{"seq": 342, "issued_at": "2026-11-20T09:02:23Z", "domains": ["music-flower24.online", "www.music-flower24.online"], "label": "benign", "simulated": true}
+{"seq": 343, "issued_at": "2026-11-20T09:02:39Z", "domains": ["kids-tiny24.com", "www.kids-tiny24.com"], "label": "benign", "simulated": true}
+{"seq": 344, "issued_at": "2026-11-20T09:02:56Z", "domains": ["harbor-travel.com", "www.harbor-travel.com"], "label": "benign", "simulated": true}
+{"seq": 345, "issued_at": "2026-11-20T09:03:05Z", "domains": ["river-dental.com", "www.river-dental.com"], "label": "benign", "simulated": true}
+{"seq": 346, "issued_at": "2026-11-20T09:03:25Z", "domains": ["bookriver360.shop", "www.bookriver360.shop"], "label": "benign", "simulated": true}
+{"seq": 347, "issued_at": "2026-11-20T09:03:34Z", "domains": ["bike-forest360.com", "www.bike-forest360.com"], "label": "benign", "simulated": true}
+{"seq": 348, "issued_at": "2026-11-20T09:03:38Z", "domains": ["stone-coffee24.com"], "label": "benign", "simulated": true}
+{"seq": 349, "issued_at": "2026-11-20T09:03:57Z", "domains": ["blue-lemon.org"], "label": "benign", "simulated": true}
+{"seq": 350, "issued_at": "2026-11-20T09:04:12Z", "domains": ["orbit-studio.com"], "label": "benign", "simulated": true}
+{"seq": 351, "issued_at": "2026-11-20T09:04:18Z", "domains": ["plumbing-hobby24.com", "www.plumbing-hobby24.com"], "label": "benign", "simulated": true}
+{"seq": 352, "issued_at": "2026-11-20T09:04:26Z", "domains": ["gardenmaple.net"], "label": "benign", "simulated": true}
+{"seq": 353, "issued_at": "2026-11-20T09:04:43Z", "domains": ["dhl-confirm.icu"], "label": "lookalike", "simulated": true}
+{"seq": 354, "issued_at": "2026-11-20T09:04:54Z", "domains": ["gardencinema.com"], "label": "benign", "simulated": true}
+{"seq": 355, "issued_at": "2026-11-20T09:04:59Z", "domains": ["dhl-secure.click"], "label": "lookalike", "simulated": true}
+{"seq": 356, "issued_at": "2026-11-20T09:05:04Z", "domains": ["quick-plumbing360.com"], "label": "benign", "simulated": true}
+{"seq": 357, "issued_at": "2026-11-20T09:05:18Z", "domains": ["cloud-pets360.com"], "label": "benign", "simulated": true}
+{"seq": 358, "issued_at": "2026-11-20T09:05:26Z", "domains": ["solarriverhub.com"], "label": "benign", "simulated": true}
+{"seq": 359, "issued_at": "2026-11-20T09:05:32Z", "domains": ["orbitcedar.online", "www.orbitcedar.online"], "label": "benign", "simulated": true}
+{"seq": 360, "issued_at": "2026-11-20T09:05:44Z", "domains": ["kids-printhub.com", "www.kids-printhub.com"], "label": "benign", "simulated": true}
+{"seq": 361, "issued_at": "2026-11-20T09:05:53Z", "domains": ["dentalcedar.shop"], "label": "benign", "simulated": true}
+{"seq": 362, "issued_at": "2026-11-20T09:05:57Z", "domains": ["quickgardenhub.site", "www.quickgardenhub.site"], "label": "benign", "simulated": true}
+{"seq": 363, "issued_at": "2026-11-20T09:06:12Z", "domains": ["travel-northhub.online"], "label": "benign", "simulated": true}
+{"seq": 364, "issued_at": "2026-11-20T09:06:22Z", "domains": ["photoplumbing360.io"], "label": "benign", "simulated": true}
+{"seq": 365, "issued_at": "2026-11-20T09:06:40Z", "domains": ["yogasolar360.com", "www.yogasolar360.com"], "label": "benign", "simulated": true}
+{"seq": 366, "issued_at": "2026-11-20T09:06:53Z", "domains": ["coffeetrail360.ae"], "label": "benign", "simulated": true}
+{"seq": 367, "issued_at": "2026-11-20T09:06:58Z", "domains": ["wallet-confirm-hobby.com"], "label": "keyword", "simulated": true}
+{"seq": 368, "issued_at": "2026-11-20T09:07:12Z", "domains": ["bakerytailor24.io", "www.bakerytailor24.io"], "label": "benign", "simulated": true}
+{"seq": 369, "issued_at": "2026-11-20T09:07:27Z", "domains": ["stone-tiny.online"], "label": "benign", "simulated": true}
+{"seq": 370, "issued_at": "2026-11-20T09:07:38Z", "domains": ["printdental360.ae"], "label": "benign", "simulated": true}
+{"seq": 371, "issued_at": "2026-11-20T09:07:40Z", "domains": ["lemon-music24.net", "www.lemon-music24.net"], "label": "benign", "simulated": true}
+{"seq": 372, "issued_at": "2026-11-20T09:07:58Z", "domains": ["coffee-print.com"], "label": "benign", "simulated": true}
+{"seq": 373, "issued_at": "2026-11-20T09:08:12Z", "domains": ["greendentalhub.com"], "label": "benign", "simulated": true}
+{"seq": 374, "issued_at": "2026-11-20T09:08:21Z", "domains": ["bakery-plumbing24.com"], "label": "benign", "simulated": true}
+{"seq": 375, "issued_at": "2026-11-20T09:08:30Z", "domains": ["photo-studio.com"], "label": "benign", "simulated": true}
+{"seq": 376, "issued_at": "2026-11-20T09:08:39Z", "domains": ["gardentailor24.co"], "label": "benign", "simulated": true}
+{"seq": 377, "issued_at": "2026-11-20T09:08:52Z", "domains": ["bluegreen360.online"], "label": "benign", "simulated": true}
+{"seq": 378, "issued_at": "2026-11-20T09:09:00Z", "domains": ["pixel-tailor.io"], "label": "benign", "simulated": true}
+{"seq": 379, "issued_at": "2026-11-20T09:09:19Z", "domains": ["emiratesnd-login.com"], "label": "lookalike", "simulated": true}
+{"seq": 380, "issued_at": "2026-11-20T09:09:36Z", "domains": ["quickflower24.net"], "label": "benign", "simulated": true}
+{"seq": 381, "issued_at": "2026-11-20T09:09:42Z", "domains": ["hobbypixelhub.com"], "label": "benign", "simulated": true}
+{"seq": 382, "issued_at": "2026-11-20T09:09:43Z", "domains": ["bakery-pixelhub.co"], "label": "benign", "simulated": true}
+{"seq": 383, "issued_at": "2026-11-20T09:09:46Z", "domains": ["bakery-lightinghub.ae", "www.bakery-lightinghub.ae"], "label": "benign", "simulated": true}
+{"seq": 384, "issued_at": "2026-11-20T09:09:50Z", "domains": ["music-nova24.com"], "label": "benign", "simulated": true}
+{"seq": 385, "issued_at": "2026-11-20T09:10:05Z", "domains": ["tailortrailhub.com"], "label": "benign", "simulated": true}
+{"seq": 386, "issued_at": "2026-11-20T09:10:15Z", "domains": ["3nbd-payment.online", "www.3nbd-payment.online"], "label": "lookalike", "simulated": true}
+{"seq": 387, "issued_at": "2026-11-20T09:10:17Z", "domains": ["solar-bikehub.io", "www.solar-bikehub.io"], "label": "benign", "simulated": true}
+{"seq": 388, "issued_at": "2026-11-20T09:10:20Z", "domains": ["novasummit24.net", "www.novasummit24.net"], "label": "benign", "simulated": true}
+{"seq": 389, "issued_at": "2026-11-20T09:10:40Z", "domains": ["lighting-lighting.net"], "label": "benign", "simulated": true}
+{"seq": 390, "issued_at": "2026-11-20T09:10:47Z", "domains": ["summitcoffee.com"], "label": "benign", "simulated": true}
+{"seq": 391, "issued_at": "2026-11-20T09:10:51Z", "domains": ["tamm4budhabi-secure.shop"], "label": "lookalike", "simulated": true}
+{"seq": 392, "issued_at": "2026-11-20T09:10:55Z", "domains": ["lightingstone360.shop", "www.lightingstone360.shop"], "label": "benign", "simulated": true}
+{"seq": 393, "issued_at": "2026-11-20T09:11:15Z", "domains": ["dental-stone.com", "www.dental-stone.com"], "label": "benign", "simulated": true}
+{"seq": 394, "issued_at": "2026-11-20T09:11:34Z", "domains": ["orbit-kids360.co"], "label": "benign", "simulated": true}
+{"seq": 395, "issued_at": "2026-11-20T09:11:40Z", "domains": ["firstabudh4bibank-account.shop"], "label": "lookalike", "simulated": true}
+{"seq": 396, "issued_at": "2026-11-20T09:11:46Z", "domains": ["novaquick.com", "www.novaquick.com"], "label": "benign", "simulated": true}
+{"seq": 397, "issued_at": "2026-11-20T09:12:01Z", "domains": ["lemonstone24.io"], "label": "benign", "simulated": true}
+{"seq": 398, "issued_at": "2026-11-20T09:12:04Z", "domains": ["cedarnorth24.com"], "label": "benign", "simulated": true}
+{"seq": 399, "issued_at": "2026-11-20T09:12:13Z", "domains": ["travelsummit360.co"], "label": "benign", "simulated": true}
+{"seq": 400, "issued_at": "2026-11-20T09:12:24Z", "domains": ["bakery-lighting360.com", "www.bakery-lighting360.com"], "label": "benign", "simulated": true}
+{"seq": 401, "issued_at": "2026-11-20T09:12:27Z", "domains": ["hobby-plumbing.ae", "www.hobby-plumbing.ae"], "label": "benign", "simulated": true}
+{"seq": 402, "issued_at": "2026-11-20T09:12:29Z", "domains": ["solar-printhub.io"], "label": "benign", "simulated": true}
+{"seq": 403, "issued_at": "2026-11-20T09:12:40Z", "domains": ["cedarplumbing360.com"], "label": "benign", "simulated": true}
+{"seq": 404, "issued_at": "2026-11-20T09:12:49Z", "domains": ["kids-orbit24.com"], "label": "benign", "simulated": true}
+{"seq": 405, "issued_at": "2026-11-20T09:12:58Z", "domains": ["etisalat.ae.payment-blue.site", "www.etisalat.ae.payment-blue.site"], "label": "lookalike", "simulated": true}
+{"seq": 406, "issued_at": "2026-11-20T09:13:01Z", "domains": ["travelfoxhub.co"], "label": "benign", "simulated": true}
+{"seq": 407, "issued_at": "2026-11-20T09:13:08Z", "domains": ["dentaltiny360.site"], "label": "benign", "simulated": true}
+{"seq": 408, "issued_at": "2026-11-20T09:13:14Z", "domains": ["green-nova.com"], "label": "benign", "simulated": true}
+{"seq": 409, "issued_at": "2026-11-20T09:13:18Z", "domains": ["cloudphoto360.site", "www.cloudphoto360.site"], "label": "benign", "simulated": true}
+{"seq": 410, "issued_at": "2026-11-20T09:13:32Z", "domains": ["nova-trail.online", "www.nova-trail.online"], "label": "benign", "simulated": true}
+{"seq": 411, "issued_at": "2026-11-20T09:13:36Z", "domains": ["hobby-garden360.com"], "label": "benign", "simulated": true}
+{"seq": 412, "issued_at": "2026-11-20T09:13:45Z", "domains": ["riverpets24.ae", "www.riverpets24.ae"], "label": "benign", "simulated": true}
+{"seq": 413, "issued_at": "2026-11-20T09:13:48Z", "domains": ["pets-print24.com", "www.pets-print24.com"], "label": "benign", "simulated": true}
+{"seq": 414, "issued_at": "2026-11-20T09:13:57Z", "domains": ["kidsphoto360.com"], "label": "benign", "simulated": true}
+{"seq": 415, "issued_at": "2026-11-20T09:13:58Z", "domains": ["lemoncinema.online"], "label": "benign", "simulated": true}
+{"seq": 416, "issued_at": "2026-11-20T09:14:03Z", "domains": ["pixel-book360.com"], "label": "benign", "simulated": true}
+{"seq": 417, "issued_at": "2026-11-20T09:14:04Z", "domains": ["summitcraft24.com"], "label": "benign", "simulated": true}
+{"seq": 418, "issued_at": "2026-11-20T09:14:17Z", "domains": ["gardenflowerhub.ae", "www.gardenflowerhub.ae"], "label": "benign", "simulated": true}
+{"seq": 419, "issued_at": "2026-11-20T09:14:28Z", "domains": ["foxblue.com"], "label": "benign", "simulated": true}
+{"seq": 420, "issued_at": "2026-11-20T09:14:47Z", "domains": ["foxphoto360.com", "www.foxphoto360.com"], "label": "benign", "simulated": true}
+{"seq": 421, "issued_at": "2026-11-20T09:15:03Z", "domains": ["stonegreenhub.net"], "label": "benign", "simulated": true}
+{"seq": 422, "issued_at": "2026-11-20T09:15:16Z", "domains": ["cedar-gardenhub.ae"], "label": "benign", "simulated": true}
+{"seq": 423, "issued_at": "2026-11-20T09:15:19Z", "domains": ["atlas-studio360.shop"], "label": "benign", "simulated": true}
+{"seq": 424, "issued_at": "2026-11-20T09:15:20Z", "domains": ["cedar-tailor.ae"], "label": "benign", "simulated": true}
+{"seq": 425, "issued_at": "2026-11-20T09:15:36Z", "domains": ["furniture-quick.com", "www.furniture-quick.com"], "label": "benign", "simulated": true}
+{"seq": 426, "issued_at": "2026-11-20T09:15:54Z", "domains": ["travelquickhub.io"], "label": "benign", "simulated": true}
+{"seq": 427, "issued_at": "2026-11-20T09:16:06Z", "domains": ["happy-plumbinghub.com"], "label": "benign", "simulated": true}
+{"seq": 428, "issued_at": "2026-11-20T09:16:16Z", "domains": ["tinyatlashub.online"], "label": "benign", "simulated": true}
+{"seq": 429, "issued_at": "2026-11-20T09:16:19Z", "domains": ["orbitcedar360.com"], "label": "benign", "simulated": true}
+{"seq": 430, "issued_at": "2026-11-20T09:16:30Z", "domains": ["tinysummit24.com", "www.tinysummit24.com"], "label": "benign", "simulated": true}
+{"seq": 431, "issued_at": "2026-11-20T09:16:45Z", "domains": ["summithappy.shop"], "label": "benign", "simulated": true}
+{"seq": 432, "issued_at": "2026-11-20T09:16:55Z", "domains": ["flowerforest360.com"], "label": "benign", "simulated": true}
+{"seq": 433, "issued_at": "2026-11-20T09:17:01Z", "domains": ["kidsdental24.com"], "label": "benign", "simulated": true}
+{"seq": 434, "issued_at": "2026-11-20T09:17:14Z", "domains": ["summittrail.site"], "label": "benign", "simulated": true}
+{"seq": 435, "issued_at": "2026-11-20T09:17:24Z", "domains": ["summittrailhub.online"], "label": "benign", "simulated": true}
+{"seq": 436, "issued_at": "2026-11-20T09:17:28Z", "domains": ["north-blue24.org"], "label": "benign", "simulated": true}
+{"seq": 437, "issued_at": "2026-11-20T09:17:40Z", "domains": ["north-foresthub.com"], "label": "benign", "simulated": true}
+{"seq": 438, "issued_at": "2026-11-20T09:17:55Z", "domains": ["photo-harbor.online"], "label": "benign", "simulated": true}
+{"seq": 439, "issued_at": "2026-11-20T09:18:00Z", "domains": ["dentalbike360.site", "www.dentalbike360.site"], "label": "benign", "simulated": true}
+{"seq": 440, "issued_at": "2026-11-20T09:18:01Z", "domains": ["river-green360.shop"], "label": "benign", "simulated": true}
+{"seq": 441, "issued_at": "2026-11-20T09:18:20Z", "domains": ["greendental24.io", "www.greendental24.io"], "label": "benign", "simulated": true}
+{"seq": 442, "issued_at": "2026-11-20T09:18:33Z", "domains": ["photofurniture24.site", "www.photofurniture24.site"], "label": "benign", "simulated": true}
+{"seq": 443, "issued_at": "2026-11-20T09:18:51Z", "domains": ["www.emiratesnbd.com"], "label": "official", "simulated": true}
+{"seq": 444, "issued_at": "2026-11-20T09:19:07Z", "domains": ["lemonsummit.com"], "label": "benign", "simulated": true}
+{"seq": 445, "issued_at": "2026-11-20T09:19:22Z", "domains": ["bluecloud24.com"], "label": "benign", "simulated": true}
+{"seq": 446, "issued_at": "2026-11-20T09:19:23Z", "domains": ["trail-photo.com", "www.trail-photo.com"], "label": "benign", "simulated": true}
+{"seq": 447, "issued_at": "2026-11-20T09:19:25Z", "domains": ["lemon-update.site"], "label": "keyword", "simulated": true}
+{"seq": 448, "issued_at": "2026-11-20T09:19:27Z", "domains": ["northcoffee360.com"], "label": "benign", "simulated": true}
+{"seq": 449, "issued_at": "2026-11-20T09:19:34Z", "domains": ["cedarcoffee24.io"], "label": "benign", "simulated": true}
+{"seq": 450, "issued_at": "2026-11-20T09:19:51Z", "domains": ["bookquick360.net"], "label": "benign", "simulated": true}
+{"seq": 451, "issued_at": "2026-11-20T09:20:09Z", "domains": ["yogapets.net", "www.yogapets.net"], "label": "benign", "simulated": true}
+{"seq": 452, "issued_at": "2026-11-20T09:20:28Z", "domains": ["greenkids.com", "www.greenkids.com"], "label": "benign", "simulated": true}
+{"seq": 453, "issued_at": "2026-11-20T09:20:31Z", "domains": ["pixelsolar.org", "www.pixelsolar.org"], "label": "benign", "simulated": true}
+{"seq": 454, "issued_at": "2026-11-20T09:20:36Z", "domains": ["tailorbluehub.com"], "label": "benign", "simulated": true}
+{"seq": 455, "issued_at": "2026-11-20T09:20:37Z", "domains": ["trailforest24.site"], "label": "benign", "simulated": true}
+{"seq": 456, "issued_at": "2026-11-20T09:20:57Z", "domains": ["stonegarden24.com", "www.stonegarden24.com"], "label": "benign", "simulated": true}
+{"seq": 457, "issued_at": "2026-11-20T09:21:02Z", "domains": ["flower-payment.click", "www.flower-payment.click"], "label": "keyword", "simulated": true}
+{"seq": 458, "issued_at": "2026-11-20T09:21:04Z", "domains": ["lightingsolar360.com"], "label": "benign", "simulated": true}
+{"seq": 459, "issued_at": "2026-11-20T09:21:08Z", "domains": ["quickstone360.com"], "label": "benign", "simulated": true}
+{"seq": 460, "issued_at": "2026-11-20T09:21:14Z", "domains": ["hobbytrail.com"], "label": "benign", "simulated": true}
+{"seq": 461, "issued_at": "2026-11-20T09:21:17Z", "domains": ["atlasphotohub.com"], "label": "benign", "simulated": true}
+{"seq": 462, "issued_at": "2026-11-20T09:21:21Z", "domains": ["gardenatlashub.io", "www.gardenatlashub.io"], "label": "benign", "simulated": true}
+{"seq": 463, "issued_at": "2026-11-20T09:21:41Z", "domains": ["plumbingmaple360.shop"], "label": "benign", "simulated": true}
+{"seq": 464, "issued_at": "2026-11-20T09:21:49Z", "domains": ["nova-flower360.ae", "www.nova-flower360.ae"], "label": "benign", "simulated": true}
+{"seq": 465, "issued_at": "2026-11-20T09:21:56Z", "domains": ["riverstudiohub.online"], "label": "benign", "simulated": true}
+{"seq": 466, "issued_at": "2026-11-20T09:22:09Z", "domains": ["bluequick24.com"], "label": "benign", "simulated": true}
+{"seq": 467, "issued_at": "2026-11-20T09:22:28Z", "domains": ["salik-login.vip"], "label": "lookalike", "simulated": true}
+{"seq": 468, "issued_at": "2026-11-20T09:22:39Z", "domains": ["lighting-lighting360.com"], "label": "benign", "simulated": true}
+{"seq": 469, "issued_at": "2026-11-20T09:22:46Z", "domains": ["nova-lemon360.ae"], "label": "benign", "simulated": true}
+{"seq": 470, "issued_at": "2026-11-20T09:23:05Z", "domains": ["xn--mshrq-4ve2b.com", "www.xn--mshrq-4ve2b.com"], "label": "homoglyph", "simulated": true}
+{"seq": 471, "issued_at": "2026-11-20T09:23:08Z", "domains": ["maplecoffeehub.com", "www.maplecoffeehub.com"], "label": "benign", "simulated": true}
+{"seq": 472, "issued_at": "2026-11-20T09:23:13Z", "domains": ["yoga-furniture.site"], "label": "benign", "simulated": true}
+{"seq": 473, "issued_at": "2026-11-20T09:23:19Z", "domains": ["pixelkids.io"], "label": "benign", "simulated": true}
+{"seq": 474, "issued_at": "2026-11-20T09:23:37Z", "domains": ["tiny-happyhub.io", "www.tiny-happyhub.io"], "label": "benign", "simulated": true}
+{"seq": 475, "issued_at": "2026-11-20T09:23:45Z", "domains": ["maplepets24.site"], "label": "benign", "simulated": true}
+{"seq": 476, "issued_at": "2026-11-20T09:23:47Z", "domains": ["pets-stone.com", "www.pets-stone.com"], "label": "benign", "simulated": true}
+{"seq": 477, "issued_at": "2026-11-20T09:24:07Z", "domains": ["happy-yoga360.online"], "label": "benign", "simulated": true}
+{"seq": 478, "issued_at": "2026-11-20T09:24:13Z", "domains": ["musicgarden24.com", "www.musicgarden24.com"], "label": "benign", "simulated": true}
+{"seq": 479, "issued_at": "2026-11-20T09:24:29Z", "domains": ["printnova.com", "www.printnova.com"], "label": "benign", "simulated": true}
+{"seq": 480, "issued_at": "2026-11-20T09:24:30Z", "domains": ["gardenfox.online", "www.gardenfox.online"], "label": "benign", "simulated": true}
+{"seq": 481, "issued_at": "2026-11-20T09:24:33Z", "domains": ["printdental.org"], "label": "benign", "simulated": true}
+{"seq": 482, "issued_at": "2026-11-20T09:24:52Z", "domains": ["bluelighting.com"], "label": "benign", "simulated": true}
+{"seq": 483, "issued_at": "2026-11-20T09:25:06Z", "domains": ["adib.ae.update-tailor.top"], "label": "lookalike", "simulated": true}
+{"seq": 484, "issued_at": "2026-11-20T09:25:22Z", "domains": ["cinemaforest.org"], "label": "benign", "simulated": true}
+{"seq": 485, "issued_at": "2026-11-20T09:25:29Z", "domains": ["foreststudio24.com", "www.foreststudio24.com"], "label": "benign", "simulated": true}
+{"seq": 486, "issued_at": "2026-11-20T09:25:38Z", "domains": ["sa1ik-verify.com"], "label": "lookalike", "simulated": true}
+{"seq": 487, "issued_at": "2026-11-20T09:25:52Z", "domains": ["flower-flower24.com", "www.flower-flower24.com"], "label": "benign", "simulated": true}
+{"seq": 488, "issued_at": "2026-11-20T09:25:58Z", "domains": ["xn--fb-7kc.com"], "label": "homoglyph", "simulated": true}
+{"seq": 489, "issued_at": "2026-11-20T09:26:00Z", "domains": ["photo-harbor24.com"], "label": "benign", "simulated": true}
+{"seq": 490, "issued_at": "2026-11-20T09:26:16Z", "domains": ["summitbikehub.com"], "label": "benign", "simulated": true}
+{"seq": 491, "issued_at": "2026-11-20T09:26:19Z", "domains": ["summit-lightinghub.com"], "label": "benign", "simulated": true}
+{"seq": 492, "issued_at": "2026-11-20T09:26:29Z", "domains": ["book-music.com"], "label": "benign", "simulated": true}
+{"seq": 493, "issued_at": "2026-11-20T09:26:30Z", "domains": ["flower-crafthub.com"], "label": "benign", "simulated": true}
+{"seq": 494, "issued_at": "2026-11-20T09:26:37Z", "domains": ["stonequick.com", "www.stonequick.com"], "label": "benign", "simulated": true}
+{"seq": 495, "issued_at": "2026-11-20T09:26:54Z", "domains": ["happy-yogahub.org"], "label": "benign", "simulated": true}
+{"seq": 496, "issued_at": "2026-11-20T09:27:14Z", "domains": ["solar-yoga.com"], "label": "benign", "simulated": true}
+{"seq": 497, "issued_at": "2026-11-20T09:27:32Z", "domains": ["furnitureriver24.shop"], "label": "benign", "simulated": true}
+{"seq": 498, "issued_at": "2026-11-20T09:27:47Z", "domains": ["happy-photo.shop"], "label": "benign", "simulated": true}
+{"seq": 499, "issued_at": "2026-11-20T09:27:54Z", "domains": ["happyflower360.co", "www.happyflower360.co"], "label": "benign", "simulated": true}
+{"seq": 500, "issued_at": "2026-11-20T09:28:01Z", "domains": ["yoga-foresthub.net", "www.yoga-foresthub.net"], "label": "benign", "simulated": true}
+{"seq": 501, "issued_at": "2026-11-20T09:28:06Z", "domains": ["booknovahub.com"], "label": "benign", "simulated": true}
+{"seq": 502, "issued_at": "2026-11-20T09:28:22Z", "domains": ["stonebike24.online"], "label": "benign", "simulated": true}
+{"seq": 503, "issued_at": "2026-11-20T09:28:28Z", "domains": ["pets-northhub.com"], "label": "benign", "simulated": true}
+{"seq": 504, "issued_at": "2026-11-20T09:28:30Z", "domains": ["blue-bakery24.com", "www.blue-bakery24.com"], "label": "benign", "simulated": true}
+{"seq": 505, "issued_at": "2026-11-20T09:28:42Z", "domains": ["forest-photo24.ae", "www.forest-photo24.ae"], "label": "benign", "simulated": true}
+{"seq": 506, "issued_at": "2026-11-20T09:28:56Z", "domains": ["bike-lighting360.net", "www.bike-lighting360.net"], "label": "benign", "simulated": true}
+{"seq": 507, "issued_at": "2026-11-20T09:29:16Z", "domains": ["bakeryfox.net"], "label": "benign", "simulated": true}
+{"seq": 508, "issued_at": "2026-11-20T09:29:31Z", "domains": ["travelpeak.site", "www.travelpeak.site"], "label": "benign", "simulated": true}
+{"seq": 509, "issued_at": "2026-11-20T09:29:33Z", "domains": ["studiophoto.com"], "label": "benign", "simulated": true}
+{"seq": 510, "issued_at": "2026-11-20T09:29:39Z", "domains": ["travellighting360.ae", "www.travellighting360.ae"], "label": "benign", "simulated": true}
+{"seq": 511, "issued_at": "2026-11-20T09:29:40Z", "domains": ["photo-peak.com"], "label": "benign", "simulated": true}
+{"seq": 512, "issued_at": "2026-11-20T09:29:44Z", "domains": ["book-travel24.com", "www.book-travel24.com"], "label": "benign", "simulated": true}
+{"seq": 513, "issued_at": "2026-11-20T09:29:52Z", "domains": ["pixelcraft.com"], "label": "benign", "simulated": true}
+{"seq": 514, "issued_at": "2026-11-20T09:30:11Z", "domains": ["happy-maple24.shop"], "label": "benign", "simulated": true}
+{"seq": 515, "issued_at": "2026-11-20T09:30:25Z", "domains": ["bakeryfurniture24.online", "www.bakeryfurniture24.online"], "label": "benign", "simulated": true}
+{"seq": 516, "issued_at": "2026-11-20T09:30:36Z", "domains": ["mapletravel360.shop", "www.mapletravel360.shop"], "label": "benign", "simulated": true}
+{"seq": 517, "issued_at": "2026-11-20T09:30:40Z", "domains": ["forestcinema.com"], "label": "benign", "simulated": true}
+{"seq": 518, "issued_at": "2026-11-20T09:30:44Z", "domains": ["lightingtailor360.online", "www.lightingtailor360.online"], "label": "benign", "simulated": true}
+{"seq": 519, "issued_at": "2026-11-20T09:30:58Z", "domains": ["studioyoga.org"], "label": "benign", "simulated": true}
+{"seq": 520, "issued_at": "2026-11-20T09:31:11Z", "domains": ["phototailorhub.com"], "label": "benign", "simulated": true}
+{"seq": 521, "issued_at": "2026-11-20T09:31:14Z", "domains": ["kids-lightinghub.com"], "label": "benign", "simulated": true}
+{"seq": 522, "issued_at": "2026-11-20T09:31:30Z", "domains": ["xn--tihd-73d0a.com", "www.xn--tihd-73d0a.com"], "label": "homoglyph", "simulated": true}
+{"seq": 523, "issued_at": "2026-11-20T09:31:44Z", "domains": ["furniturebluehub.net", "www.furniturebluehub.net"], "label": "benign", "simulated": true}
+{"seq": 524, "issued_at": "2026-11-20T09:32:04Z", "domains": ["quick-lemon24.shop"], "label": "benign", "simulated": true}
+{"seq": 525, "issued_at": "2026-11-20T09:32:17Z", "domains": ["tailor-summit360.com"], "label": "benign", "simulated": true}
+{"seq": 526, "issued_at": "2026-11-20T09:32:32Z", "domains": ["dental-yogahub.com"], "label": "benign", "simulated": true}
+{"seq": 527, "issued_at": "2026-11-20T09:32:44Z", "domains": ["furniturelighting24.org"], "label": "benign", "simulated": true}
+{"seq": 528, "issued_at": "2026-11-20T09:32:51Z", "domains": ["secure-verify-photo.com"], "label": "keyword", "simulated": true}
+{"seq": 529, "issued_at": "2026-11-20T09:32:53Z", "domains": ["harbor-north24.ae"], "label": "benign", "simulated": true}
+{"seq": 530, "issued_at": "2026-11-20T09:32:55Z", "domains": ["quick-tiny.net", "www.quick-tiny.net"], "label": "benign", "simulated": true}
+{"seq": 531, "issued_at": "2026-11-20T09:32:59Z", "domains": ["flower-summit360.site"], "label": "benign", "simulated": true}
+{"seq": 532, "issued_at": "2026-11-20T09:33:14Z", "domains": ["pixel-river.shop"], "label": "benign", "simulated": true}
+{"seq": 533, "issued_at": "2026-11-20T09:33:25Z", "domains": ["maplestudiohub.com", "www.maplestudiohub.com"], "label": "benign", "simulated": true}
+{"seq": 534, "issued_at": "2026-11-20T09:33:35Z", "domains": ["plumbingatlas360.site"], "label": "benign", "simulated": true}
+{"seq": 535, "issued_at": "2026-11-20T09:33:55Z", "domains": ["bakeryquick360.com"], "label": "benign", "simulated": true}
+{"seq": 536, "issued_at": "2026-11-20T09:34:14Z", "domains": ["greenfurniture360.com"], "label": "benign", "simulated": true}
+{"seq": 537, "issued_at": "2026-11-20T09:34:22Z", "domains": ["furniturecinema360.ae", "www.furniturecinema360.ae"], "label": "benign", "simulated": true}
+{"seq": 538, "issued_at": "2026-11-20T09:34:39Z", "domains": ["tiny-tailor24.io"], "label": "benign", "simulated": true}
+{"seq": 539, "issued_at": "2026-11-20T09:34:46Z", "domains": ["green-forest360.online"], "label": "benign", "simulated": true}
+{"seq": 540, "issued_at": "2026-11-20T09:35:01Z", "domains": ["federalauth0rityforidentityandcitizenship.shop", "www.federalauth0rityforidentityandcitizenship.shop"], "label": "lookalike", "simulated": true}
+{"seq": 541, "issued_at": "2026-11-20T09:35:15Z", "domains": ["lightingquickhub.co"], "label": "benign", "simulated": true}
+{"seq": 542, "issued_at": "2026-11-20T09:35:23Z", "domains": ["tailorharbor360.online", "www.tailorharbor360.online"], "label": "benign", "simulated": true}
+{"seq": 543, "issued_at": "2026-11-20T09:35:37Z", "domains": ["happybike360.online"], "label": "benign", "simulated": true}
+{"seq": 544, "issued_at": "2026-11-20T09:35:56Z", "domains": ["kidsatlas360.online"], "label": "benign", "simulated": true}
+{"seq": 545, "issued_at": "2026-11-20T09:36:15Z", "domains": ["solarmaplehub.site"], "label": "benign", "simulated": true}
+{"seq": 546, "issued_at": "2026-11-20T09:36:29Z", "domains": ["cinemakidshub.com"], "label": "benign", "simulated": true}
+{"seq": 547, "issued_at": "2026-11-20T09:36:31Z", "domains": ["pixelharbor.com"], "label": "benign", "simulated": true}
+{"seq": 548, "issued_at": "2026-11-20T09:36:48Z", "domains": ["bookcoffee24.online", "www.bookcoffee24.online"], "label": "benign", "simulated": true}
+{"seq": 549, "issued_at": "2026-11-20T09:37:05Z", "domains": ["green-photohub.net"], "label": "benign", "simulated": true}
+{"seq": 550, "issued_at": "2026-11-20T09:37:09Z", "domains": ["cinema-green360.shop"], "label": "benign", "simulated": true}
+{"seq": 551, "issued_at": "2026-11-20T09:37:17Z", "domains": ["dentalforesthub.shop", "www.dentalforesthub.shop"], "label": "benign", "simulated": true}
+{"seq": 552, "issued_at": "2026-11-20T09:37:18Z", "domains": ["bakery-furniture360.com"], "label": "benign", "simulated": true}
+{"seq": 553, "issued_at": "2026-11-20T09:37:32Z", "domains": ["flowerpets.ae"], "label": "benign", "simulated": true}
+{"seq": 554, "issued_at": "2026-11-20T09:37:37Z", "domains": ["bikeatlas.site"], "label": "benign", "simulated": true}
+{"seq": 555, "issued_at": "2026-11-20T09:37:45Z", "domains": ["quickmaple360.online"], "label": "benign", "simulated": true}
+{"seq": 556, "issued_at": "2026-11-20T09:37:48Z", "domains": ["peaknovahub.net", "www.peaknovahub.net"], "label": "benign", "simulated": true}
+{"seq": 557, "issued_at": "2026-11-20T09:37:58Z", "domains": ["forestbakery360.net", "www.forestbakery360.net"], "label": "benign", "simulated": true}
+{"seq": 558, "issued_at": "2026-11-20T09:38:13Z", "domains": ["emir4tes.top"], "label": "lookalike", "simulated": true}
+{"seq": 559, "issued_at": "2026-11-20T09:38:32Z", "domains": ["4ramex-secure.com", "www.4ramex-secure.com"], "label": "lookalike", "simulated": true}
+{"seq": 560, "issued_at": "2026-11-20T09:38:47Z", "domains": ["musicnova360.io"], "label": "benign", "simulated": true}
+{"seq": 561, "issued_at": "2026-11-20T09:38:52Z", "domains": ["trailpixel360.com"], "label": "benign", "simulated": true}
+{"seq": 562, "issued_at": "2026-11-20T09:39:05Z", "domains": ["quickharbor.com", "www.quickharbor.com"], "label": "benign", "simulated": true}
+{"seq": 563, "issued_at": "2026-11-20T09:39:17Z", "domains": ["music-blue360.net"], "label": "benign", "simulated": true}
+{"seq": 564, "issued_at": "2026-11-20T09:39:18Z", "domains": ["craftharbor360.com"], "label": "benign", "simulated": true}
+{"seq": 565, "issued_at": "2026-11-20T09:39:21Z", "domains": ["furniture-craft.org"], "label": "benign", "simulated": true}
+{"seq": 566, "issued_at": "2026-11-20T09:39:32Z", "domains": ["lightingfox24.com"], "label": "benign", "simulated": true}
+{"seq": 567, "issued_at": "2026-11-20T09:39:42Z", "domains": ["yogahappy360.net"], "label": "benign", "simulated": true}
+{"seq": 568, "issued_at": "2026-11-20T09:39:51Z", "domains": ["musicbook.com"], "label": "benign", "simulated": true}
+{"seq": 569, "issued_at": "2026-11-20T09:40:11Z", "domains": ["quicksummit.com"], "label": "benign", "simulated": true}
+{"seq": 570, "issued_at": "2026-11-20T09:40:18Z", "domains": ["dentalpets360.site"], "label": "benign", "simulated": true}
+{"seq": 571, "issued_at": "2026-11-20T09:40:21Z", "domains": ["atlastravel.org"], "label": "benign", "simulated": true}
+{"seq": 572, "issued_at": "2026-11-20T09:40:32Z", "domains": ["photolighting24.com"], "label": "benign", "simulated": true}
+{"seq": 573, "issued_at": "2026-11-20T09:40:34Z", "domains": ["novadental360.com"], "label": "benign", "simulated": true}
+{"seq": 574, "issued_at": "2026-11-20T09:40:46Z", "domains": ["atlaspixel24.com"], "label": "benign", "simulated": true}
+{"seq": 575, "issued_at": "2026-11-20T09:40:50Z", "domains": ["hobby-secure.top"], "label": "keyword", "simulated": true}
+{"seq": 576, "issued_at": "2026-11-20T09:41:05Z", "domains": ["kids-solar24.com"], "label": "benign", "simulated": true}
+{"seq": 577, "issued_at": "2026-11-20T09:41:17Z", "domains": ["novasummithub.com"], "label": "benign", "simulated": true}
+{"seq": 578, "issued_at": "2026-11-20T09:41:35Z", "domains": ["greenbakery360.online"], "label": "benign", "simulated": true}
+{"seq": 579, "issued_at": "2026-11-20T09:41:53Z", "domains": ["bikeharbor24.com"], "label": "benign", "simulated": true}
+{"seq": 580, "issued_at": "2026-11-20T09:42:00Z", "domains": ["happy-coffeehub.com", "www.happy-coffeehub.com"], "label": "benign", "simulated": true}
+{"seq": 581, "issued_at": "2026-11-20T09:42:11Z", "domains": ["peakfox360.com", "www.peakfox360.com"], "label": "benign", "simulated": true}
+{"seq": 582, "issued_at": "2026-11-20T09:42:15Z", "domains": ["fox-north360.site"], "label": "benign", "simulated": true}
+{"seq": 583, "issued_at": "2026-11-20T09:42:34Z", "domains": ["plumbingdental24.ae"], "label": "benign", "simulated": true}
+{"seq": 584, "issued_at": "2026-11-20T09:42:41Z", "domains": ["furniture-stone24.com"], "label": "benign", "simulated": true}
+{"seq": 585, "issued_at": "2026-11-20T09:42:49Z", "domains": ["dhl-support.top"], "label": "lookalike", "simulated": true}
+{"seq": 586, "issued_at": "2026-11-20T09:42:58Z", "domains": ["northblue.net"], "label": "benign", "simulated": true}
+{"seq": 587, "issued_at": "2026-11-20T09:43:12Z", "domains": ["book-tiny360.com", "www.book-tiny360.com"], "label": "benign", "simulated": true}
+{"seq": 588, "issued_at": "2026-11-20T09:43:15Z", "domains": ["pixelcinemahub.ae"], "label": "benign", "simulated": true}
+{"seq": 589, "issued_at": "2026-11-20T09:43:30Z", "domains": ["lemon-furniture24.ae"], "label": "benign", "simulated": true}
+{"seq": 590, "issued_at": "2026-11-20T09:43:47Z", "domains": ["tailorcoffee24.com"], "label": "benign", "simulated": true}
+{"seq": 591, "issued_at": "2026-11-20T09:44:03Z", "domains": ["summit-maple.org"], "label": "benign", "simulated": true}
+{"seq": 592, "issued_at": "2026-11-20T09:44:21Z", "domains": ["xn--dli-5cd2a5cnl.com"], "label": "homoglyph", "simulated": true}
+{"seq": 593, "issued_at": "2026-11-20T09:44:36Z", "domains": ["cinemapeak.co"], "label": "benign", "simulated": true}
+{"seq": 594, "issued_at": "2026-11-20T09:44:39Z", "domains": ["maple-furniturehub.site", "www.maple-furniturehub.site"], "label": "benign", "simulated": true}
+{"seq": 595, "issued_at": "2026-11-20T09:44:54Z", "domains": ["trailflowerhub.ae", "www.trailflowerhub.ae"], "label": "benign", "simulated": true}
+{"seq": 596, "issued_at": "2026-11-20T09:45:07Z", "domains": ["orbit-pixel24.com"], "label": "benign", "simulated": true}
+{"seq": 597, "issued_at": "2026-11-20T09:45:17Z", "domains": ["dubaiisl4micbank.icu"], "label": "lookalike", "simulated": true}
+{"seq": 598, "issued_at": "2026-11-20T09:45:20Z", "domains": ["tinybakery24.com", "www.tinybakery24.com"], "label": "benign", "simulated": true}
+{"seq": 599, "issued_at": "2026-11-20T09:45:29Z", "domains": ["foxhappy360.site", "www.foxhappy360.site"], "label": "benign", "simulated": true}
+{"seq": 600, "issued_at": "2026-11-20T09:45:34Z", "domains": ["happy-nova24.com"], "label": "benign", "simulated": true}
+{"seq": 601, "issued_at": "2026-11-20T09:45:41Z", "domains": ["novabook360.net"], "label": "benign", "simulated": true}
+{"seq": 602, "issued_at": "2026-11-20T09:45:42Z", "domains": ["north-summit.site", "www.north-summit.site"], "label": "benign", "simulated": true}
+{"seq": 603, "issued_at": "2026-11-20T09:46:00Z", "domains": ["craft-peak.com"], "label": "benign", "simulated": true}
+{"seq": 604, "issued_at": "2026-11-20T09:46:16Z", "domains": ["kidsfox24.site"], "label": "benign", "simulated": true}
+{"seq": 605, "issued_at": "2026-11-20T09:46:31Z", "domains": ["orbitsummit24.com"], "label": "benign", "simulated": true}
+{"seq": 606, "issued_at": "2026-11-20T09:46:32Z", "domains": ["book-orbit360.site", "www.book-orbit360.site"], "label": "benign", "simulated": true}
+{"seq": 607, "issued_at": "2026-11-20T09:46:35Z", "domains": ["blue-trail.co", "www.blue-trail.co"], "label": "benign", "simulated": true}
+{"seq": 608, "issued_at": "2026-11-20T09:46:43Z", "domains": ["photo-river24.com"], "label": "benign", "simulated": true}
+{"seq": 609, "issued_at": "2026-11-20T09:47:00Z", "domains": ["pixel-confirm.click"], "label": "keyword", "simulated": true}
+{"seq": 610, "issued_at": "2026-11-20T09:47:14Z", "domains": ["fox-pixel24.site"], "label": "benign", "simulated": true}
+{"seq": 611, "issued_at": "2026-11-20T09:47:25Z", "domains": ["green-payment.click"], "label": "keyword", "simulated": true}
+{"seq": 612, "issued_at": "2026-11-20T09:47:42Z", "domains": ["forestsummit360.ae"], "label": "benign", "simulated": true}
+{"seq": 613, "issued_at": "2026-11-20T09:47:57Z", "domains": ["orbit-trail360.com"], "label": "benign", "simulated": true}
+{"seq": 614, "issued_at": "2026-11-20T09:48:16Z", "domains": ["plumbing-atlas360.org", "www.plumbing-atlas360.org"], "label": "benign", "simulated": true}
+{"seq": 615, "issued_at": "2026-11-20T09:48:26Z", "domains": ["dentalbike24.online", "www.dentalbike24.online"], "label": "benign", "simulated": true}
+{"seq": 616, "issued_at": "2026-11-20T09:48:35Z", "domains": ["bakerygarden24.io", "www.bakerygarden24.io"], "label": "benign", "simulated": true}
+{"seq": 617, "issued_at": "2026-11-20T09:48:47Z", "domains": ["flowerfoxhub.com"], "label": "benign", "simulated": true}
+{"seq": 618, "issued_at": "2026-11-20T09:48:49Z", "domains": ["cinemapeak24.com", "www.cinemapeak24.com"], "label": "benign", "simulated": true}
+{"seq": 619, "issued_at": "2026-11-20T09:48:59Z", "domains": ["printstone360.shop"], "label": "benign", "simulated": true}
+{"seq": 620, "issued_at": "2026-11-20T09:49:05Z", "domains": ["pixelhobby.net"], "label": "benign", "simulated": true}
+{"seq": 621, "issued_at": "2026-11-20T09:49:11Z", "domains": ["harbor-craft24.online"], "label": "benign", "simulated": true}
+{"seq": 622, "issued_at": "2026-11-20T09:49:21Z", "domains": ["solargarden.com", "www.solargarden.com"], "label": "benign", "simulated": true}
+{"seq": 623, "issued_at": "2026-11-20T09:49:27Z", "domains": ["bakeryharborhub.com"], "label": "benign", "simulated": true}
+{"seq": 624, "issued_at": "2026-11-20T09:49:32Z", "domains": ["greenfurniturehub.online", "www.greenfurniturehub.online"], "label": "benign", "simulated": true}
+{"seq": 625, "issued_at": "2026-11-20T09:49:36Z", "domains": ["wallet-support-forest.com", "www.wallet-support-forest.com"], "label": "keyword", "simulated": true}
+{"seq": 626, "issued_at": "2026-11-20T09:49:47Z", "domains": ["emiratesnbd.com.confirm-forest.icu"], "label": "lookalike", "simulated": true}
+{"seq": 627, "issued_at": "2026-11-20T09:50:02Z", "domains": ["rivertrail360.io", "www.rivertrail360.io"], "label": "benign", "simulated": true}
+{"seq": 628, "issued_at": "2026-11-20T09:50:08Z", "domains": ["photobikehub.com", "www.photobikehub.com"], "label": "benign", "simulated": true}
+{"seq": 629, "issued_at": "2026-11-20T09:50:10Z", "domains": ["kids-kids24.online"], "label": "benign", "simulated": true}
+{"seq": 630, "issued_at": "2026-11-20T09:50:22Z", "domains": ["happy-north24.com", "www.happy-north24.com"], "label": "benign", "simulated": true}
+{"seq": 631, "issued_at": "2026-11-20T09:50:37Z", "domains": ["adolice-update.com"], "label": "lookalike", "simulated": true}
+{"seq": 632, "issued_at": "2026-11-20T09:50:43Z", "domains": ["music-yoga24.io"], "label": "benign", "simulated": true}
+{"seq": 633, "issued_at": "2026-11-20T09:50:47Z", "domains": ["bakeryyoga.shop"], "label": "benign", "simulated": true}
+{"seq": 634, "issued_at": "2026-11-20T09:51:00Z", "domains": ["musicdental360.com"], "label": "benign", "simulated": true}
+{"seq": 635, "issued_at": "2026-11-20T09:51:05Z", "domains": ["bakerynovahub.co"], "label": "benign", "simulated": true}
+{"seq": 636, "issued_at": "2026-11-20T09:51:16Z", "domains": ["gardenfoxhub.com", "www.gardenfoxhub.com"], "label": "benign", "simulated": true}
+{"seq": 637, "issued_at": "2026-11-20T09:51:34Z", "domains": ["studio-flower360.shop"], "label": "benign", "simulated": true}
+{"seq": 638, "issued_at": "2026-11-20T09:51:45Z", "domains": ["cinemaforest.com"], "label": "benign", "simulated": true}
+{"seq": 639, "issued_at": "2026-11-20T09:51:55Z", "domains": ["pets-north.io"], "label": "benign", "simulated": true}
+{"seq": 640, "issued_at": "2026-11-20T09:52:05Z", "domains": ["login-wallet-cloud.com"], "label": "keyword", "simulated": true}
+{"seq": 641, "issued_at": "2026-11-20T09:52:24Z", "domains": ["lemon-furniturehub.com"], "label": "benign", "simulated": true}
+{"seq": 642, "issued_at": "2026-11-20T09:52:43Z", "domains": ["orbit-maple360.io"], "label": "benign", "simulated": true}
+{"seq": 643, "issued_at": "2026-11-20T09:52:58Z", "domains": ["solarbike24.com"], "label": "benign", "simulated": true}
+{"seq": 644, "issued_at": "2026-11-20T09:53:02Z", "domains": ["pixelmaplehub.online"], "label": "benign", "simulated": true}
+{"seq": 645, "issued_at": "2026-11-20T09:53:04Z", "domains": ["riverpeakhub.site", "www.riverpeakhub.site"], "label": "benign", "simulated": true}
+{"seq": 646, "issued_at": "2026-11-20T09:53:22Z", "domains": ["studioatlashub.shop", "www.studioatlashub.shop"], "label": "benign", "simulated": true}
+{"seq": 647, "issued_at": "2026-11-20T09:53:23Z", "domains": ["photonovahub.com"], "label": "benign", "simulated": true}
+{"seq": 648, "issued_at": "2026-11-20T09:53:31Z", "domains": ["account-payment-green.com"], "label": "keyword", "simulated": true}
+{"seq": 649, "issued_at": "2026-11-20T09:53:34Z", "domains": ["craft-coffee.io"], "label": "benign", "simulated": true}
+{"seq": 650, "issued_at": "2026-11-20T09:53:54Z", "domains": ["quick-dentalhub.online"], "label": "benign", "simulated": true}
+{"seq": 651, "issued_at": "2026-11-20T09:54:13Z", "domains": ["dh1-wallet.click"], "label": "lookalike", "simulated": true}
+{"seq": 652, "issued_at": "2026-11-20T09:54:22Z", "domains": ["adib-update.top", "www.adib-update.top"], "label": "lookalike", "simulated": true}
+{"seq": 653, "issued_at": "2026-11-20T09:54:25Z", "domains": ["tiny-harbor.org"], "label": "benign", "simulated": true}
+{"seq": 654, "issued_at": "2026-11-20T09:54:40Z", "domains": ["gardenmaple24.site"], "label": "benign", "simulated": true}
+{"seq": 655, "issued_at": "2026-11-20T09:54:43Z", "domains": ["printfox.com"], "label": "benign", "simulated": true}
+{"seq": 656, "issued_at": "2026-11-20T09:54:56Z", "domains": ["print-solar360.com", "www.print-solar360.com"], "label": "benign", "simulated": true}
+{"seq": 657, "issued_at": "2026-11-20T09:55:07Z", "domains": ["dentalquick24.org"], "label": "benign", "simulated": true}
+{"seq": 658, "issued_at": "2026-11-20T09:55:24Z", "domains": ["plumbingkids360.com"], "label": "benign", "simulated": true}
+{"seq": 659, "issued_at": "2026-11-20T09:55:36Z", "domains": ["du-account.vip"], "label": "lookalike", "simulated": true}
+{"seq": 660, "issued_at": "2026-11-20T09:55:50Z", "domains": ["harbornovahub.org"], "label": "benign", "simulated": true}
+{"seq": 661, "issued_at": "2026-11-20T09:56:02Z", "domains": ["greenyoga24.co", "www.greenyoga24.co"], "label": "benign", "simulated": true}
+{"seq": 662, "issued_at": "2026-11-20T09:56:14Z", "domains": ["solarforest.com"], "label": "benign", "simulated": true}
+{"seq": 663, "issued_at": "2026-11-20T09:56:29Z", "domains": ["orbit-garden24.com"], "label": "benign", "simulated": true}
+{"seq": 664, "issued_at": "2026-11-20T09:56:32Z", "domains": ["happy-kidshub.com", "www.happy-kidshub.com"], "label": "benign", "simulated": true}
+{"seq": 665, "issued_at": "2026-11-20T09:56:47Z", "domains": ["yoga-stone24.site"], "label": "benign", "simulated": true}
+{"seq": 666, "issued_at": "2026-11-20T09:57:01Z", "domains": ["novaflowerhub.site"], "label": "benign", "simulated": true}
+{"seq": 667, "issued_at": "2026-11-20T09:57:11Z", "domains": ["solar-tailor24.com", "www.solar-tailor24.com"], "label": "benign", "simulated": true}
+{"seq": 668, "issued_at": "2026-11-20T09:57:25Z", "domains": ["bookriverhub.shop"], "label": "benign", "simulated": true}
+{"seq": 669, "issued_at": "2026-11-20T09:57:39Z", "domains": ["nova-greenhub.ae", "www.nova-greenhub.ae"], "label": "benign", "simulated": true}
+{"seq": 670, "issued_at": "2026-11-20T09:57:58Z", "domains": ["forest-quick.net"], "label": "benign", "simulated": true}
+{"seq": 671, "issued_at": "2026-11-20T09:58:03Z", "domains": ["tailorplumbing360.shop", "www.tailorplumbing360.shop"], "label": "benign", "simulated": true}
+{"seq": 672, "issued_at": "2026-11-20T09:58:19Z", "domains": ["happyorbithub.com"], "label": "benign", "simulated": true}
+{"seq": 673, "issued_at": "2026-11-20T09:58:36Z", "domains": ["bluebakery360.ae"], "label": "benign", "simulated": true}
+{"seq": 674, "issued_at": "2026-11-20T09:58:39Z", "domains": ["forestsolar360.shop"], "label": "benign", "simulated": true}
+{"seq": 675, "issued_at": "2026-11-20T09:58:58Z", "domains": ["plumbingriver.shop"], "label": "benign", "simulated": true}
+{"seq": 676, "issued_at": "2026-11-20T09:59:01Z", "domains": ["xn--mirtsirlin-1qic2dfh.com", "www.xn--mirtsirlin-1qic2dfh.com"], "label": "homoglyph", "simulated": true}
+{"seq": 677, "issued_at": "2026-11-20T09:59:10Z", "domains": ["yogabike24.ae"], "label": "benign", "simulated": true}
+{"seq": 678, "issued_at": "2026-11-20T09:59:28Z", "domains": ["pixelcedar360.net"], "label": "benign", "simulated": true}
+{"seq": 679, "issued_at": "2026-11-20T09:59:47Z", "domains": ["forestfurniture360.com"], "label": "benign", "simulated": true}
+{"seq": 680, "issued_at": "2026-11-20T09:59:52Z", "domains": ["northtiny360.org", "www.northtiny360.org"], "label": "benign", "simulated": true}
+{"seq": 681, "issued_at": "2026-11-20T10:00:05Z", "domains": ["dentalcinemahub.co", "www.dentalcinemahub.co"], "label": "benign", "simulated": true}
+{"seq": 682, "issued_at": "2026-11-20T10:00:21Z", "domains": ["north-north360.com", "www.north-north360.com"], "label": "benign", "simulated": true}
+{"seq": 683, "issued_at": "2026-11-20T10:00:31Z", "domains": ["salik.gov.ae.payment-cinema.shop"], "label": "lookalike", "simulated": true}
+{"seq": 684, "issued_at": "2026-11-20T10:00:41Z", "domains": ["coffeekidshub.online"], "label": "benign", "simulated": true}
+{"seq": 685, "issued_at": "2026-11-20T10:00:56Z", "domains": ["hobbygreen24.org", "www.hobbygreen24.org"], "label": "benign", "simulated": true}
+{"seq": 686, "issued_at": "2026-11-20T10:00:57Z", "domains": ["hobbybakeryhub.co", "www.hobbybakeryhub.co"], "label": "benign", "simulated": true}
+{"seq": 687, "issued_at": "2026-11-20T10:01:07Z", "domains": ["lemon-kids.site"], "label": "benign", "simulated": true}
+{"seq": 688, "issued_at": "2026-11-20T10:01:23Z", "domains": ["flowerbike360.org", "www.flowerbike360.org"], "label": "benign", "simulated": true}
+{"seq": 689, "issued_at": "2026-11-20T10:01:33Z", "domains": ["bluesummithub.com"], "label": "benign", "simulated": true}
+{"seq": 690, "issued_at": "2026-11-20T10:01:49Z", "domains": ["tinynorth24.com"], "label": "benign", "simulated": true}
+{"seq": 691, "issued_at": "2026-11-20T10:01:57Z", "domains": ["studio-printhub.online", "www.studio-printhub.online"], "label": "benign", "simulated": true}
+{"seq": 692, "issued_at": "2026-11-20T10:02:06Z", "domains": ["dental-trailhub.com"], "label": "benign", "simulated": true}
+{"seq": 693, "issued_at": "2026-11-20T10:02:09Z", "domains": ["cedargarden24.ae"], "label": "benign", "simulated": true}
+{"seq": 694, "issued_at": "2026-11-20T10:02:21Z", "domains": ["travel-printhub.co"], "label": "benign", "simulated": true}
+{"seq": 695, "issued_at": "2026-11-20T10:02:40Z", "domains": ["gardenpixel360.com"], "label": "benign", "simulated": true}
+{"seq": 696, "issued_at": "2026-11-20T10:02:49Z", "domains": ["tinycloud24.net"], "label": "benign", "simulated": true}
+{"seq": 697, "issued_at": "2026-11-20T10:03:05Z", "domains": ["tiny-green24.online"], "label": "benign", "simulated": true}
+{"seq": 698, "issued_at": "2026-11-20T10:03:09Z", "domains": ["musiccinemahub.co"], "label": "benign", "simulated": true}
+{"seq": 699, "issued_at": "2026-11-20T10:03:28Z", "domains": ["pixel-green24.co", "www.pixel-green24.co"], "label": "benign", "simulated": true}
+{"seq": 700, "issued_at": "2026-11-20T10:03:37Z", "domains": ["travel-summit360.online", "www.travel-summit360.online"], "label": "benign", "simulated": true}
+{"seq": 701, "issued_at": "2026-11-20T10:03:39Z", "domains": ["flowercinema24.org", "www.flowercinema24.org"], "label": "benign", "simulated": true}
+{"seq": 702, "issued_at": "2026-11-20T10:03:54Z", "domains": ["plumbing-pets360.org"], "label": "benign", "simulated": true}
+{"seq": 703, "issued_at": "2026-11-20T10:03:59Z", "domains": ["printatlashub.com"], "label": "benign", "simulated": true}
+{"seq": 704, "issued_at": "2026-11-20T10:04:01Z", "domains": ["lemon-plumbing.io", "www.lemon-plumbing.io"], "label": "benign", "simulated": true}
+{"seq": 705, "issued_at": "2026-11-20T10:04:15Z", "domains": ["cloudflower.com"], "label": "benign", "simulated": true}
+{"seq": 706, "issued_at": "2026-11-20T10:04:27Z", "domains": ["bakery-orbithub.org", "www.bakery-orbithub.org"], "label": "benign", "simulated": true}
+{"seq": 707, "issued_at": "2026-11-20T10:04:37Z", "domains": ["print-hobbyhub.com"], "label": "benign", "simulated": true}
+{"seq": 708, "issued_at": "2026-11-20T10:04:40Z", "domains": ["kids-orbithub.ae"], "label": "benign", "simulated": true}
+{"seq": 709, "issued_at": "2026-11-20T10:04:46Z", "domains": ["petspeak360.ae"], "label": "benign", "simulated": true}
+{"seq": 710, "issued_at": "2026-11-20T10:05:06Z", "domains": ["trailbook360.io"], "label": "benign", "simulated": true}
+{"seq": 711, "issued_at": "2026-11-20T10:05:24Z", "domains": ["bookbike24.com"], "label": "benign", "simulated": true}
+{"seq": 712, "issued_at": "2026-11-20T10:05:35Z", "domains": ["quick-north24.org"], "label": "benign", "simulated": true}
+{"seq": 713, "issued_at": "2026-11-20T10:05:45Z", "domains": ["cinemayoga.com", "www.cinemayoga.com"], "label": "benign", "simulated": true}
+{"seq": 714, "issued_at": "2026-11-20T10:05:57Z", "domains": ["trailcloudhub.online", "www.trailcloudhub.online"], "label": "benign", "simulated": true}
+{"seq": 715, "issued_at": "2026-11-20T10:06:16Z", "domains": ["coffeetiny360.co"], "label": "benign", "simulated": true}
+{"seq": 716, "issued_at": "2026-11-20T10:06:21Z", "domains": ["cinemalemon.co", "www.cinemalemon.co"], "label": "benign", "simulated": true}
+{"seq": 717, "issued_at": "2026-11-20T10:06:38Z", "domains": ["studioharbor.site", "www.studioharbor.site"], "label": "benign", "simulated": true}
+{"seq": 718, "issued_at": "2026-11-20T10:06:54Z", "domains": ["coffeebook.online"], "label": "benign", "simulated": true}
+{"seq": 719, "issued_at": "2026-11-20T10:07:00Z", "domains": ["kids-north360.net", "www.kids-north360.net"], "label": "benign", "simulated": true}
+{"seq": 720, "issued_at": "2026-11-20T10:07:05Z", "domains": ["trailprint.online"], "label": "benign", "simulated": true}
+{"seq": 721, "issued_at": "2026-11-20T10:07:12Z", "domains": ["plumbing-lightinghub.com"], "label": "benign", "simulated": true}
+{"seq": 722, "issued_at": "2026-11-20T10:07:30Z", "domains": ["craftprint.com"], "label": "benign", "simulated": true}
+{"seq": 723, "issued_at": "2026-11-20T10:07:47Z", "domains": ["enbd-account.click"], "label": "lookalike", "simulated": true}
+{"seq": 724, "issued_at": "2026-11-20T10:08:05Z", "domains": ["happy-hobbyhub.com"], "label": "benign", "simulated": true}
+{"seq": 725, "issued_at": "2026-11-20T10:08:09Z", "domains": ["harborpeak24.org"], "label": "benign", "simulated": true}
+{"seq": 726, "issued_at": "2026-11-20T10:08:12Z", "domains": ["happytailorhub.io", "www.happytailorhub.io"], "label": "benign", "simulated": true}
+{"seq": 727, "issued_at": "2026-11-20T10:08:17Z", "domains": ["solar-maplehub.io"], "label": "benign", "simulated": true}
+{"seq": 728, "issued_at": "2026-11-20T10:08:33Z", "domains": ["studioatlas.com"], "label": "benign", "simulated": true}
+{"seq": 729, "issued_at": "2026-11-20T10:08:45Z", "domains": ["bookflower24.shop", "www.bookflower24.shop"], "label": "benign", "simulated": true}
+{"seq": 730, "issued_at": "2026-11-20T10:09:00Z", "domains": ["pixellemon24.co"], "label": "benign", "simulated": true}
+{"seq": 731, "issued_at": "2026-11-20T10:09:20Z", "domains": ["dentaltiny360.co"], "label": "benign", "simulated": true}
+{"seq": 732, "issued_at": "2026-11-20T10:09:31Z", "domains": ["garden-coffeehub.com", "www.garden-coffeehub.com"], "label": "benign", "simulated": true}
+{"seq": 733, "issued_at": "2026-11-20T10:09:41Z", "domains": ["orbitcraft360.net", "www.orbitcraft360.net"], "label": "benign", "simulated": true}
+{"seq": 734, "issued_at": "2026-11-20T10:09:45Z", "domains": ["bakerycinema360.org", "www.bakerycinema360.org"], "label": "benign", "simulated": true}
+{"seq": 735, "issued_at": "2026-11-20T10:09:50Z", "domains": ["studio-confirm.online"], "label": "keyword", "simulated": true}
+{"seq": 736, "issued_at": "2026-11-20T10:10:00Z", "domains": ["furniture-harborhub.ae", "www.furniture-harborhub.ae"], "label": "benign", "simulated": true}
+{"seq": 737, "issued_at": "2026-11-20T10:10:05Z", "domains": ["tailorsolar24.co"], "label": "benign", "simulated": true}
+{"seq": 738, "issued_at": "2026-11-20T10:10:19Z", "domains": ["pixelcloud.io"], "label": "benign", "simulated": true}
+{"seq": 739, "issued_at": "2026-11-20T10:10:23Z", "domains": ["trailgreen24.com", "www.trailgreen24.com"], "label": "benign", "simulated": true}
+{"seq": 740, "issued_at": "2026-11-20T10:10:39Z", "domains": ["lemonsolar.online"], "label": "benign", "simulated": true}
+{"seq": 741, "issued_at": "2026-11-20T10:10:41Z", "domains": ["coffee-bakery360.io", "www.coffee-bakery360.io"], "label": "benign", "simulated": true}
+{"seq": 742, "issued_at": "2026-11-20T10:10:43Z", "domains": ["musicbakeryhub.ae"], "label": "benign", "simulated": true}
+{"seq": 743, "issued_at": "2026-11-20T10:11:00Z", "domains": ["northbakery360.co"], "label": "benign", "simulated": true}
+{"seq": 744, "issued_at": "2026-11-20T10:11:16Z", "domains": ["photo-fox24.com", "www.photo-fox24.com"], "label": "benign", "simulated": true}
+{"seq": 745, "issued_at": "2026-11-20T10:11:25Z", "domains": ["maple-cinema.com", "www.maple-cinema.com"], "label": "benign", "simulated": true}
+{"seq": 746, "issued_at": "2026-11-20T10:11:35Z", "domains": ["hobbystonehub.io"], "label": "benign", "simulated": true}
+{"seq": 747, "issued_at": "2026-11-20T10:11:39Z", "domains": ["summitmusic24.online"], "label": "benign", "simulated": true}
+{"seq": 748, "issued_at": "2026-11-20T10:11:59Z", "domains": ["musictrail360.com", "www.musictrail360.com"], "label": "benign", "simulated": true}
+{"seq": 749, "issued_at": "2026-11-20T10:12:06Z", "domains": ["3nbd-support.com", "www.3nbd-support.com"], "label": "lookalike", "simulated": true}
+{"seq": 750, "issued_at": "2026-11-20T10:12:18Z", "domains": ["musicquick24.com", "www.musicquick24.com"], "label": "benign", "simulated": true}
+{"seq": 751, "issued_at": "2026-11-20T10:12:23Z", "domains": ["travelplumbing.net"], "label": "benign", "simulated": true}
+{"seq": 752, "issued_at": "2026-11-20T10:12:32Z", "domains": ["tailororbit.org"], "label": "benign", "simulated": true}
+{"seq": 753, "issued_at": "2026-11-20T10:12:44Z", "domains": ["cinema-lighting360.io"], "label": "benign", "simulated": true}
+{"seq": 754, "issued_at": "2026-11-20T10:13:01Z", "domains": ["foresttravel360.site"], "label": "benign", "simulated": true}
+{"seq": 755, "issued_at": "2026-11-20T10:13:21Z", "domains": ["adcb-payment.click", "www.adcb-payment.click"], "label": "lookalike", "simulated": true}
+{"seq": 756, "issued_at": "2026-11-20T10:13:40Z", "domains": ["adib.ae.login-bike.top", "www.adib.ae.login-bike.top"], "label": "lookalike", "simulated": true}
+{"seq": 757, "issued_at": "2026-11-20T10:13:59Z", "domains": ["print-greenhub.com"], "label": "benign", "simulated": true}
+{"seq": 758, "issued_at": "2026-11-20T10:14:16Z", "domains": ["orbitphoto360.com", "www.orbitphoto360.com"], "label": "benign", "simulated": true}
+{"seq": 759, "issued_at": "2026-11-20T10:14:23Z", "domains": ["foxbook24.com"], "label": "benign", "simulated": true}
+{"seq": 760, "issued_at": "2026-11-20T10:14:29Z", "domains": ["solar-craft.shop"], "label": "benign", "simulated": true}
+{"seq": 761, "issued_at": "2026-11-20T10:14:47Z", "domains": ["bike-tiny.site", "www.bike-tiny.site"], "label": "benign", "simulated": true}
+{"seq": 762, "issued_at": "2026-11-20T10:14:51Z", "domains": ["cinemadental360.site"], "label": "benign", "simulated": true}
+{"seq": 763, "issued_at": "2026-11-20T10:15:08Z", "domains": ["cloud-forest24.ae"], "label": "benign", "simulated": true}
+{"seq": 764, "issued_at": "2026-11-20T10:15:24Z", "domains": ["orbit-garden24.io"], "label": "benign", "simulated": true}
+{"seq": 765, "issued_at": "2026-11-20T10:15:43Z", "domains": ["coffeebakery360.com", "www.coffeebakery360.com"], "label": "benign", "simulated": true}
+{"seq": 766, "issued_at": "2026-11-20T10:15:47Z", "domains": ["cinemaplumbing24.co", "www.cinemaplumbing24.co"], "label": "benign", "simulated": true}
+{"seq": 767, "issued_at": "2026-11-20T10:15:59Z", "domains": ["summitmusic.io"], "label": "benign", "simulated": true}
+{"seq": 768, "issued_at": "2026-11-20T10:16:13Z", "domains": ["greentailorhub.com", "www.greentailorhub.com"], "label": "benign", "simulated": true}
+{"seq": 769, "issued_at": "2026-11-20T10:16:21Z", "domains": ["atlas-yogahub.com"], "label": "benign", "simulated": true}
+{"seq": 770, "issued_at": "2026-11-20T10:16:32Z", "domains": ["cloudtravel360.com", "www.cloudtravel360.com"], "label": "benign", "simulated": true}
+{"seq": 771, "issued_at": "2026-11-20T10:16:36Z", "domains": ["northtrail24.shop"], "label": "benign", "simulated": true}
+{"seq": 772, "issued_at": "2026-11-20T10:16:52Z", "domains": ["greenlightinghub.ae"], "label": "benign", "simulated": true}
+{"seq": 773, "issued_at": "2026-11-20T10:17:02Z", "domains": ["account-confirm-flower.com"], "label": "keyword", "simulated": true}
+{"seq": 774, "issued_at": "2026-11-20T10:17:04Z", "domains": ["trailforest360.org", "www.trailforest360.org"], "label": "benign", "simulated": true}
+{"seq": 775, "issued_at": "2026-11-20T10:17:20Z", "domains": ["novasolar.com", "www.novasolar.com"], "label": "benign", "simulated": true}
+{"seq": 776, "issued_at": "2026-11-20T10:17:30Z", "domains": ["book-petshub.com"], "label": "benign", "simulated": true}
+{"seq": 777, "issued_at": "2026-11-20T10:17:40Z", "domains": ["musicflower.org"], "label": "benign", "simulated": true}
+{"seq": 778, "issued_at": "2026-11-20T10:17:55Z", "domains": ["tailor-pets.com", "www.tailor-pets.com"], "label": "benign", "simulated": true}
+{"seq": 779, "issued_at": "2026-11-20T10:18:09Z", "domains": ["summit-cedar.com", "www.summit-cedar.com"], "label": "benign", "simulated": true}
+{"seq": 780, "issued_at": "2026-11-20T10:18:23Z", "domains": ["sa1ik-account.com", "www.sa1ik-account.com"], "label": "lookalike", "simulated": true}
+{"seq": 781, "issued_at": "2026-11-20T10:18:26Z", "domains": ["quickpetshub.com"], "label": "benign", "simulated": true}
+{"seq": 782, "issued_at": "2026-11-20T10:18:42Z", "domains": ["cinemacraft360.com"], "label": "benign", "simulated": true}
+{"seq": 783, "issued_at": "2026-11-20T10:18:54Z", "domains": ["travelbluehub.com", "www.travelbluehub.com"], "label": "benign", "simulated": true}
+{"seq": 784, "issued_at": "2026-11-20T10:19:10Z", "domains": ["quickforest360.co"], "label": "benign", "simulated": true}
+{"seq": 785, "issued_at": "2026-11-20T10:19:23Z", "domains": ["studio-blue24.co"], "label": "benign", "simulated": true}
+{"seq": 786, "issued_at": "2026-11-20T10:19:26Z", "domains": ["cloud-plumbing24.shop", "www.cloud-plumbing24.shop"], "label": "benign", "simulated": true}
+{"seq": 787, "issued_at": "2026-11-20T10:19:39Z", "domains": ["musiccrafthub.com"], "label": "benign", "simulated": true}
+{"seq": 788, "issued_at": "2026-11-20T10:19:58Z", "domains": ["cedar-quick.com"], "label": "benign", "simulated": true}
+{"seq": 789, "issued_at": "2026-11-20T10:20:04Z", "domains": ["cloudtiny.com", "www.cloudtiny.com"], "label": "benign", "simulated": true}
+{"seq": 790, "issued_at": "2026-11-20T10:20:11Z", "domains": ["dhl-payment.click"], "label": "lookalike", "simulated": true}
+{"seq": 791, "issued_at": "2026-11-20T10:20:31Z", "domains": ["craftnovahub.com"], "label": "benign", "simulated": true}
+{"seq": 792, "issued_at": "2026-11-20T10:20:44Z", "domains": ["dentalsolar360.site", "www.dentalsolar360.site"], "label": "benign", "simulated": true}
+{"seq": 793, "issued_at": "2026-11-20T10:20:58Z", "domains": ["bakery-flower.ae"], "label": "benign", "simulated": true}
+{"seq": 794, "issued_at": "2026-11-20T10:21:07Z", "domains": ["orbitcinema.com"], "label": "benign", "simulated": true}
+{"seq": 795, "issued_at": "2026-11-20T10:21:26Z", "domains": ["dentalgreen.site"], "label": "benign", "simulated": true}
+{"seq": 796, "issued_at": "2026-11-20T10:21:39Z", "domains": ["harborforest24.org"], "label": "benign", "simulated": true}
+{"seq": 797, "issued_at": "2026-11-20T10:21:59Z", "domains": ["foxtrail24.com"], "label": "benign", "simulated": true}
+{"seq": 798, "issued_at": "2026-11-20T10:22:15Z", "domains": ["novalemon24.com"], "label": "benign", "simulated": true}
+{"seq": 799, "issued_at": "2026-11-20T10:22:20Z", "domains": ["stone-atlas360.site"], "label": "benign", "simulated": true}
+{"seq": 800, "issued_at": "2026-11-20T10:22:24Z", "domains": ["tiny-trail.com", "www.tiny-trail.com"], "label": "benign", "simulated": true}
+{"seq": 801, "issued_at": "2026-11-20T10:22:40Z", "domains": ["tiny-craft.com"], "label": "benign", "simulated": true}
+{"seq": 802, "issued_at": "2026-11-20T10:22:45Z", "domains": ["dental-studio360.shop", "www.dental-studio360.shop"], "label": "benign", "simulated": true}
+{"seq": 803, "issued_at": "2026-11-20T10:22:47Z", "domains": ["atlassolarhub.com"], "label": "benign", "simulated": true}
+{"seq": 804, "issued_at": "2026-11-20T10:23:03Z", "domains": ["dental-book24.com"], "label": "benign", "simulated": true}
+{"seq": 805, "issued_at": "2026-11-20T10:23:09Z", "domains": ["northsolarhub.com"], "label": "benign", "simulated": true}
+{"seq": 806, "issued_at": "2026-11-20T10:23:20Z", "domains": ["craft-dental.site", "www.craft-dental.site"], "label": "benign", "simulated": true}
+{"seq": 807, "issued_at": "2026-11-20T10:23:40Z", "domains": ["hobbykids.net"], "label": "benign", "simulated": true}
+{"seq": 808, "issued_at": "2026-11-20T10:23:43Z", "domains": ["traillemonhub.site"], "label": "benign", "simulated": true}
+{"seq": 809, "issued_at": "2026-11-20T10:24:00Z", "domains": ["3miratesnbd-secure.xyz"], "label": "lookalike", "simulated": true}
+{"seq": 810, "issued_at": "2026-11-20T10:24:15Z", "domains": ["trailbike.site", "www.trailbike.site"], "label": "benign", "simulated": true}
+{"seq": 811, "issued_at": "2026-11-20T10:24:31Z", "domains": ["gardencloud360.ae"], "label": "benign", "simulated": true}
+{"seq": 812, "issued_at": "2026-11-20T10:24:40Z", "domains": ["cloudphoto360.org"], "label": "benign", "simulated": true}
+{"seq": 813, "issued_at": "2026-11-20T10:24:58Z", "domains": ["studiolemonhub.org"], "label": "benign", "simulated": true}
+{"seq": 814, "issued_at": "2026-11-20T10:25:00Z", "domains": ["floweryogahub.com"], "label": "benign", "simulated": true}
+{"seq": 815, "issued_at": "2026-11-20T10:25:04Z", "domains": ["tailor-tiny.net"], "label": "benign", "simulated": true}
+{"seq": 816, "issued_at": "2026-11-20T10:25:15Z", "domains": ["travelcloudhub.com"], "label": "benign", "simulated": true}
+{"seq": 817, "issued_at": "2026-11-20T10:25:30Z", "domains": ["atlastrail24.com"], "label": "benign", "simulated": true}
+{"seq": 818, "issued_at": "2026-11-20T10:25:32Z", "domains": ["stonestudio360.com", "www.stonestudio360.com"], "label": "benign", "simulated": true}
+{"seq": 819, "issued_at": "2026-11-20T10:25:42Z", "domains": ["cinemabike24.com"], "label": "benign", "simulated": true}
+{"seq": 820, "issued_at": "2026-11-20T10:25:48Z", "domains": ["pixelbookhub.com"], "label": "benign", "simulated": true}
+{"seq": 821, "issued_at": "2026-11-20T10:25:53Z", "domains": ["petsphoto.io"], "label": "benign", "simulated": true}
+{"seq": 822, "issued_at": "2026-11-20T10:26:06Z", "domains": ["green-tinyhub.com"], "label": "benign", "simulated": true}
+{"seq": 823, "issued_at": "2026-11-20T10:26:10Z", "domains": ["coffeesummit24.ae"], "label": "benign", "simulated": true}
+{"seq": 824, "issued_at": "2026-11-20T10:26:26Z", "domains": ["petsbike.co"], "label": "benign", "simulated": true}
+{"seq": 825, "issued_at": "2026-11-20T10:26:44Z", "domains": ["cinema-north.co"], "label": "benign", "simulated": true}
+{"seq": 826, "issued_at": "2026-11-20T10:27:00Z", "domains": ["orbitdentalhub.com"], "label": "benign", "simulated": true}
+{"seq": 827, "issued_at": "2026-11-20T10:27:06Z", "domains": ["gardenmaplehub.net"], "label": "benign", "simulated": true}
+{"seq": 828, "issued_at": "2026-11-20T10:27:19Z", "domains": ["cinematiny360.co", "www.cinematiny360.co"], "label": "benign", "simulated": true}
+{"seq": 829, "issued_at": "2026-11-20T10:27:38Z", "domains": ["yogariver24.net"], "label": "benign", "simulated": true}
+{"seq": 830, "issued_at": "2026-11-20T10:27:58Z", "domains": ["tailor-cloud24.site"], "label": "benign", "simulated": true}
+{"seq": 831, "issued_at": "2026-11-20T10:28:08Z", "domains": ["trail-secure.shop"], "label": "keyword", "simulated": true}
+{"seq": 832, "issued_at": "2026-11-20T10:28:09Z", "domains": ["greenpixelhub.com"], "label": "benign", "simulated": true}
+{"seq": 833, "issued_at": "2026-11-20T10:28:14Z", "domains": ["atlasmusic360.io"], "label": "benign", "simulated": true}
+{"seq": 834, "issued_at": "2026-11-20T10:28:26Z", "domains": ["foxcoffee360.io"], "label": "benign", "simulated": true}
+{"seq": 835, "issued_at": "2026-11-20T10:28:45Z", "domains": ["du-support.com", "www.du-support.com"], "label": "lookalike", "simulated": true}
+{"seq": 836, "issued_at": "2026-11-20T10:28:56Z", "domains": ["eetisalat-account.icu"], "label": "lookalike", "simulated": true}
+{"seq": 837, "issued_at": "2026-11-20T10:29:10Z", "domains": ["tailorstone360.ae"], "label": "benign", "simulated": true}
+{"seq": 838, "issued_at": "2026-11-20T10:29:22Z", "domains": ["summit-cinemahub.com"], "label": "benign", "simulated": true}
+{"seq": 839, "issued_at": "2026-11-20T10:29:24Z", "domains": ["gardencraft24.com"], "label": "benign", "simulated": true}
+{"seq": 840, "issued_at": "2026-11-20T10:29:32Z", "domains": ["plumbingquick360.site", "www.plumbingquick360.site"], "label": "benign", "simulated": true}
+{"seq": 841, "issued_at": "2026-11-20T10:29:42Z", "domains": ["lighting-orbit.net"], "label": "benign", "simulated": true}
+{"seq": 842, "issued_at": "2026-11-20T10:29:45Z", "domains": ["forestcoffee.net"], "label": "benign", "simulated": true}
+{"seq": 843, "issued_at": "2026-11-20T10:29:49Z", "domains": ["summit-lemonhub.site"], "label": "benign", "simulated": true}
+{"seq": 844, "issued_at": "2026-11-20T10:29:50Z", "domains": ["orbitgardenhub.co"], "label": "benign", "simulated": true}
+{"seq": 845, "issued_at": "2026-11-20T10:29:52Z", "domains": ["dental-hobbyhub.site"], "label": "benign", "simulated": true}
+{"seq": 846, "issued_at": "2026-11-20T10:30:06Z", "domains": ["traveltailor24.io"], "label": "benign", "simulated": true}
+{"seq": 847, "issued_at": "2026-11-20T10:30:20Z", "domains": ["book-lighting.co", "www.book-lighting.co"], "label": "benign", "simulated": true}
+{"seq": 848, "issued_at": "2026-11-20T10:30:36Z", "domains": ["trailnorthhub.shop"], "label": "benign", "simulated": true}
+{"seq": 849, "issued_at": "2026-11-20T10:30:47Z", "domains": ["hobbybikehub.shop"], "label": "benign", "simulated": true}
+{"seq": 850, "issued_at": "2026-11-20T10:31:00Z", "domains": ["travelhappy24.com"], "label": "benign", "simulated": true}
+{"seq": 851, "issued_at": "2026-11-20T10:31:04Z", "domains": ["mapletravel.shop"], "label": "benign", "simulated": true}
+{"seq": 852, "issued_at": "2026-11-20T10:31:08Z", "domains": ["salik.gov.ae.secure-maple.xyz"], "label": "lookalike", "simulated": true}
+{"seq": 853, "issued_at": "2026-11-20T10:31:15Z", "domains": ["foresttrail360.shop"], "label": "benign", "simulated": true}
+{"seq": 854, "issued_at": "2026-11-20T10:31:32Z", "domains": ["flower-north24.com"], "label": "benign", "simulated": true}
+{"seq": 855, "issued_at": "2026-11-20T10:31:43Z", "domains": ["printblue360.co", "www.printblue360.co"], "label": "benign", "simulated": true}
+{"seq": 856, "issued_at": "2026-11-20T10:31:53Z", "domains": ["kids-flower360.com"], "label": "benign", "simulated": true}
+{"seq": 857, "issued_at": "2026-11-20T10:32:07Z", "domains": ["cloudcrafthub.com", "www.cloudcrafthub.com"], "label": "benign", "simulated": true}
+{"seq": 858, "issued_at": "2026-11-20T10:32:10Z", "domains": ["tailorsolar360.ae"], "label": "benign", "simulated": true}
+{"seq": 859, "issued_at": "2026-11-20T10:32:28Z", "domains": ["photoorbit360.com", "www.photoorbit360.com"], "label": "benign", "simulated": true}
+{"seq": 860, "issued_at": "2026-11-20T10:32:37Z", "domains": ["maplecoffee360.shop", "www.maplecoffee360.shop"], "label": "benign", "simulated": true}
+{"seq": 861, "issued_at": "2026-11-20T10:32:56Z", "domains": ["peak-orbit24.com"], "label": "benign", "simulated": true}
+{"seq": 862, "issued_at": "2026-11-20T10:33:04Z", "domains": ["orbit-lemon24.shop"], "label": "benign", "simulated": true}
+{"seq": 863, "issued_at": "2026-11-20T10:33:07Z", "domains": ["solar-cinema360.shop"], "label": "benign", "simulated": true}
+{"seq": 864, "issued_at": "2026-11-20T10:33:26Z", "domains": ["tinykids.co", "www.tinykids.co"], "label": "benign", "simulated": true}
+{"seq": 865, "issued_at": "2026-11-20T10:33:37Z", "domains": ["photo-pixel.site", "www.photo-pixel.site"], "label": "benign", "simulated": true}
+{"seq": 866, "issued_at": "2026-11-20T10:33:56Z", "domains": ["craft-pixel360.online"], "label": "benign", "simulated": true}
+{"seq": 867, "issued_at": "2026-11-20T10:34:12Z", "domains": ["north-green360.ae"], "label": "benign", "simulated": true}
+{"seq": 868, "issued_at": "2026-11-20T10:34:24Z", "domains": ["novamaple24.com"], "label": "benign", "simulated": true}
+{"seq": 869, "issued_at": "2026-11-20T10:34:34Z", "domains": ["pixel-tinyhub.com"], "label": "benign", "simulated": true}
+{"seq": 870, "issued_at": "2026-11-20T10:34:44Z", "domains": ["photo-pets24.com"], "label": "benign", "simulated": true}
+{"seq": 871, "issued_at": "2026-11-20T10:35:02Z", "domains": ["peak-gardenhub.site"], "label": "benign", "simulated": true}
+{"seq": 872, "issued_at": "2026-11-20T10:35:16Z", "domains": ["riverplumbing.ae"], "label": "benign", "simulated": true}
+{"seq": 873, "issued_at": "2026-11-20T10:35:36Z", "domains": ["river-solar.com"], "label": "benign", "simulated": true}
+{"seq": 874, "issued_at": "2026-11-20T10:35:54Z", "domains": ["plumbingbakery24.com", "www.plumbingbakery24.com"], "label": "benign", "simulated": true}
+{"seq": 875, "issued_at": "2026-11-20T10:35:55Z", "domains": ["orbit-nova.com"], "label": "benign", "simulated": true}
+{"seq": 876, "issued_at": "2026-11-20T10:36:12Z", "domains": ["yogaflowerhub.ae"], "label": "benign", "simulated": true}
+{"seq": 877, "issued_at": "2026-11-20T10:36:31Z", "domains": ["atlasgreenhub.ae"], "label": "benign", "simulated": true}
+{"seq": 878, "issued_at": "2026-11-20T10:36:46Z", "domains": ["garden-bakeryhub.site", "www.garden-bakeryhub.site"], "label": "benign", "simulated": true}
+{"seq": 879, "issued_at": "2026-11-20T10:37:04Z", "domains": ["tamm-wallet.vip"], "label": "lookalike", "simulated": true}
+{"seq": 880, "issued_at": "2026-11-20T10:37:18Z", "domains": ["craftbook.online"], "label": "benign", "simulated": true}
+{"seq": 881, "issued_at": "2026-11-20T10:37:20Z", "domains": ["cloud-quick360.net"], "label": "benign", "simulated": true}
+{"seq": 882, "issued_at": "2026-11-20T10:37:32Z", "domains": ["novapets.com"], "label": "benign", "simulated": true}
+{"seq": 883, "issued_at": "2026-11-20T10:37:40Z", "domains": ["support-login-trail.com", "www.support-login-trail.com"], "label": "keyword", "simulated": true}
+{"seq": 884, "issued_at": "2026-11-20T10:37:50Z", "domains": ["lighting-atlashub.ae"], "label": "benign", "simulated": true}
+{"seq": 885, "issued_at": "2026-11-20T10:38:04Z", "domains": ["plumbing-dental24.org"], "label": "benign", "simulated": true}
+{"seq": 886, "issued_at": "2026-11-20T10:38:07Z", "domains": ["photosummithub.com"], "label": "benign", "simulated": true}
+{"seq": 887, "issued_at": "2026-11-20T10:38:21Z", "domains": ["gardenatlashub.site", "www.gardenatlashub.site"], "label": "benign", "simulated": true}
+{"seq": 888, "issued_at": "2026-11-20T10:38:31Z", "domains": ["music-foresthub.ae"], "label": "benign", "simulated": true}
+{"seq": 889, "issued_at": "2026-11-20T10:38:40Z", "domains": ["xn--nbd-qdd.com"], "label": "homoglyph", "simulated": true}
+{"seq": 890, "issued_at": "2026-11-20T10:38:48Z", "domains": ["cloudgarden360.ae"], "label": "benign", "simulated": true}
+{"seq": 891, "issued_at": "2026-11-20T10:38:52Z", "domains": ["hobby-lemon24.co", "www.hobby-lemon24.co"], "label": "benign", "simulated": true}
+{"seq": 892, "issued_at": "2026-11-20T10:38:53Z", "domains": ["craftprinthub.com", "www.craftprinthub.com"], "label": "benign", "simulated": true}
+{"seq": 893, "issued_at": "2026-11-20T10:39:03Z", "domains": ["harborquick.net"], "label": "benign", "simulated": true}
+{"seq": 894, "issued_at": "2026-11-20T10:39:21Z", "domains": ["studio-musichub.com"], "label": "benign", "simulated": true}
+{"seq": 895, "issued_at": "2026-11-20T10:39:35Z", "domains": ["peakhappy.com"], "label": "benign", "simulated": true}
+{"seq": 896, "issued_at": "2026-11-20T10:39:37Z", "domains": ["coffee-print.online", "www.coffee-print.online"], "label": "benign", "simulated": true}
+{"seq": 897, "issued_at": "2026-11-20T10:39:46Z", "domains": ["forestquick.io", "www.forestquick.io"], "label": "benign", "simulated": true}
+{"seq": 898, "issued_at": "2026-11-20T10:39:55Z", "domains": ["furniture-coffee.com"], "label": "benign", "simulated": true}
+{"seq": 899, "issued_at": "2026-11-20T10:40:04Z", "domains": ["coffeeorbit360.com"], "label": "benign", "simulated": true}
+{"seq": 900, "issued_at": "2026-11-20T10:40:10Z", "domains": ["studio-foxhub.io"], "label": "benign", "simulated": true}
+{"seq": 901, "issued_at": "2026-11-20T10:40:12Z", "domains": ["cedarpets24.com"], "label": "benign", "simulated": true}
+{"seq": 902, "issued_at": "2026-11-20T10:40:28Z", "domains": ["furniture-harborhub.io"], "label": "benign", "simulated": true}
+{"seq": 903, "issued_at": "2026-11-20T10:40:30Z", "domains": ["nova-cinema.com"], "label": "benign", "simulated": true}
+{"seq": 904, "issued_at": "2026-11-20T10:40:33Z", "domains": ["furniture-solarhub.com"], "label": "benign", "simulated": true}
+{"seq": 905, "issued_at": "2026-11-20T10:40:43Z", "domains": ["maple-bikehub.com"], "label": "benign", "simulated": true}
+{"seq": 906, "issued_at": "2026-11-20T10:40:57Z", "domains": ["musicsummit24.co"], "label": "benign", "simulated": true}
+{"seq": 907, "issued_at": "2026-11-20T10:41:00Z", "domains": ["ministryofinterior-wallet.xyz"], "label": "lookalike", "simulated": true}
+{"seq": 908, "issued_at": "2026-11-20T10:41:05Z", "domains": ["plumbinggreenhub.com", "www.plumbinggreenhub.com"], "label": "benign", "simulated": true}
+{"seq": 909, "issued_at": "2026-11-20T10:41:24Z", "domains": ["harborhappy360.site"], "label": "benign", "simulated": true}
+{"seq": 910, "issued_at": "2026-11-20T10:41:28Z", "domains": ["stone-maplehub.ae"], "label": "benign", "simulated": true}
+{"seq": 911, "issued_at": "2026-11-20T10:41:47Z", "domains": ["bakery-studio360.co"], "label": "benign", "simulated": true}
+{"seq": 912, "issued_at": "2026-11-20T10:42:04Z", "domains": ["petsstone24.com", "www.petsstone24.com"], "label": "benign", "simulated": true}
+{"seq": 913, "issued_at": "2026-11-20T10:42:07Z", "domains": ["travel-studio360.com", "www.travel-studio360.com"], "label": "benign", "simulated": true}
+{"seq": 914, "issued_at": "2026-11-20T10:42:11Z", "domains": ["cloudtiny24.com"], "label": "benign", "simulated": true}
+{"seq": 915, "issued_at": "2026-11-20T10:42:22Z", "domains": ["furniture-peak.org"], "label": "benign", "simulated": true}
+{"seq": 916, "issued_at": "2026-11-20T10:42:41Z", "domains": ["novatiny360.com"], "label": "benign", "simulated": true}
+{"seq": 917, "issued_at": "2026-11-20T10:42:49Z", "domains": ["cedar-happyhub.co"], "label": "benign", "simulated": true}
+{"seq": 918, "issued_at": "2026-11-20T10:42:56Z", "domains": ["kidscedar360.com", "www.kidscedar360.com"], "label": "benign", "simulated": true}
+{"seq": 919, "issued_at": "2026-11-20T10:43:02Z", "domains": ["peak-cedar24.com", "www.peak-cedar24.com"], "label": "benign", "simulated": true}
+{"seq": 920, "issued_at": "2026-11-20T10:43:11Z", "domains": ["cedarharbor.com"], "label": "benign", "simulated": true}
+{"seq": 921, "issued_at": "2026-11-20T10:43:20Z", "domains": ["pixelstudio.com"], "label": "benign", "simulated": true}
+{"seq": 922, "issued_at": "2026-11-20T10:43:22Z", "domains": ["lighting-cedar.shop"], "label": "benign", "simulated": true}
+{"seq": 923, "issued_at": "2026-11-20T10:43:34Z", "domains": ["lightingbikehub.com"], "label": "benign", "simulated": true}
+{"seq": 924, "issued_at": "2026-11-20T10:43:38Z", "domains": ["craft-cedar.com"], "label": "benign", "simulated": true}
+{"seq": 925, "issued_at": "2026-11-20T10:43:52Z", "domains": ["cloudlemon.com"], "label": "benign", "simulated": true}
+{"seq": 926, "issued_at": "2026-11-20T10:44:00Z", "domains": ["bluebakeryhub.co"], "label": "benign", "simulated": true}
+{"seq": 927, "issued_at": "2026-11-20T10:44:05Z", "domains": ["coffeecraft24.site"], "label": "benign", "simulated": true}
+{"seq": 928, "issued_at": "2026-11-20T10:44:17Z", "domains": ["studio-hobby24.co"], "label": "benign", "simulated": true}
+{"seq": 929, "issued_at": "2026-11-20T10:44:18Z", "domains": ["blue-cloudhub.com"], "label": "benign", "simulated": true}
+{"seq": 930, "issued_at": "2026-11-20T10:44:38Z", "domains": ["trailtiny360.online", "www.trailtiny360.online"], "label": "benign", "simulated": true}
+{"seq": 931, "issued_at": "2026-11-20T10:44:40Z", "domains": ["plumbingquick.online"], "label": "benign", "simulated": true}
+{"seq": 932, "issued_at": "2026-11-20T10:44:48Z", "domains": ["traillightinghub.io", "www.traillightinghub.io"], "label": "benign", "simulated": true}
+{"seq": 933, "issued_at": "2026-11-20T10:45:01Z", "domains": ["bakery-pets.online"], "label": "benign", "simulated": true}
+{"seq": 934, "issued_at": "2026-11-20T10:45:13Z", "domains": ["pets-atlas360.net"], "label": "benign", "simulated": true}
+{"seq": 935, "issued_at": "2026-11-20T10:45:17Z", "domains": ["cloudnova24.online"], "label": "benign", "simulated": true}
+{"seq": 936, "issued_at": "2026-11-20T10:45:25Z", "domains": ["blueplumbinghub.com"], "label": "benign", "simulated": true}
+{"seq": 937, "issued_at": "2026-11-20T10:45:38Z", "domains": ["blue-wallet.xyz", "www.blue-wallet.xyz"], "label": "keyword", "simulated": true}
+{"seq": 938, "issued_at": "2026-11-20T10:45:51Z", "domains": ["print-music.org"], "label": "benign", "simulated": true}
+{"seq": 939, "issued_at": "2026-11-20T10:46:00Z", "domains": ["forest-orbit.org"], "label": "benign", "simulated": true}
+{"seq": 940, "issued_at": "2026-11-20T10:46:08Z", "domains": ["summit-orbithub.com", "www.summit-orbithub.com"], "label": "benign", "simulated": true}
+{"seq": 941, "issued_at": "2026-11-20T10:46:14Z", "domains": ["coffeestudio24.online"], "label": "benign", "simulated": true}
+{"seq": 942, "issued_at": "2026-11-20T10:46:25Z", "domains": ["photobook360.shop"], "label": "benign", "simulated": true}
+{"seq": 943, "issued_at": "2026-11-20T10:46:39Z", "domains": ["craft-travel.ae"], "label": "benign", "simulated": true}
+{"seq": 944, "issued_at": "2026-11-20T10:46:48Z", "domains": ["orbitpets.ae"], "label": "benign", "simulated": true}
+{"seq": 945, "issued_at": "2026-11-20T10:47:04Z", "domains": ["coffee-garden24.online"], "label": "benign", "simulated": true}
+{"seq": 946, "issued_at": "2026-11-20T10:47:18Z", "domains": ["kidssummit24.com"], "label": "benign", "simulated": true}
+{"seq": 947, "issued_at": "2026-11-20T10:47:29Z", "domains": ["furniture-forest.co"], "label": "benign", "simulated": true}
+{"seq": 948, "issued_at": "2026-11-20T10:47:33Z", "domains": ["lighting-maple.ae"], "label": "benign", "simulated": true}
+{"seq": 949, "issued_at": "2026-11-20T10:47:42Z", "domains": ["plumbingatlas24.online"], "label": "benign", "simulated": true}
+{"seq": 950, "issued_at": "2026-11-20T10:47:54Z", "domains": ["print-print24.io"], "label": "benign", "simulated": true}
+{"seq": 951, "issued_at": "2026-11-20T10:48:12Z", "domains": ["lemonatlas360.com"], "label": "benign", "simulated": true}
+{"seq": 952, "issued_at": "2026-11-20T10:48:27Z", "domains": ["river-north.ae"], "label": "benign", "simulated": true}
+{"seq": 953, "issued_at": "2026-11-20T10:48:29Z", "domains": ["cedar-lighting.com"], "label": "benign", "simulated": true}
+{"seq": 954, "issued_at": "2026-11-20T10:48:35Z", "domains": ["www.bankfab.com"], "label": "official", "simulated": true}
+{"seq": 955, "issued_at": "2026-11-20T10:48:40Z", "domains": ["solar-happyhub.com", "www.solar-happyhub.com"], "label": "benign", "simulated": true}
+{"seq": 956, "issued_at": "2026-11-20T10:48:47Z", "domains": ["xn--bnkfb-4ved.com"], "label": "homoglyph", "simulated": true}
+{"seq": 957, "issued_at": "2026-11-20T10:48:58Z", "domains": ["lighting-dentalhub.site"], "label": "benign", "simulated": true}
+{"seq": 958, "issued_at": "2026-11-20T10:49:02Z", "domains": ["forest-print.com", "www.forest-print.com"], "label": "benign", "simulated": true}
+{"seq": 959, "issued_at": "2026-11-20T10:49:19Z", "domains": ["book-quickhub.ae"], "label": "benign", "simulated": true}
+{"seq": 960, "issued_at": "2026-11-20T10:49:24Z", "domains": ["dental-garden360.site"], "label": "benign", "simulated": true}
+{"seq": 961, "issued_at": "2026-11-20T10:49:38Z", "domains": ["dental-hobby24.com"], "label": "benign", "simulated": true}
+{"seq": 962, "issued_at": "2026-11-20T10:49:49Z", "domains": ["quickphoto.io"], "label": "benign", "simulated": true}
+{"seq": 963, "issued_at": "2026-11-20T10:49:54Z", "domains": ["happyprint360.shop", "www.happyprint360.shop"], "label": "benign", "simulated": true}
+{"seq": 964, "issued_at": "2026-11-20T10:50:13Z", "domains": ["tailor-cloudhub.org"], "label": "benign", "simulated": true}
+{"seq": 965, "issued_at": "2026-11-20T10:50:23Z", "domains": ["coffee-bluehub.io", "www.coffee-bluehub.io"], "label": "benign", "simulated": true}
+{"seq": 966, "issued_at": "2026-11-20T10:50:37Z", "domains": ["lemon-river360.com"], "label": "benign", "simulated": true}
+{"seq": 967, "issued_at": "2026-11-20T10:50:50Z", "domains": ["solar-kids360.ae"], "label": "benign", "simulated": true}
+{"seq": 968, "issued_at": "2026-11-20T10:51:09Z", "domains": ["plumbing-cloudhub.com", "www.plumbing-cloudhub.com"], "label": "benign", "simulated": true}
+{"seq": 969, "issued_at": "2026-11-20T10:51:10Z", "domains": ["ad1b.xyz"], "label": "lookalike", "simulated": true}
+{"seq": 970, "issued_at": "2026-11-20T10:51:30Z", "domains": ["printgardenhub.co"], "label": "benign", "simulated": true}
+{"seq": 971, "issued_at": "2026-11-20T10:51:33Z", "domains": ["bakerycedarhub.com"], "label": "benign", "simulated": true}
+{"seq": 972, "issued_at": "2026-11-20T10:51:40Z", "domains": ["studioyoga.ae", "www.studioyoga.ae"], "label": "benign", "simulated": true}
+{"seq": 973, "issued_at": "2026-11-20T10:51:46Z", "domains": ["cloudmaple24.org", "www.cloudmaple24.org"], "label": "benign", "simulated": true}
+{"seq": 974, "issued_at": "2026-11-20T10:52:06Z", "domains": ["bluemaplehub.com"], "label": "benign", "simulated": true}
+{"seq": 975, "issued_at": "2026-11-20T10:52:15Z", "domains": ["cedarbook.com", "www.cedarbook.com"], "label": "benign", "simulated": true}
+{"seq": 976, "issued_at": "2026-11-20T10:52:27Z", "domains": ["craftnova24.com", "www.craftnova24.com"], "label": "benign", "simulated": true}
+{"seq": 977, "issued_at": "2026-11-20T10:52:46Z", "domains": ["tailor-atlas24.co", "www.tailor-atlas24.co"], "label": "benign", "simulated": true}
+{"seq": 978, "issued_at": "2026-11-20T10:53:03Z", "domains": ["kidscloudhub.com"], "label": "benign", "simulated": true}
+{"seq": 979, "issued_at": "2026-11-20T10:53:18Z", "domains": ["flowerfox24.com"], "label": "benign", "simulated": true}
+{"seq": 980, "issued_at": "2026-11-20T10:53:34Z", "domains": ["harborbakery24.online", "www.harborbakery24.online"], "label": "benign", "simulated": true}
+{"seq": 981, "issued_at": "2026-11-20T10:53:41Z", "domains": ["trailyoga24.com", "www.trailyoga24.com"], "label": "benign", "simulated": true}
+{"seq": 982, "issued_at": "2026-11-20T10:53:50Z", "domains": ["summit-quickhub.org", "www.summit-quickhub.org"], "label": "benign", "simulated": true}
+{"seq": 983, "issued_at": "2026-11-20T10:54:06Z", "domains": ["cedardental360.org"], "label": "benign", "simulated": true}
+{"seq": 984, "issued_at": "2026-11-20T10:54:20Z", "domains": ["printtravel24.com"], "label": "benign", "simulated": true}
+{"seq": 985, "issued_at": "2026-11-20T10:54:40Z", "domains": ["kids-photo.com", "www.kids-photo.com"], "label": "benign", "simulated": true}
+{"seq": 986, "issued_at": "2026-11-20T10:54:50Z", "domains": ["bike-atlas360.co"], "label": "benign", "simulated": true}

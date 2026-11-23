@@ -1,0 +1,28 @@
+# certstream-server-go config for FraudShield (image pinned by digest in docker-compose.yml).
+# Read-only consumer of the PUBLIC certificate-transparency logs; it never contacts the domains it sees.
+# Why only Google's logs: a certificate is normally logged in several logs, so one operator covers most new certificates
+# at a fraction of the traffic (all operators measured ~10 MB/s, far too much). Excluded names that do not exist are harmless.
+webserver:
+  listen_addr: "0.0.0.0"
+  listen_port: 8080
+  full_url: "/full-stream"
+  lite_url: "/"
+  domains_only_url: "/domains-only"
+  compression_enabled: false
+prometheus:
+  enabled: false
+general:
+  drop_old_logs: true
+  excluded_logs:
+    - operator: "Cloudflare"
+    - operator: "DigiCert"
+    - operator: "Sectigo"
+    - operator: "Let's Encrypt"
+    - operator: "TrustAsia"
+    - operator: "Geomys"
+    - operator: "IPng Networks"
+    - operator: "Microsec"
+    - operator: "GoDaddy"
+    - operator: "HARICA"
+  recovery:
+    enabled: false   # recovery can replay up to ~10,000 certs/s of history; we only want what is new

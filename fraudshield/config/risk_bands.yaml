@@ -1,0 +1,6 @@
+# score range -> label -> action (starting values, tune on your data)
+bands:
+  - { name: safe,          min: 0,  max: 29,  action: allow }
+  - { name: suspicious,    min: 30, max: 59,  action: monitor }
+  - { name: high_risk,     min: 60, max: 79,  action: warn }
+  - { name: likely_fraud,  min: 80, max: 100, action: review }

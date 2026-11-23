@@ -1,0 +1,6 @@
+# Local-development overrides, merged automatically by `docker compose up`.
+# Exposes the API on the host so you can open http://localhost:8000/docs.
+services:
+  backend:
+    ports:
+      - "127.0.0.1:8000:8000"

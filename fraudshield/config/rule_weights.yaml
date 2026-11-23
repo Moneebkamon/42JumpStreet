@@ -1,0 +1,27 @@
+# rule name -> points added to the score (capped at 100). Starting values, tune on your data.
+# Rules whose input feature is missing (for example page content on a link that was not deep-scanned)
+# simply do not fire.
+rules:
+  # URL-only rules
+  brand_name_not_official_domain: 35
+  brand_typosquat: 15
+  homoglyph_or_punycode: 25
+  risky_tld: 15
+  free_host_generated_name: 30  # new 2026-11-23; no measurement of false alarms on real free-hosting pages yet
+  suspicious_keywords_2_plus: 15
+  url_shortener: 10
+  ip_host: 15
+  # ready-model rules (weak signal; small on purpose so the model alone cannot reach 'suspicious')
+  ml_url_pattern_strong: 15
+  ml_url_pattern: 8
+  # domain-intel rules (RDAP / TLS lookups)
+  domain_age_under_7_days: 20
+  very_new_certificate: 10
+  # page-content rules (sandbox deep scan)
+  brand_plus_credential_form: 25
+  form_posts_to_other_domain: 20
+  urgency_language: 10
+  guaranteed_returns: 20
+  hidden_content: 10
+  redirect_chain_3_plus: 10
+  scam_phone_match: 15  # needs a known-bad phone list, not built yet

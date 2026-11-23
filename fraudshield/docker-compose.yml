@@ -1,0 +1,93 @@
+# FraudShield demo stack. Nothing here starts unless you run `docker compose up`.
+#   docker compose build      (downloads base images, several GB the first time)
+#   docker compose up
+# Then open http://localhost:3000
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: infra/docker/backend.Dockerfile
+    environment:
+      FRAUDSHIELD_NETWORK: "1"
+    volumes:
+      - fraud_data:/data
+    # Hardening: the container that opens suspicious pages gets no extra privileges.
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    read_only: true
+    tmpfs: ["/tmp:size=256m"]
+    shm_size: "512m"          # Chromium needs shared memory
+    mem_limit: 1536m
+    pids_limit: 256
+    networks: [internal, egress]
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: infra/docker/frontend.Dockerfile
+      args:
+        BACKEND_URL: http://backend:8000
+    depends_on: [backend]
+    ports:
+      - "3000:3000"
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    read_only: true
+    tmpfs: ["/tmp", "/app/.next/cache"]
+    networks: [internal, web]
+    restart: unless-stopped
+
+  # --- Live early detection (OFF by default; start with: docker compose --profile live up -d certstream ct-listener) ---
+  # certstream reads the PUBLIC certificate-transparency logs (Google's logs only: ~1 MB/s, ~3 GB/hour while running).
+  # Image pinned by digest (0rickyy0/certstream-server-go v1.10.1, linux/amd64). Never contacts the domains it sees.
+  certstream:
+    profiles: [live]
+    image: 0rickyy0/certstream-server-go@sha256:88e22118b12c4ebd2c0ae70ccb10e3cb52dde217040f8449f5aace3571835d18
+    volumes:
+      - ./infra/certstream/config.yaml:/app/config/config.yaml:ro
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    read_only: true
+    tmpfs: ["/tmp"]
+    mem_limit: 256m
+    pids_limit: 100
+    networks: [ct, egress]      # ct: private link to the listener; egress: the public CT logs. No ports published.
+    restart: "no"
+
+  ct-listener:
+    profiles: [live]
+    build:
+      context: .
+      dockerfile: infra/docker/backend.Dockerfile
+    command: ["python", "scripts/run_ct_listener.py"]
+    healthcheck:
+      disable: true           # the image's check targets the API port, which this container does not serve
+    environment:
+      FRAUDSHIELD_NETWORK: "0"                       # name-only scoring; no lookups against discovered domains
+      FRAUDSHIELD_ML: "0"                            # rules only here: the URL model cost ~2.5 CPU cores at stream volume and is a weak signal
+      OMP_NUM_THREADS: "1"
+      FRAUDSHIELD_CT_URL: ws://certstream:8080/domains-only
+    volumes:
+      - fraud_data:/data
+    depends_on: [certstream]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    read_only: true
+    tmpfs: ["/tmp"]
+    mem_limit: 512m
+    cpus: 1.0
+    pids_limit: 100
+    networks: [ct]              # can reach only certstream; no internet
+    restart: "no"
+
+networks:
+  ct:
+    internal: true            # certstream <-> ct-listener only
+  internal:
+    internal: true            # frontend <-> backend only, no internet
+  web: {}                     # lets the frontend publish port 3000 (Docker cannot publish from an internal network)
+  egress: {}                  # the backend's outbound path (feeds, safe-browser deep scan)
+
+volumes:
+  fraud_data: {}

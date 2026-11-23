@@ -1,0 +1,36 @@
+# env and secrets
+.env
+.env.local
+*.pem
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# node
+node_modules/
+.next/
+dist/
+
+# data (keep samples and .gitkeep)
+data/raw/*
+data/interim/*
+data/processed/*
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# models and local db
+ml/artifacts/*
+!ml/artifacts/.gitkeep
+*.db
+*.sqlite3
+
+# os/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

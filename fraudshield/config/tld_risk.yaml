@@ -1,0 +1,15 @@
+# TLD -> risk weight 0..1 (starting guesses, replace with your own data)
+default: 0.2
+tlds:
+  top: 0.7
+  xyz: 0.6
+  click: 0.7
+  icu: 0.7
+  vip: 0.6
+  shop: 0.5
+  online: 0.5
+  site: 0.5
+  ae: 0.05
+  com: 0.2
+  org: 0.15
+  gov.ae: 0.0

@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+pydantic-settings
+sqlalchemy
+httpx
+pyyaml
+tldextract
+certifi
+beautifulsoup4
+playwright==1.65.2
+pytest
+numpy
+safetensors
+tokenizers
+websockets>=13,<18   # live certificate stream reader (scripts/run_ct_listener.py)

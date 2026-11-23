@@ -1,0 +1,50 @@
+[
+ {
+  "text": "google.com/",
+  "torch_prob": 0.153796
+ },
+ {
+  "text": "example.org/",
+  "torch_prob": 0.025895
+ },
+ {
+  "text": "gazprombank.ru/",
+  "torch_prob": 0.969422
+ },
+ {
+  "text": "adcb-secure-login.top/verify",
+  "torch_prob": 0.99956
+ },
+ {
+  "text": "paypal-account-verify.xyz/login.php?id=123",
+  "torch_prob": 0.999505
+ },
+ {
+  "text": "s0y41.com/",
+  "torch_prob": 0.049328
+ },
+ {
+  "text": "treemanagingassociate.weebly.com/",
+  "torch_prob": 0.022735
+ },
+ {
+  "text": "online.adcb.com/",
+  "torch_prob": 0.48233
+ },
+ {
+  "text": "xn--80ak6aa92e.com/",
+  "torch_prob": 0.084215
+ },
+ {
+  "text": "a.b.c.d.e.example.com/a/very/long/path/with/many/segments/and/words/index.html?x=1&y=2&z=3",
+  "torch_prob": 0.213593
+ },
+ {
+  "text": "192.168.0.1/admin",
+  "torch_prob": 0.995514
+ },
+ {
+  "text": "bankfab.com.wallet-studio.icu/",
+  "torch_prob": 0.905843
+ }
+]
