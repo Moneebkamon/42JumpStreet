@@ -33,7 +33,7 @@ export function CitizenReportForm() {
 
   if (receipt) {
     return (
-      <section aria-live="polite" className="space-y-4 rounded-2xl border border-zinc-200 p-6 dark:border-zinc-800">
+      <section aria-live="polite" className="space-y-4 glass rounded-2xl border border-zinc-200 p-6 dark:border-zinc-800">
         <h2 className="text-lg font-semibold">Thank you. Your report was received.</h2>
         <p className="text-sm">
           Reference number: <strong className="font-mono">{receipt.ref}</strong>

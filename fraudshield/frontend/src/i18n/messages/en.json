@@ -29,6 +29,12 @@
   "home.feature2.body": "Add your phone numbers. Links that arrive by SMS or WhatsApp are checked, and dangerous ones are blocked and emailed to you.",
   "home.feature3.title": "Your research history",
   "home.feature3.body": "Every link you check or visit is saved privately in your account.",
+  "home.kicker": "Real-time fraud shield",
+  "home.layers": "Every link passes through",
+  "home.layer1": "URL & lookalike analysis",
+  "home.layer2": "Domain & certificate intel",
+  "home.layer3": "Threat-feed matching",
+  "home.layer4": "AI risk scoring",
 
   "auth.signin.title": "Welcome back",
   "auth.signin.subtitle": "Sign in to your Manee account. Staff and members use the same page.",

@@ -25,7 +25,7 @@ export function AuditLog() {
     return <p className="text-sm text-zinc-500">Nothing has been recorded yet.</p>;
   }
   return (
-    <div className="max-h-96 overflow-auto rounded-xl border border-zinc-200 dark:border-zinc-800">
+    <div className="max-h-96 overflow-auto glass rounded-xl border border-zinc-200 dark:border-zinc-800">
       <table className="w-full min-w-[36rem] text-left text-sm">
         <thead className="sticky top-0 z-10 bg-zinc-50 text-xs uppercase tracking-wide text-zinc-500 dark:bg-zinc-900">
           <tr>

@@ -8,10 +8,11 @@ export function cn(...parts: Array<string | false | null | undefined>): string {
 }
 
 const BTN_BASE =
-  "inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50";
+  "inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50";
 const BTN_VARIANT = {
-  primary: "bg-brand text-brand-ink hover:brightness-110",
-  secondary: "border border-line bg-card text-foreground hover:bg-zinc-100 dark:hover:bg-zinc-800",
+  primary:
+    "bg-gradient-to-r from-brand to-brand-2 text-brand-ink shadow-[0_6px_24px_-8px_var(--brand)] hover:-translate-y-px hover:shadow-[0_10px_30px_-8px_var(--brand)] active:translate-y-0",
+  secondary: "glass border border-line text-foreground hover:border-brand/40 hover:bg-zinc-100 dark:hover:bg-brand/5",
   danger: "border border-red-500/40 bg-red-500/10 text-red-600 hover:bg-red-500/20 dark:text-red-400",
   ghost: "text-muted hover:text-foreground",
 } as const;
@@ -44,14 +45,19 @@ export function ButtonLink({
 }
 
 export const FIELD =
-  "block w-full rounded-lg border border-line bg-card px-3 py-2 text-sm text-foreground placeholder:text-zinc-500 outline-none focus:border-brand focus:ring-2 focus:ring-brand/20";
+  "block w-full rounded-lg border border-zinc-300 bg-white px-3 dark:border-zinc-700 dark:bg-zinc-950/70 py-2 text-sm text-foreground placeholder:text-zinc-500 outline-none transition focus:border-brand/70 focus:ring-2 focus:ring-brand/20";
 
 export function Input({ className, ...props }: InputHTMLAttributes<HTMLInputElement>) {
   return <input className={cn(FIELD, className)} {...props} />;
 }
 
 export function Card({ className, children }: { className?: string; children: ReactNode }) {
-  return <section className={cn("rounded-2xl border border-line bg-card p-5", className)}>{children}</section>;
+  return <section
+      className={cn(
+        "glass rounded-2xl border border-line p-5 shadow-[inset_0_1px_0_0_rgb(255_255_255/0.04),0_20px_40px_-24px_rgb(0_0_0/0.6)] transition-colors hover:border-brand/25",
+        className,
+      )}
+    >{children}</section>;
 }
 
 export function CardTitle({ children, hint }: { children: ReactNode; hint?: ReactNode }) {
@@ -67,7 +73,8 @@ export function PageHeader({ title, subtitle, action }: { title: string; subtitl
   return (
     <header className="mb-6 flex flex-wrap items-end justify-between gap-3">
       <div className="space-y-1">
-        <h1 className="text-2xl font-semibold tracking-tight">{title}</h1>
+        <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">{title}</h1>
+        <div className="h-px w-16 bg-gradient-to-r from-brand to-transparent" />
         {subtitle && <p className="max-w-2xl text-sm text-muted">{subtitle}</p>}
       </div>
       {action}
@@ -76,12 +83,12 @@ export function PageHeader({ title, subtitle, action }: { title: string; subtitl
 }
 
 const TONES = {
-  neutral: "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300",
-  safe: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300",
-  warn: "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300",
-  high: "bg-orange-100 text-orange-800 dark:bg-orange-950 dark:text-orange-300",
-  bad: "bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-300",
-  info: "bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300",
+  neutral: "bg-zinc-200 text-zinc-700 ring-1 ring-inset ring-zinc-500/20 dark:bg-zinc-800/70 dark:text-zinc-300",
+  safe: "bg-emerald-100 text-emerald-800 ring-1 ring-inset ring-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-300",
+  warn: "bg-amber-100 text-amber-800 ring-1 ring-inset ring-amber-500/30 dark:bg-amber-500/10 dark:text-amber-300",
+  high: "bg-orange-100 text-orange-800 ring-1 ring-inset ring-orange-500/30 dark:bg-orange-500/10 dark:text-orange-300",
+  bad: "bg-red-100 text-red-800 ring-1 ring-inset ring-red-500/40 dark:bg-red-500/10 dark:text-red-300",
+  info: "bg-sky-100 text-sky-800 ring-1 ring-inset ring-sky-500/30 dark:bg-sky-500/10 dark:text-sky-300",
 } as const;
 export type Tone = keyof typeof TONES;
 
@@ -122,7 +129,7 @@ export function Switch({
       onClick={() => onChange(!checked)}
       className={cn(
         "relative h-6 w-11 shrink-0 rounded-full border border-line transition-colors disabled:opacity-50",
-        checked ? "bg-brand" : "bg-zinc-300 dark:bg-zinc-700",
+        checked ? "bg-brand shadow-[0_0_14px_-2px_var(--brand)]" : "bg-zinc-300 dark:bg-zinc-700",
       )}
     >
       <span
@@ -137,9 +144,10 @@ export function Switch({
 
 export function StatTile({ label, value, tone }: { label: string; value: ReactNode; tone?: "bad" }) {
   return (
-    <div className="rounded-2xl border border-line bg-card p-4">
-      <div className="text-xs uppercase tracking-wide text-muted">{label}</div>
-      <div className={cn("mt-1 text-3xl font-semibold tabular-nums", tone === "bad" && "text-red-500")}>{value}</div>
+    <div className="glass group relative overflow-hidden rounded-2xl border border-line p-4 transition-colors hover:border-brand/30">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/60 to-transparent opacity-60 group-hover:opacity-100" />
+      <div className="kicker text-muted">{label}</div>
+      <div className={cn("mt-1 text-3xl font-semibold tabular-nums", tone === "bad" ? "text-threat" : "text-foreground")}>{value}</div>
     </div>
   );
 }
@@ -151,7 +159,7 @@ export function Notice({ tone = "info", children }: { tone?: "info" | "error" | 
     ok: "border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300",
   }[tone];
   return (
-    <p role={tone === "error" ? "alert" : "status"} className={cn("rounded-xl border px-4 py-3 text-sm", cls)}>
+    <p role={tone === "error" ? "alert" : "status"} className={cn("rounded-xl border px-4 py-3 text-sm backdrop-blur", cls)}>
       {children}
     </p>
   );

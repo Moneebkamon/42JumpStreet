@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
+import { CyberBackground } from "@/components/layout/cyber-background";
 import { Footer } from "@/components/layout/footer";
 import { Navbar, NavbarFallback } from "@/components/layout/navbar";
 import { PreferencesProvider } from "@/i18n/provider";
@@ -40,8 +41,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: PREFS_SCRIPT }} />
         <script dangerouslySetInnerHTML={{ __html: SW_SCRIPT }} />
       </head>
-      <body suppressHydrationWarning className="min-h-full flex flex-col">
+      <body suppressHydrationWarning className="relative min-h-full flex flex-col">
         <PreferencesProvider>
+          <CyberBackground />
           <Suspense fallback={<NavbarFallback />}>
             <Navbar />
           </Suspense>

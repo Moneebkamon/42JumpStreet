@@ -68,7 +68,7 @@ export function ScanResultCard({ result }: { result: ScanResult }) {
   return (
     <section
       aria-live="polite"
-      className="space-y-5 rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-950"
+      className="space-y-5 glass rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-950"
     >
       <p className="break-all text-xs text-zinc-500">{result.url}</p>
 

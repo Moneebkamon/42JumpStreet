@@ -42,7 +42,7 @@ export function Notes({ caseRef, events, onUpdated }: { caseRef: string; events:
   }
 
   return (
-    <section className="space-y-3 rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
+    <section className="space-y-3 glass rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
       <h2 className="text-sm font-semibold">History and notes</h2>
       <ol className="max-h-96 space-y-2 overflow-y-auto pr-1">
         {[...events].reverse().map((e) => (

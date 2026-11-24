@@ -49,7 +49,7 @@ export function CheckedDomains() {
         </p>
       )}
       <div
-        className="h-96 overflow-y-auto rounded-xl border border-zinc-200 dark:border-zinc-800"
+        className="h-96 overflow-y-auto glass rounded-xl border border-zinc-200 dark:border-zinc-800"
         tabIndex={0}
         aria-label="Recently checked domains"
       >

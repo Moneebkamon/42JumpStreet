@@ -32,7 +32,7 @@ export function EvidenceViewer({ caseRef, items, onChanged }: { caseRef: string;
     });
 
   return (
-    <section className="space-y-3 rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
+    <section className="space-y-3 glass rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-sm font-semibold">Evidence</h2>
         <button

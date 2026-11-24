@@ -61,7 +61,7 @@ export function TakedownDraft({
   }
 
   return (
-    <section className="space-y-3 rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
+    <section className="space-y-3 glass rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
       <h2 className="text-sm font-semibold">Takedown report drafts</h2>
       <p className="text-xs text-zinc-500">
         Manee only drafts and exports text. It never sends anything: an analyst reviews it and sends it by hand.

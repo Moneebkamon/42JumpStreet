@@ -85,7 +85,7 @@ export function FeedbackQueue() {
         ) : (
           <ul className="max-h-96 space-y-3 overflow-y-auto pr-1">
             {queue.map((q) => (
-              <li key={q.scan_id} className="space-y-2 rounded-xl border border-zinc-200 p-3 dark:border-zinc-800">
+              <li key={q.scan_id} className="space-y-2 glass rounded-xl border border-zinc-200 p-3 dark:border-zinc-800">
                 <div className="flex flex-wrap items-center gap-2">
                   <VerdictBadge band={q.band as Band} />
                   <span className="text-sm tabular-nums text-zinc-500">score {q.score}</span>

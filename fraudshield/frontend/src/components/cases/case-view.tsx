@@ -68,7 +68,7 @@ function CaseView({ caseRef }: { caseRef: string }) {
     <div className="space-y-5">
       <CaseHeader c={d} />
       <StatusStepper caseRef={d.ref} status={d.status} allowed={d.allowed_next} onUpdated={setDetail} />
-      <section className="space-y-2 rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
+      <section className="space-y-2 glass rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
         <h2 className="text-sm font-semibold">Why it was flagged</h2>
         <ul className="list-disc space-y-1 pl-5 text-sm">
           {d.result.reasons.length === 0 ? <li>No specific rule fired.</li> : d.result.reasons.map((r) => <li key={r.rule}>{r.reason}</li>)}
