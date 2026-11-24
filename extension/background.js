@@ -1,16 +1,30 @@
 /**
- * Fraud Extension — MV3 service worker.
+ * FraudShield — MV3 service worker.
  * Coordinates rules scoring, RDAP age lookup, tab result storage and the
  * optional team LLM hook. No remote code and no API keys.
  */
 
 import { analyzeDomain } from "./scoring.js";
 import { getDomainAgeDays, getRegistrableDomain } from "./rdap.js";
+import { getIpOwner } from "./ip-intel.js";
+import { initBlocker, getSettings } from "./blocker.js";
+import { initDownloadGuard } from "./downloads.js";
+import "./i18n.js";
+import "./phone-claims.js";
+
+const I18N = globalThis.FE_I18N;
+
+// Redirect high-risk navigations to warning.html (see blocker.js).
+initBlocker();
+// Pause and check dangerous downloads (see downloads.js).
+initDownloadGuard();
 
 const MAX_CONCURRENT_DOMAINS = 5;
 const MAX_TAB_RESULTS = 250;
 const TAB_STORAGE_PREFIX = "fe:tab-results:";
 const LLM_TIMEOUT_MS = 6000;
+// Known body + personal mobile number in a search result (fake customer service).
+const BRAND_PHONE_POINTS = 60;
 
 // Last known results per tab. Storage is the crash/restart-safe backup.
 const tabResultsMemory = new Map();
@@ -29,7 +43,7 @@ if (typeof chrome !== "undefined" && chrome.runtime && chrome.runtime.onMessage)
         handleAnalyzeMessage(message, sender)
           .then((results) => safeRespond(sendResponse, results))
           .catch((error) => {
-            console.warn("[Fraud Extension] Analyze failed:", error);
+            console.warn("[FraudShield] Analyze failed:", error);
             safeRespond(sendResponse, []);
           });
         return true;
@@ -42,7 +56,7 @@ if (typeof chrome !== "undefined" && chrome.runtime && chrome.runtime.onMessage)
         return true;
       }
     } catch (error) {
-      console.warn("[Fraud Extension] Message handler failed:", error);
+      console.warn("[FraudShield] Message handler failed:", error);
       safeRespond(sendResponse, message.type === "ANALYZE" ? [] : emptyTabPayload(null));
       return false;
     }
@@ -86,10 +100,11 @@ async function handleAnalyzeMessage(message, sender) {
     return ageLookups.get(domain);
   };
 
+  const lang = I18N.resolve((await getSettings()).lang);
   const analyzed = await mapWithConcurrency(
     targets,
     MAX_CONCURRENT_DOMAINS,
-    async (target) => analyzeTarget(target, getAge)
+    async (target) => analyzeTarget(target, getAge, lang)
   );
 
   const results = analyzed.filter(Boolean);
@@ -102,12 +117,13 @@ async function handleAnalyzeMessage(message, sender) {
   return results;
 }
 
-async function analyzeTarget(target, getAge) {
+async function analyzeTarget(target, getAge, lang) {
   const { url, parsed } = target;
   const hostname = parsed.hostname;
   const scoringOptions = {
     protocol: parsed.protocol,
-    path: `${parsed.pathname}${parsed.search}`
+    path: `${parsed.pathname}${parsed.search}`,
+    lang
   };
 
   try {
@@ -115,8 +131,18 @@ async function analyzeTarget(target, getAge) {
     let scored = analyzeDomain(hostname, scoringOptions);
 
     // The lookup is shared/cached; scoring is re-run with the real age.
-    const ageDays = await getAge(hostname);
-    scored = analyzeDomain(hostname, { ...scoringOptions, ageDays });
+    // For an IP address, also ask who owns it (Google itself vs a rented server).
+    const [ageDays, ipOwner] = await Promise.all([
+      getAge(hostname),
+      getIpOwner(hostname).catch(() => null)
+    ]);
+    scored = analyzeDomain(hostname, { ...scoringOptions, ageDays, ipOwner });
+
+    // A known bank / police / government name with a personal mobile number
+    // in the result text (fake "customer service" ads and listings).
+    if (scored.level !== "safe") {
+      scored = applyBrandPhone(scored, `${target.title || ""} ${target.snippet || ""}`, lang);
+    }
 
     // Only gray-zone results are eligible for the optional LLM hook.
     if (scored.level === "medium") {
@@ -129,7 +155,7 @@ async function analyzeTarget(target, getAge) {
 
     // Sponsored result on a non-official domain: +15 after rules and RDAP.
     if (target.sponsored && scored.level !== "safe") {
-      scored = applySponsoredBoost(scored);
+      scored = applySponsoredBoost(scored, lang);
     }
 
     return {
@@ -146,7 +172,7 @@ async function analyzeTarget(target, getAge) {
       hostname,
       score: 0,
       level: "low",
-      reasons: ["تعذر تحليل الرابط"],
+      reasons: [I18N.t("analyzeFailed", lang)],
       ageDays: null
     };
   }
@@ -227,9 +253,20 @@ function withTimeout(promise, timeoutMs) {
   });
 }
 
-function applySponsoredBoost(scored) {
+export function applyBrandPhone(scored, text, lang) {
+  const hit = globalThis.FE_PHONE.findBrandMobile(text);
+  if (!hit) return scored;
+  const score = Math.min(100, scored.score + BRAND_PHONE_POINTS);
+  const reason = I18N.t("searchPhone", lang, {
+    brand: I18N.brandLabel(hit.brand, lang),
+    phone: hit.phone
+  });
+  return { ...scored, score, level: levelForScore(score), reasons: [...scored.reasons, reason] };
+}
+
+function applySponsoredBoost(scored, lang) {
   const score = Math.min(100, scored.score + 15);
-  const reason = "نتيجة إعلانية مدفوعة (زيادة 15 نقطة)";
+  const reason = I18N.t("sponsored", lang);
   const reasons = scored.reasons.includes(reason)
     ? scored.reasons
     : [...scored.reasons, reason];
@@ -341,7 +378,7 @@ function mergeTabResults(tabId, freshResults) {
     .catch(() => {})
     .then(() => performMergeTabResults(tabId, freshResults))
     .catch((error) => {
-      console.warn("[Fraud Extension] Saving tab results failed:", error);
+      console.warn("[FraudShield] Saving tab results failed:", error);
     });
 
   tabMergeQueues.set(tabId, queued);

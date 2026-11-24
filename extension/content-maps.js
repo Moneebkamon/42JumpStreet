@@ -1,5 +1,5 @@
 /**
- * Fraud Extension — Google Maps content script.
+ * FraudShield — Google Maps content script.
  * Reads the open place panel (name, category, website, phone), scores the
  * website via the background worker, adds Maps-specific rules, and shows a
  * floating Arabic banner. Fails silently if Google changes its DOM.
@@ -44,6 +44,10 @@
     { words: ["dewa", "هيئة كهرباء ومياه دبي"], domains: ["dewa.gov.ae"] },
     { words: ["tamm", "تم"], domains: ["tamm.abudhabi"] }
   ];
+
+  const I18N = globalThis.FE_I18N;
+  let LANG = I18N.DEFAULT_LANG;
+  const T = (key, params) => I18N.t(key, LANG, params);
 
   let timer = null;
   let lastKey = "";
@@ -126,7 +130,7 @@
     const sensitive = SENSITIVE_WORDS.some((w) => text.includes(w));
     let score = base ? base.score : 0;
     let level = base ? base.level : "low";
-    const reasons = base ? base.reasons.filter((r) => r !== "عمر الدومين غير معروف") : [];
+    const reasons = base ? base.reasons.filter((r) => !I18N.isReason(r, "ageUnknown")) : [];
     const add = (points, reason) => {
       score = Math.min(100, score + points);
       reasons.push(reason);
@@ -134,26 +138,35 @@
 
     const host = place.website ? place.website.hostname.toLowerCase() : "";
 
+    // Place claims to be a known bank / police / government body.
+    const brand = BRAND_SITES.find((b) =>
+      b.words.some((w) => w.length > 2 && text.includes(w.toLowerCase()))
+    );
+    const claimedKey = globalThis.FE_PHONE ? globalThis.FE_PHONE.claimedBrand(text) : "";
+
     if (host) {
       const free = FREE_HOSTING.find((d) => hostMatches(host, d));
       if (free && sensitive) {
-        add(60, `موقع مجاني (${free}) لجهة تبدو بنكًا أو جهة رسمية — البنوك والجهات الحكومية لا تستخدم روابط مجانية`);
+        add(60, T("mapsFree", { host: free }));
       }
 
       // Place claims to be a known brand but links somewhere else.
-      const brand = BRAND_SITES.find((b) =>
-        b.words.some((w) => w.length > 2 && text.includes(w.toLowerCase()))
-      );
       if (brand && !brand.domains.some((d) => hostMatches(host, d))) {
-        add(50, `اسم المكان يدّعي أنه جهة معروفة لكن الموقع المرتبط ليس موقعها الرسمي (${brand.domains[0]})`);
+        add(50, T("mapsBrand", { domain: brand.domains[0] }));
       }
     } else if (sensitive) {
-      reasons.push("لا يوجد موقع إلكتروني مرتبط بهذا المكان");
+      reasons.push(T("mapsNoSite"));
     }
 
     // UAE mobile numbers: +9715x / 05x. Official bodies use landlines / 800 numbers.
-    if (place.phone && sensitive && /^(\+?971|00971|0)5\d{7,8}$/.test(place.phone)) {
-      add(25, `رقم الهاتف رقم جوال شخصي (${place.phone}) لجهة تبدو رسمية`);
+    // A known bank / police / government name with a personal mobile is the
+    // fake "customer service" scam: high on its own, website or not.
+    const mobile = place.phone && /^(\+?971|00971|0)5\d{7,8}$/.test(place.phone);
+    if (mobile && (brand || claimedKey)) {
+      const label = claimedKey ? I18N.brandLabel(claimedKey, LANG) : place.name;
+      add(60, T("mapsBrandPhone", { brand: label, phone: place.phone }));
+    } else if (mobile && sensitive) {
+      add(35, T("mapsPhone", { phone: place.phone }));
     }
 
     if (score !== (base ? base.score : 0) || !base) {
@@ -171,17 +184,17 @@
     if (!banner) {
       banner = document.createElement("div");
       banner.id = BANNER_ID;
-      banner.setAttribute("dir", "rtl");
-      banner.setAttribute("lang", "ar");
+      banner.setAttribute("dir", I18N.dir(LANG));
+      banner.setAttribute("lang", LANG);
       banner.setAttribute("role", "status");
       document.body.appendChild(banner);
     }
 
     const titles = {
-      safe: "✅ موقع رسمي موثّق",
-      low: "🟢 لا توجد مؤشرات خطر واضحة",
-      medium: "🟡 تحذير: مؤشرات مشبوهة",
-      high: "🔴 خطر: احتمال احتيال مرتفع"
+      safe: T("mapsSafe"),
+      low: T("mapsLow"),
+      medium: T("mapsMedium"),
+      high: T("mapsHigh")
     };
 
     banner.className = `fe-maps-banner fe-maps-${result.level}`;
@@ -197,19 +210,19 @@
     const close = document.createElement("button");
     close.type = "button";
     close.className = "fe-maps-close";
-    close.setAttribute("aria-label", "إغلاق");
+    close.setAttribute("aria-label", T("close"));
     close.textContent = "×";
     close.addEventListener("click", () => banner.remove());
     head.append(title, score, close);
 
     const place_ = document.createElement("div");
     place_.className = "fe-maps-place";
-    place_.textContent = place.name || "مكان على الخريطة";
+    place_.textContent = place.name || T("mapsPlace");
 
     const site = document.createElement("div");
     site.className = "fe-maps-site";
     site.dir = "ltr";
-    site.textContent = result.hostname || "بدون موقع إلكتروني";
+    site.textContent = result.hostname || T("mapsNoSiteShort");
 
     banner.append(head, place_, site);
 
@@ -225,7 +238,7 @@
 
     const brand = document.createElement("div");
     brand.className = "fe-maps-brand";
-    brand.textContent = "Fraud Extension — فحص الخرائط";
+    brand.textContent = T("brandMaps");
     banner.appendChild(brand);
   }
 
@@ -284,7 +297,7 @@
       }
       showBanner(place, result);
     } catch (error) {
-      try { console.warn("[Fraud Extension] Maps check failed:", error); } catch { /* ignore */ }
+      try { console.warn("[FraudShield] Maps check failed:", error); } catch { /* ignore */ }
     } finally {
       running = false;
     }
@@ -301,7 +314,10 @@
       if (banner && mutations.every((m) => banner.contains(m.target))) return;
       schedule();
     }).observe(document.body, { childList: true, subtree: true, characterData: true });
-    schedule();
+    I18N.loadLang().then((lang) => {
+      LANG = lang;
+      schedule();
+    });
   } catch {
     // Never break Google Maps.
   }

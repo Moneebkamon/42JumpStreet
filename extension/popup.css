@@ -72,6 +72,9 @@ body {
 .age { color: var(--muted); font-size: 12px; margin-top: 6px; }
 .note { color: var(--muted); font-size: 12px; }
 
+.toggle { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; cursor: pointer; font-weight: 600; }
+.toggle input { width: 16px; height: 16px; accent-color: var(--high); }
+
 .check { margin-bottom: 12px; }
 .check-row { display: flex; gap: 6px; }
 .check-row input {
@@ -114,3 +117,20 @@ body {
 .results .r-score { font-variant-numeric: tabular-nums; font-weight: 600; }
 
 .foot { color: var(--muted); font-size: 11px; margin-top: 10px; }
+
+.top-text { flex: 1; }
+.version { font-size: 11px; font-weight: 600; color: var(--muted); }
+.lang { display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.lang button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 600;
+  padding: 3px 9px;
+  cursor: pointer;
+}
+.lang button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.hint { margin-top: 8px; color: var(--medium); }
+[dir="ltr"] .results .r-host { direction: ltr; text-align: left; }
+[dir="ltr"] .host { text-align: left; }

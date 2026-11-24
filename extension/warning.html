@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FraudShield</title>
+  <link rel="stylesheet" href="warning.css">
+</head>
+<body>
+  <main class="wrap">
+    <svg class="icon" viewBox="0 0 120 108" aria-hidden="true">
+      <path d="M60 4c3 0 5.6 1.6 7 4.2l49 86c2.9 5.1-.8 11.4-6.6 11.4H10.6c-5.8 0-9.5-6.3-6.6-11.4l49-86C54.4 5.6 57 4 60 4z" fill="currentColor"/>
+      <rect x="53" y="32" width="14" height="40" rx="5" fill="var(--bg)"/>
+      <rect x="53" y="80" width="14" height="14" rx="4" fill="var(--bg)"/>
+    </svg>
+
+    <p class="lead" id="lead" data-i18n="wLead"></p>
+    <div class="url" id="url" dir="ltr">…</div>
+
+    <div class="score-row">
+      <span class="pill" id="level" data-i18n="level_high"></span>
+      <span class="score" id="score"></span>
+    </div>
+
+    <h2 data-i18n="wWhy"></h2>
+    <ul class="reasons" id="reasons"><li data-i18n="wLoading"></li></ul>
+
+    <h2 data-i18n="wNext"></h2>
+    <ol class="steps" id="steps">
+      <li data-i18n="wStep1"></li>
+      <li data-i18n="wStep2"></li>
+      <li data-i18n="wStep3"></li>
+      <li data-i18n="wStep4"></li>
+    </ol>
+
+    <label class="check" id="always-row">
+      <input type="checkbox" id="always">
+      <span data-i18n="wAlways"></span>
+    </label>
+
+    <div class="actions">
+      <button type="button" class="primary" id="back" data-i18n="wBack"></button>
+      <button type="button" class="secondary" id="proceed" data-i18n="wProceed"></button>
+    </div>
+
+    <p class="done" id="done" role="status" hidden></p>
+
+    <p class="foot" data-i18n="wFoot"></p>
+  </main>
+  <script src="i18n.js"></script>
+  <script src="warning.js"></script>
+</body>
+</html>
