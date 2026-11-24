@@ -59,7 +59,7 @@ def build_draft(case_ref: str, recipient_type: str, actor: str) -> dict:
         "", _ASK[recipient_type], "",
         "Status of this report: " + ("confirmed by an analyst." if confirmed
                                      else "AUTOMATED ASSESSMENT, NOT YET CONFIRMED by an analyst. Do not send before review."),
-        "This is a draft prepared by FraudShield for human review; it has not been sent to anyone.",
+        "This is a draft prepared by Manee for human review; it has not been sent to anyone.",
     ]
     subject = f"{'Report' if confirmed else 'Suspected'} fraudulent website: {case['host']} [{case_ref}]"
     draft_id = action_repo.add_draft(case_ref, recipient_type, subject, "\n".join(lines), actor)

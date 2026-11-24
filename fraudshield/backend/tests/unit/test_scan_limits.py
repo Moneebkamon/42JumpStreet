@@ -33,7 +33,7 @@ def test_visitors_cannot_trigger_a_deep_scan(client):
 
 def test_staff_may_request_a_deep_scan(client, monkeypatch):
     client.post("/api/v1/auth/login", json={"username": "ana", "password": "correct-horse-1"})
-    monkeypatch.setattr("app.api.v1.endpoints.scan.scan_url", lambda url, deep=False: {
+    monkeypatch.setattr("app.api.v1.endpoints.scan.scan_url", lambda url, deep=False, **kw: {
         "scan_id": "x", "state": "complete", "url": url, "score": 0, "band": "safe", "action": "allow", "confidence": 1.0,
         "reasons": [], "analyzers_ok": [], "analyzers_failed": [], "features": {}})
     assert scan(client, deep=True).status_code == 200
@@ -48,7 +48,7 @@ def test_normal_scans_are_rate_limited(client):
 
 def test_deep_scans_have_a_tighter_limit(client, monkeypatch):
     client.post("/api/v1/auth/login", json={"username": "ana", "password": "correct-horse-1"})
-    monkeypatch.setattr("app.api.v1.endpoints.scan.scan_url", lambda url, deep=False: {
+    monkeypatch.setattr("app.api.v1.endpoints.scan.scan_url", lambda url, deep=False, **kw: {
         "scan_id": "x", "state": "complete", "url": url, "score": 0, "band": "safe", "action": "allow", "confidence": 1.0,
         "reasons": [], "analyzers_ok": [], "analyzers_failed": [], "features": {}})
     for _ in range(5):

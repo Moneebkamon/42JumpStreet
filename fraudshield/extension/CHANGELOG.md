@@ -1,0 +1,153 @@
+# Changelog
+
+Every change raises the version in `manifest.json` and `package.json`, gets an entry here, and gets a git tag (`vX.Y.Z`).
+
+- **Minor** (1.2.0 → 1.3.0): a new feature or a new detection rule.
+- **Patch** (1.2.0 → 1.2.1): a fix or small tweak.
+
+## [1.9.3] - 2026-11-24
+
+### Added
+- **One-click connect.** The website's Devices page has a "Connect my browser extension" button. It creates the code and hands it to the extension through `site-bridge.js`, so nothing is copied or pasted. If the extension is not found on the page, the page shows the code to paste, as before.
+
+## [1.9.2] - 2026-11-24
+
+### Changed
+- **Instant switch.** The Manee website tells the extension the moment you flip Active / Inactive (`site-bridge.js` runs on `localhost:3000` only), so there is no wait for the next check.
+- **Visible off state.** While Inactive the toolbar icon is grey with an "OFF" badge and the title says it is switched off. Active restores the normal icon. (Chrome does not allow an extension to remove its own icon.)
+
+## [1.9.1] - 2026-11-24
+
+### Fixed
+- **The website's Active / Inactive switch now stops everything.** It used to stop only the Google result badges. The page blocker (warning page), the download guard and the toolbar icon colouring kept running, and badges already on the page stayed. Now all of them check the switch (`account-state.js`), and badges and cards on a page disappear as soon as the switch changes (`content-state.js`, no reload needed).
+- The toolbar icon's coloured score badge and tinted icon are cleared on every tab when the switch goes Inactive (back to the plain Manee icon). The icon itself stays so the popup can still show the account status.
+- The extension asks the website for the switch every minute (was every 5).
+
+## [1.9.0] - 2026-11-24
+
+### Changed
+- Renamed the extension to **Manee | منيع** everywhere users see it (toolbar title, popup, warnings, download notices). The popup footer now says what leaves the browser when an account is linked.
+
+### Added (Manee website integration, re-applied on top of 1.8.0)
+- **Account link.** Create a code on the website's Devices page, paste it in the popup under "Manee account" and press Link. Then the website's Active / Inactive switch controls the extension, and links seen on Google pages are added to the account history (`/api/v1/ext/config`, `/api/v1/ext/visits`). Unlinked, the extension works locally as before. New permission: `alarms`, plus access to `localhost:3000` and `localhost:8000`.
+- **Manee scan for gray-zone links.** Medium-score links are also scored by the Manee server (URL only, never a deep scan). The final score is the higher of the two.
+- **Report button.** "Report this link to Manee" for medium and high results (`/api/v1/citizen-reports`).
+- Popup strings for these are in `i18n.js` (Arabic and English).
+
+## [1.8.0] - 2026-11-24
+
+### Added
+- **Fake "customer service" numbers** (`phone-claims.js`). Banks, police and government bodies publish landlines and 800 / 600 numbers, never a personal mobile. A known UAE name (English or Arabic) together with a UAE mobile number (`05x`, `+9715x`, `009715x`, Arabic digits too) is now:
+  - **Google Maps:** +60, high on its own, **with or without a website**. Before, a place like "شرطة أبوظبي - مكتب سداد المخالفات" with only a mobile number scored 25 (low).
+  - **Google Search:** the title and snippet of each result are checked too; a non-official result with a known name and a mobile number gets +60 (high).
+  - Short or common words (`fab`, `du`, `e&`, `تم`) do not count as a claim, to avoid false alarms.
+- Demo: Maps has a new "شرطة برقم جوال" tab; Search has a fake "ADCB Customer Care" result with a mobile number.
+
+### Changed
+- Maps: a personal mobile number on a bank / government / courier category place (no known name) is now +35 (medium) instead of +25.
+
+## [1.7.0] - 2026-11-24
+
+### Added
+- **Fake UAE PASS sign-in detection** (page scanner). A page is flagged (+70, high, blocked) when all three hold:
+  1. It presents itself as UAE PASS in its **title, headings or logo** ("UAE PASS", "الهوية الرقمية"). A plain "Sign in with UAE PASS" button or link does not count, because many real sites have one that goes to uaepass.ae.
+  2. It shows an **Emirates ID field** (name/id with emirates/eid/identity, or a `784-` placeholder), a **password field**, or a **one-time-code (OTP) field**.
+  3. It is **not on uaepass.ae**. Official domains (`*.gov.ae`, banks on the official list) are never affected.
+- Demo page `demo/uaepass-mock.html`: a harmless fake UAE PASS sign-in ("your traffic fine is overdue") with Emirates ID and OTP fields. It has no form action and sends nothing.
+
+## [1.6.1] - 2026-11-24
+
+### Changed
+- **Renamed to FraudShield**, the same name as the team's backend and web app, so the extension and the server read as one product. The new name shows in the toolbar, popup, warning and download pages, Search and Maps labels, and console logs. Internal message IDs and the GitHub repo name are unchanged.
+
+## [1.6.0] - 2026-11-24
+
+### Added
+- **IP owner check (`ip-intel.js`).** A link that uses an IP address now gets a second look: who owns that address?
+  - **Layer 1, local and instant:** Google publishes its address ranges (`goog.json`) and the subset it rents out as Google Cloud (`cloud.json`). The difference is Google itself (Search, Gmail, YouTube, 8.8.8.8). It ships as `ip-ranges.js` (297 IPv4 + 98 IPv6 prefixes) and is rebuilt with `node tools/update-ip-ranges.js`. `142.250.201.110` is now **low risk** with the reason "IP belongs to Google's own services".
+  - **Layer 2, RDAP (cached 7 days):** the registry record of the network (ARIN, redirected to RIPE/APNIC/... as needed) names the owner, which is classified:
+    - Apple / Meta own networks: IP points removed.
+    - Cloud or hosting (Amazon, Google Cloud, Microsoft, Cloudflare, DigitalOcean, Hetzner, OVH, Linode…): stays medium, and the reason names the provider ("anyone can rent a server there").
+    - Home or mobile internet (du, Etisalat, Telefonica, Vodafone…): +20 more, so **high** (often a hacked device).
+  - Local network addresses are never sent anywhere.
+- The auto-blocker now always runs the owner check for IP links, so Google's own IPs are no longer blocked over HTTP.
+
+## [1.5.1] - 2026-11-24
+
+### Fixed
+- **Links that use a raw IP address were rated "Low risk".** A public IP now adds 45 points (medium on its own) instead of 10. With plain HTTP (+15) it reaches high (60) and is blocked by auto-block. Hex/decimal forms (`http://0x8efac96e/`) are covered because the URL parser turns them into dotted form first.
+- Local network and loopback addresses (`192.168.x.x`, `10.x`, `172.16–31.x`, `127.0.0.1`, `::1`, `fc00::/7`, `fe80::/10`) are not penalised, so router pages and local dev servers are not flagged. They show the reason "Local network address".
+
+## [1.5.0] - 2026-11-23
+
+### Added
+- **Download guard** (`downloads.js`): dangerous file types (`.exe`, `.msi`, `.scr`, `.bat`, `.ps1`, `.hta`, `.apk`, `.iso`…) are paused the moment they start.
+  - They stay paused when the page or file host is medium/high risk, or when the download **started by itself** with no click first (drive-by).
+  - Archives from high-risk sites are paused too.
+  - If the file already finished, it is deleted from disk.
+  - A warning tab explains why and offers **Delete the file** or **Keep it anyway**.
+- **Clipboard guard (ClickFix):** a page that silently copies a command (PowerShell, `cmd /c`, mshta, `curl | sh`…) to the clipboard is stopped. The copy is dropped, so nothing harmful can be pasted, and the page is scored high (+80) and blocked. Normal copying is untouched.
+- **Scareware detection:** fullscreen together with keyboard/mouse lock or a loop of pop-up messages, on a page without a video player (fake "tech support" pages), adds +70.
+- **Trap detection:** any two of a pop-up message loop, a "leave this page?" prompt, or Back-button flooding adds +60.
+- Popups opened without a click (+10/+20) and notification-permission requests on suspicious sites (+15).
+- Demo pages: `demo/scareware-mock.html` (fullscreen fake alert) and `demo/download-mock.html` (automatic harmless "exe").
+
+### Notes
+- The ClickFix demo page does not copy anything. A version that copied a harmless command was flagged by Windows Defender as ClickFix malware, so it was removed rather than disguised.
+
+## [1.4.0] - 2026-11-23
+
+### Added
+- **Page scanner** (`content-page.js`) on every page. It looks at what the page asks for, not only its link:
+  - A phone field with "not a robot / verify / prize / OTP" bait or a +971 prefix (mobile-billing subscription and OTP-theft scams)
+  - Bank-card fields on an already suspicious domain
+  - **ClickFix** instructions (Win+R, cmd, Ctrl+V with a fake "human verification")
+
+  These signals are added to the domain score, and the page is blocked if the total reaches high.
+- **URL rules:** a link that targets a UAE carrier (`op=ae-etisalat`, `carrier=du`) adds +30. A random-looking subdomain (`96dknvhyhd73dazre.fantex.online`) adds +15.
+- **Colored toolbar icon** per tab:
+  - 🟡 Yellow with the score for medium risk (be careful)
+  - 🔴 Red for high risk, or "!" when the page was blocked
+  - Normal icon for everything else
+- The popup and the warning page show the combined verdict (domain + page).
+- Demo pages: `demo/phone-mock.html` (yellow on localhost) and `demo/clickfix-mock.html` (blocked).
+
+## [1.3.0] - 2026-11-23
+
+### Changed
+- Any domain registered less than 30 days ago is now **high risk** (score of at least 70), even with no other signal. Before this, a 1-day-old `.buzz` ClickFix page (`nvq.aidev-future.buzz`) scored only 55 (medium).
+- The blocker checks domain age (RDAP, cached) for every site that isn't official, not only medium ones, so brand-new scam domains get blocked. In testing, the ClickFix page was replaced by the warning page about 1.6 s after navigation.
+
+## [1.2.0] - 2026-11-23
+
+### Added
+- Arabic / English interface with an **ع / EN** switch in the popup (Arabic is the default). Badges, hover card, Maps banner, popup, warning page and every reason follow the chosen language and direction.
+- Each warning names the impersonated UAE entity and its sector: digital identity, UAE bank, telecom, government service, law enforcement, post & courier, utilities, transport, airline.
+- New brands: ICP and Emirates ID.
+- The popup shows the version number.
+
+## [1.1.0] - 2026-11-23
+
+### Added
+- High-risk sites are blocked before they load and replaced by a warning page with the reasons, next steps (including Abu Dhabi Police's Aman service, 8002626), "go back safely" and "proceed anyway". Proceed allows the site for this session, and a checkbox allows it permanently.
+- A popup switch to turn blocking on or off.
+- Detection of an official domain hidden inside a subdomain (`bankfab.com.wallet-studio.icu`), and of subdomains shaped like a full domain.
+- New brands: FAB (`bankfab.com`), ADIB, Emirates Islamic, NBF and Etihad. New risk words: wallet, otp, kyc, auth, account, reward, prize, bonus, gift and recharge.
+
+## [1.0.0] - 2026-11-23
+
+### Added
+- Rules engine that scores domains for UAE impersonation: typosquats, brand names, risk words, abused TLDs, free hosting, homographs, structure checks and HTTP.
+- Domain age through the IANA RDAP bootstrap, cached for 7 days.
+- Google Search badges (🟢 🟡 🔴) with a hover card and sponsored-result detection.
+- Google Maps banner: free sites for banks or government bodies, places named after a brand that link elsewhere, and personal mobile numbers.
+- Popup with the current page, a manual check and the page's results.
+- Offline demo pages and 38 false-positive guard tests.
+- An LLM hook for the team that receives the result title and snippet.
+
+[1.5.0]: https://github.com/amrelhaj87-cloud/Fraud-Extension/releases/tag/v1.5.0
+[1.4.0]: https://github.com/amrelhaj87-cloud/Fraud-Extension/releases/tag/v1.4.0
+[1.3.0]: https://github.com/amrelhaj87-cloud/Fraud-Extension/releases/tag/v1.3.0
+[1.2.0]: https://github.com/amrelhaj87-cloud/Fraud-Extension/releases/tag/v1.2.0
+[1.1.0]: https://github.com/amrelhaj87-cloud/Fraud-Extension/releases/tag/v1.1.0
+[1.0.0]: https://github.com/amrelhaj87-cloud/Fraud-Extension/releases/tag/v1.0.0

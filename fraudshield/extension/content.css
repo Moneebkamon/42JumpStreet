@@ -1,4 +1,4 @@
-/* Fraud Extension — Google Search badges, cards and high-risk outlines. */
+/* Manee — Google Search badges, cards and high-risk outlines. */
 
 /* ------------------------------------------------------------------------- */
 /* Result badges                                                             */
@@ -393,4 +393,20 @@
   .fe-spinner {
     animation: none;
   }
+}
+
+/* English UI: the hover card switches to left-to-right. */
+#fe-hover-card.fe-card[dir="ltr"] {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Switched off from the Manee website: hide everything we added to the page. */
+html[data-fe-off] [class^="fe-"],
+html[data-fe-off] [class*=" fe-"] {
+  display: none !important;
+}
+html[data-fe-off] [data-fe-high] {
+  outline: none !important;
+  box-shadow: none !important;
 }

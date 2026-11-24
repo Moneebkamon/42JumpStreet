@@ -16,7 +16,7 @@ def format_alert(det: dict) -> str:
     top = "; ".join(r["reason"] for r in det["reasons"][:3])
     brand = f" | impersonating {det['brand_name']}" if det.get("brand_name") else ""
     return (
-        f"{tag}FraudShield: suspected scam domain\n{det['domain']}\n"
+        f"{tag}Manee: suspected scam domain\n{det['domain']}\n"
         f"Score {det['score']} ({det['band']}){brand}\nWhy: {top}"
     )
 

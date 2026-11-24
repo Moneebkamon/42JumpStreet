@@ -1,8 +1,12 @@
 /**
- * Fraud Extension — UAE-focused domain risk scorer.
+ * Manee — UAE-focused domain risk scorer.
  * Pure ES module: works in Chrome (service worker / content scripts) and Node.
  * No network calls and no browser APIs are used here.
  */
+
+import "./i18n.js";
+
+const I18N = globalThis.FE_I18N;
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -35,9 +39,20 @@ const OFFICIAL_DOMAINS = [
   "salik.ae",
   "rta.ae",
   "u.ae",
+  "bankfab.com",
+  "adib.ae",
+  "emiratesislamic.ae",
+  "nbf.ae",
+  "etihad.com",
+  "emirates.com",
   "tdra.gov.ae",
   "adnoc.ae"
 ];
+
+// Points for a link that uses a public IP address instead of a domain name.
+const IP_HOST_POINTS = 45;
+// Extra points when that IP is a home / mobile connection (often a hacked device).
+const IP_ISP_POINTS = 20;
 
 // Registry-restricted suffixes: only government bodies can register these.
 const OFFICIAL_SUFFIXES = ["gov.ae"];
@@ -60,8 +75,18 @@ const BRANDS = [
   "salik",
   "moi",
   "ica",
-  "dubaipolice"
+  "dubaipolice",
+  "bankfab",
+  "fab",
+  "adib",
+  "emiratesislamic",
+  "etihad",
+  "icp",
+  "emiratesid"
 ];
+
+// Labels that make a subdomain look like a complete domain (bankfab.com.evil.icu).
+const DOMAIN_LIKE_LABELS = new Set(["com", "net", "org", "ae", "gov", "co"]);
 
 const RISK_WORDS = [
   "pay",
@@ -74,7 +99,18 @@ const RISK_WORDS = [
   "refund",
   "claim",
   "track",
-  "delivery"
+  "delivery",
+  "wallet",
+  "auth",
+  "otp",
+  "kyc",
+  "account",
+  "portal",
+  "recharge",
+  "reward",
+  "prize",
+  "bonus",
+  "gift"
 ];
 
 const SUSPICIOUS_TLDS = [
@@ -104,6 +140,10 @@ const FREE_HOSTING = [
   "vercel.app",
   "pages.dev"
 ];
+
+// Any domain younger than this is forced to at least NEW_DOMAIN_MIN_SCORE (high).
+const NEW_DOMAIN_DAYS = 30;
+const NEW_DOMAIN_MIN_SCORE = 70;
 
 // Two-label public suffixes used by the UAE and common external domains.
 const TWO_LEVEL_SUFFIXES = new Set([
@@ -154,10 +194,14 @@ const CONFUSABLES = Object.freeze({
  * Score a hostname from 0 (confirmed official) to 100 (very likely fraudulent).
  *
  * @param {string} hostname
- * @param {{protocol?: string, ageDays?: number|null, path?: string}} opts
+ * @param {{protocol?: string, ageDays?: number|null, path?: string,
+ *          ipOwner?: {kind: string, owner: string}|null}} opts
  * @returns {{score: number, level: "safe"|"low"|"medium"|"high", reasons: string[]}}
  */
 export function analyzeDomain(hostname, opts = {}) {
+  const lang = I18N.resolve(opts.lang);
+  const t = (key, params) => I18N.t(key, lang, params);
+  const brandName = (brand) => I18N.brandLabel(brand, lang);
   const reasons = [];
   let score = 0;
 
@@ -171,7 +215,7 @@ export function analyzeDomain(hostname, opts = {}) {
     return {
       score: 0,
       level: "low",
-      reasons: ["تعذر قراءة اسم النطاق"]
+      reasons: [t("unreadable")]
     };
   }
 
@@ -180,7 +224,7 @@ export function analyzeDomain(hostname, opts = {}) {
     return {
       score: 0,
       level: "safe",
-      reasons: ["دومين رسمي موثّق"]
+      reasons: [t("official")]
     };
   }
 
@@ -190,9 +234,9 @@ export function analyzeDomain(hostname, opts = {}) {
 
   const hasNonLatin = /[\u0080-\u{10FFFF}]/u.test(host);
   if (hasNonLatin) {
-    add(40, "اسم النطاق يستخدم حروفًا غير لاتينية (احتمال تصيّد بصري)");
+    add(40, t("homograph"));
   } else if (decoded.failed) {
-    add(40, "اسم النطاق يستخدم ترميز Punycode مشبوهًا");
+    add(40, t("punycodeBad"));
   }
 
   const domain = splitRegistrableDomain(host);
@@ -205,29 +249,41 @@ export function analyzeDomain(hostname, opts = {}) {
   if (typo) {
     add(
       50,
-      `تشابه كبير مع اسم جهة موثوقة (${typo.brand})${typo.distance > 0 ? " — خطأ إملائي محتمل" : ""}`
+      t("typo", { brand: brandName(typo.brand), misspell: typo.distance > 0 })
     );
   }
 
   const containedBrand = BRANDS.find((brand) => containsBrand(visualHost, brand));
   if (containedBrand) {
-    add(45, `اسم النطاق يحتوي على اسم جهة موثوقة (${containedBrand}) دون أن يكون موقعها الرسمي`);
+    add(45, t("contains", { brand: brandName(containedBrand) }));
   }
 
-  const brandSignal = Boolean(typo || containedBrand);
+  // 3b) A real domain used as a subdomain of another site:
+  //     bankfab.com.wallet-studio.icu, www.adpolice.gov.ae.fines-pay.com
+  const mimicked = findMimickedOfficial(host);
+  if (mimicked) {
+    add(
+      50,
+      t("mimic", { official: mimicked, real: `${domain.base}.${domain.tld}` })
+    );
+  } else if (!domain.isIp && hasDomainLikeSubdomain(host, domain)) {
+    add(30, t("domainLike"));
+  }
+
+  const brandSignal = Boolean(typo || containedBrand || mimicked);
 
   // 4) Risk words, with an extra penalty when a brand is also present.
   const riskMatches = findRiskWords(host);
   if (riskMatches.length > 0) {
-    add(15, `كلمة خطرة في النطاق: ${riskMatches.join("، ")}`);
+    add(15, t("riskWords", { words: riskMatches }));
     if (brandSignal) {
-      add(20, "اسم جهة موثوقة مقترن بكلمة خطرة (نمط تصيّد شائع)");
+      add(20, t("brandRisk"));
     }
   }
 
   // 5) Cheap / frequently abused TLD.
   if (domain.tld && SUSPICIOUS_TLDS.includes(domain.tld)) {
-    add(20, `امتداد النطاق غير موثوق أو كثير الاستخدام في الحملات الاحتيالية (.${domain.tld})`);
+    add(20, t("tld", { tld: domain.tld }));
   }
 
   // 6) Free hosting or site builders pretending to represent a brand.
@@ -238,42 +294,80 @@ export function analyzeDomain(hostname, opts = {}) {
     const path = typeof opts.path === "string" ? opts.path : "";
     const freeText = foldConfusables(normalizeLookalikes(`${host} ${path}`));
     if (BRANDS.some((brand) => containsBrand(freeText, brand))) {
-      add(40, `استضافة مجانية أو منشئ مواقع (${freeHost}) مع اسم جهة موثوقة`);
+      add(40, t("freeHost", { host: freeHost }));
     }
   }
 
   // 7) Structural red flags.
   if (!domain.isIp && domain.subdomainCount > 3) {
-    add(10, "عدد كبير من النطاقات الفرعية (أكثر من 3)");
+    add(10, t("manySubs"));
   }
   const hyphenCount = (host.match(/-/g) || []).length;
   if (hyphenCount > 2) {
-    add(10, "عدد كبير من الشُرط في اسم النطاق (أكثر من 2)");
+    add(10, t("manyHyphens"));
   }
+  // A raw IP instead of a name: legitimate sites almost never send people to
+  // one, phishing kits often do. 45 alone is medium; with plain HTTP it is high.
+  // Local network / loopback addresses (router pages, dev servers) are exempt.
   if (domain.isIp) {
-    add(10, "الرابط يستخدم عنوان IP بدلًا من اسم نطاق");
+    // opts.ipOwner (ip-intel.js) says who owns the address.
+    const owner = opts.ipOwner && typeof opts.ipOwner === "object" ? opts.ipOwner : null;
+    if (isPrivateIp(host)) {
+      reasons.push(t("ipLocal"));
+    } else if (owner && owner.kind === "service") {
+      // The company's own network (Google Search, Apple, Meta), not rented out.
+      reasons.push(t("ipService", { owner: owner.owner }));
+    } else {
+      add(IP_HOST_POINTS, t("ip"));
+      if (owner && owner.kind === "hosting") {
+        reasons.push(t("ipHosting", { owner: owner.owner }));
+      } else if (owner && owner.kind === "isp") {
+        add(IP_ISP_POINTS, t("ipIsp", { owner: owner.owner }));
+      } else if (owner && owner.owner) {
+        reasons.push(t("ipOwner", { owner: owner.owner }));
+      }
+    }
   }
   if (host.length > 30) {
-    add(10, "اسم النطاق طويل بشكل غير معتاد (أكثر من 30 حرفًا)");
+    add(10, t("long"));
+  }
+
+  // 7b) Mobile-billing scams put the target carrier in the link
+  //     (?op=ae-etisalat, /du/, carrier=eand).
+  const carrier = findCarrierTarget(typeof opts.path === "string" ? opts.path : "");
+  if (carrier) {
+    add(30, t("carrier", { carrier }));
+  }
+
+  // 7c) Throw-away random subdomains (96dknvhyhd73dazre.fantex.online).
+  if (!domain.isIp && domain.subdomainCount >= 1 && looksRandom(host.split(".")[0])) {
+    add(15, t("randomSub"));
   }
 
   // 8) Unencrypted HTTP.
   if (String(opts.protocol || "").toLowerCase() === "http:") {
-    add(15, "الرابط يستخدم HTTP غير المشفّر");
+    add(15, t("http"));
   }
 
   // 9) Domain age (RDAP). Unknown age is reported but adds no points.
   if (opts.ageDays === null || opts.ageDays === undefined || opts.ageDays === "") {
-    reasons.push("عمر الدومين غير معروف");
+    reasons.push(t("ageUnknown"));
   } else {
     const ageDays = Number(opts.ageDays);
     if (!Number.isFinite(ageDays)) {
-      reasons.push("عمر الدومين غير معروف");
+      reasons.push(t("ageUnknown"));
     } else if (ageDays < 30) {
-      add(35, `عمر الدومين أقل من 30 يومًا (${formatDays(ageDays)} يوم)`);
+      add(35, t("age30", { days: formatDays(ageDays) }));
     } else if (ageDays < 180) {
-      add(15, `عمر الدومين أقل من 180 يومًا (${formatDays(ageDays)} يوم)`);
+      add(15, t("age180", { days: formatDays(ageDays) }));
     }
+  }
+
+  // A domain registered in the last 30 days is high risk on its own: almost
+  // every phishing / ClickFix site is used within days of registration.
+  if (Number.isFinite(Number(opts.ageDays)) && opts.ageDays !== null && opts.ageDays !== "" &&
+      Number(opts.ageDays) < NEW_DOMAIN_DAYS) {
+    score = Math.max(score, NEW_DOMAIN_MIN_SCORE);
   }
 
   score = Math.min(100, score);
@@ -319,6 +413,46 @@ function isOfficialHost(host) {
   );
 }
 
+function findMimickedOfficial(host) {
+  for (const official of OFFICIAL_DOMAINS) {
+    const index = host.indexOf(`${official}.`);
+    if (index === 0 || (index > 0 && host[index - 1] === ".")) return official;
+  }
+  return null;
+}
+
+function hasDomainLikeSubdomain(host, domain) {
+  const labels = host.split(".");
+  // Labels before the registrable domain (base + suffix).
+  const suffixLabels = domain.tld ? labels.length - domain.subdomainCount - 1 : labels.length;
+  const subLabels = labels.slice(0, Math.max(0, labels.length - suffixLabels - 1));
+  return subLabels.slice(1).some((label) => DOMAIN_LIKE_LABELS.has(label));
+}
+
+const CARRIERS = { etisalat: "Etisalat / e&", eand: "Etisalat / e&", du: "du" };
+
+function findCarrierTarget(path) {
+  let text = path.toLowerCase();
+  try {
+    text = decodeURIComponent(text);
+  } catch {
+    // Keep the raw text.
+  }
+  const match =
+    text.match(/(?:^|[?&])(?:op|operator|carrier|telco|mno|network)=(?:ae[-_]?)?(etisalat|eand|du)(?=$|[&#_-])/) ||
+    text.match(/(?:^|[^a-z])ae[-_](etisalat|eand|du)(?=$|[^a-z])/);
+  return match ? CARRIERS[match[1]] : null;
+}
+
+function looksRandom(label) {
+  if (!label || label.length < 10) return false;
+  const letters = label.replace(/[^a-z]/g, "");
+  const digits = label.replace(/[^0-9]/g, "");
+  if (letters.length < 4 || digits.length < 2) return false;
+  const vowels = letters.replace(/[^aeiou]/g, "").length;
+  return vowels / letters.length < 0.3;
+}
+
 function splitRegistrableDomain(host) {
   if (isIpAddress(host)) {
     return { base: host, tld: "", subdomainCount: 0, isIp: true };
@@ -353,6 +487,22 @@ function splitRegistrableDomain(host) {
     subdomainCount: Math.max(0, labels.length - 2),
     isIp: false
   };
+}
+
+function isPrivateIp(host) {
+  const h = host.replace(/^\[|\]$/g, "");
+  const v4 = h.split(".").map(Number);
+  if (v4.length === 4 && v4.every((n) => Number.isInteger(n))) {
+    const [a, b] = v4;
+    return (
+      a === 10 || a === 127 || a === 0 ||
+      (a === 172 && b >= 16 && b <= 31) ||
+      (a === 192 && b === 168) ||
+      (a === 169 && b === 254) ||
+      (a === 100 && b >= 64 && b <= 127) // carrier-grade NAT
+    );
+  }
+  return h === "::1" || /^f[cd]/i.test(h) || /^fe[89ab]/i.test(h);
 }
 
 function isIpAddress(host) {

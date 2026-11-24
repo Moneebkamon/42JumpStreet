@@ -6,6 +6,8 @@
     "backend": "cd backend && .venv/Scripts/python -m uvicorn app.main:app --reload --port 8000",
     "frontend": "yarn --cwd frontend dev",
     "seed": "backend/.venv/Scripts/python scripts/seed_brands.py && backend/.venv/Scripts/python scripts/seed_demo_data.py",
+    "evolution": "docker compose -f infra/evolution/docker-compose.yml --env-file infra/evolution/.env up -d",
+    "evolution:stop": "docker compose -f infra/evolution/docker-compose.yml --env-file infra/evolution/.env down",
     "test": "cd backend && .venv/Scripts/python -m pytest"
   }
 }

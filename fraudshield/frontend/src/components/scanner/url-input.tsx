@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { useMe } from "@/hooks/use-me";
+import { isStaffRole } from "@/lib/api-auth";
 
 export function UrlInput({
   onSubmit,
@@ -14,7 +15,8 @@ export function UrlInput({
   const [value, setValue] = useState("");
   const [wantDeep, setDeep] = useState(false);
   const { me } = useMe();
-  const deep = wantDeep && !!me; // the safe-browser option is for signed-in staff only
+  const staff = !!me && isStaffRole(me.role);
+  const deep = wantDeep && staff; // the safe-browser option is for staff accounts only
 
   return (
     <form
@@ -38,18 +40,18 @@ export function UrlInput({
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder="Paste a link, for example https://example.com/login"
-          className="min-w-0 flex-1 rounded-xl border border-zinc-300 bg-white px-4 py-3 text-base outline-none focus:border-zinc-900 focus:ring-2 focus:ring-zinc-900/10 dark:border-zinc-700 dark:bg-zinc-950 dark:focus:border-zinc-300"
+          className="min-w-0 flex-1 rounded-xl border border-line bg-card px-4 py-3 text-base outline-none placeholder:text-zinc-500 focus:border-brand focus:ring-2 focus:ring-brand/20"
         />
         <button
           type="submit"
           disabled={busy || !value.trim()}
-          className="rounded-xl bg-foreground px-6 py-3 font-medium text-background transition-opacity disabled:opacity-40"
+          className="rounded-xl bg-brand px-6 py-3 font-medium text-brand-ink transition hover:brightness-110 disabled:opacity-40"
         >
           {busy ? "Checking..." : "Check link"}
         </button>
       </div>
 
-      {me ? (
+      {staff ? (
         <label className="flex cursor-pointer items-start gap-2 text-sm text-zinc-600 dark:text-zinc-400">
           <input
             type="checkbox"
@@ -65,7 +67,7 @@ export function UrlInput({
         </label>
       ) : (
         <p className="text-xs text-zinc-500">
-          This check reads the link and its domain. It never opens the page. Opening pages is limited to signed-in staff.
+          This check reads the link and its domain. It never opens the page. Deep search (opening the page in a safe browser) is available to staff accounts.
         </p>
       )}
     </form>

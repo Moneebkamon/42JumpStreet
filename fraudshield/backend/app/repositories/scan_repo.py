@@ -45,6 +45,10 @@ def _connect(path: Path | None = None) -> sqlite3.Connection:
     conn = sqlite3.connect(p)
     conn.row_factory = sqlite3.Row
     conn.executescript(_SCHEMA)
+    if "user_id" not in {r["name"] for r in conn.execute("PRAGMA table_info(scans)")}:
+        conn.execute("ALTER TABLE scans ADD COLUMN user_id TEXT")  # scans stored before accounts existed
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_scans_user ON scans(user_id, created_at)")
+    conn.commit()
     return conn
 
 
@@ -52,14 +56,14 @@ def _now() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def save(scan: dict, host: str, deep: bool, path: Path | None = None) -> None:
+def save(scan: dict, host: str, deep: bool, path: Path | None = None, user_id: str | None = None) -> None:
     """Store a finished scan response (the dict scan_service returns)."""
     with closing(_connect(path)) as conn, conn:
         conn.execute(
             """INSERT OR REPLACE INTO scans (id, url, host, score, band, action, confidence, deep, cached,
-               created_at, result_json) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+               created_at, result_json, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             (scan["scan_id"], scan["url"], host, scan["score"], scan["band"], scan["action"], scan["confidence"],
-             int(deep), int(bool(scan.get("cached"))), _now(), json.dumps(scan)),
+             int(deep), int(bool(scan.get("cached"))), _now(), json.dumps(scan), user_id),
         )
 
 
@@ -79,11 +83,24 @@ def get(scan_id: str, path: Path | None = None) -> dict | None:
     return {**json.loads(r["result_json"]), "created_at": r["created_at"], "feedback": r["feedback"]}
 
 
-def list_recent(limit: int = 50, offset: int = 0, min_score: int = 0, path: Path | None = None) -> list[dict]:
+def owner(scan_id: str, path: Path | None = None) -> tuple[bool, str | None]:
+    """(exists, user_id). user_id is None for scans made without signing in."""
+    with closing(_connect(path)) as conn:
+        r = conn.execute("SELECT user_id FROM scans WHERE id = ?", (scan_id,)).fetchone()
+    return (True, r["user_id"]) if r else (False, None)
+
+
+def list_recent(limit: int = 50, offset: int = 0, min_score: int = 0, path: Path | None = None,
+                user_id: str | None = None) -> list[dict]:
+    """Newest first. With user_id, only that account's scans."""
+    where, args = "score >= ?", [min_score]
+    if user_id is not None:
+        where += " AND user_id = ?"
+        args.append(user_id)
     with closing(_connect(path)) as conn:
         rows = conn.execute(
-            f"SELECT {_SUMMARY} FROM scans WHERE score >= ? ORDER BY created_at DESC, rowid DESC LIMIT ? OFFSET ?",
-            (min_score, limit, offset),
+            f"SELECT {_SUMMARY} FROM scans WHERE {where} ORDER BY created_at DESC, rowid DESC LIMIT ? OFFSET ?",
+            (*args, limit, offset),
         ).fetchall()
     return [_summary(r) for r in rows]
 
@@ -122,3 +139,8 @@ def set_feedback(scan_id: str, label: str, path: Path | None = None) -> bool:
 def count_for_host(host: str, path: Path | None = None) -> int:
     with closing(_connect(path)) as conn:
         return conn.execute("SELECT COUNT(*) FROM scans WHERE host = ?", (host,)).fetchone()[0]
+
+
+def delete_for_user(user_id: str, path: Path | None = None) -> int:
+    with closing(_connect(path)) as conn, conn:
+        return conn.execute("DELETE FROM scans WHERE user_id = ?", (user_id,)).rowcount

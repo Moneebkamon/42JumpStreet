@@ -1,16 +1,17 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
+import { Button, Input, Notice } from "@/components/ui/kit";
 import { announceAuthChange } from "@/hooks/use-me";
-import { login } from "@/lib/api-auth";
-
-const FIELD =
-  "block w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900";
+import { usePrefs } from "@/i18n/provider";
+import { isStaffRole, login } from "@/lib/api-auth";
 
 export function LoginForm() {
   const router = useRouter();
+  const { t } = usePrefs();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
@@ -21,9 +22,9 @@ export function LoginForm() {
     setBusy(true);
     setError(null);
     try {
-      await login(username.trim(), password);
+      const me = await login(username.trim(), password);
       announceAuthChange();
-      router.push("/console");
+      router.push(isStaffRole(me.role) ? "/console" : "/dashboard");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not sign in.");
       setBusy(false);
@@ -33,32 +34,23 @@ export function LoginForm() {
   return (
     <form onSubmit={submit} className="space-y-4">
       <label className="block space-y-1 text-sm">
-        <span className="font-medium">Username</span>
-        <input value={username} onChange={(e) => setUsername(e.target.value)} autoComplete="username" required className={FIELD} />
+        <span className="font-medium">{t("auth.username")}</span>
+        <Input value={username} onChange={(e) => setUsername(e.target.value)} autoComplete="username" required />
       </label>
       <label className="block space-y-1 text-sm">
-        <span className="font-medium">Password</span>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          autoComplete="current-password"
-          required
-          className={FIELD}
-        />
+        <span className="font-medium">{t("auth.password")}</span>
+        <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="current-password" required />
       </label>
-      {error && (
-        <p role="alert" className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-800 dark:bg-red-950 dark:text-red-300">
-          {error}
-        </p>
-      )}
-      <button
-        type="submit"
-        disabled={busy || !username.trim() || !password}
-        className="w-full rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900"
-      >
-        {busy ? "Signing in..." : "Sign in"}
-      </button>
+      {error && <Notice tone="error">{error}</Notice>}
+      <Button type="submit" disabled={busy || !username.trim() || !password} className="w-full">
+        {busy ? "..." : t("nav.signin")}
+      </Button>
+      <p className="text-center text-sm text-muted">
+        {t("auth.new")}{" "}
+        <Link href="/register" className="font-medium text-brand underline">
+          {t("nav.signup")}
+        </Link>
+      </p>
     </form>
   );
 }

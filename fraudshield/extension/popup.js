@@ -1,15 +1,13 @@
 /**
- * Fraud Extension — popup.
+ * Manee — popup.
  * Shows the verdict for the active tab, a manual URL checker, and the list of
  * links already analyzed on the current page (from the background worker).
  */
 
-const LEVEL_LABELS = {
-  safe: "آمن — موقع رسمي",
-  low: "منخفض الخطورة",
-  medium: "متوسط الخطورة",
-  high: "خطر مرتفع"
-};
+const I18N = globalThis.FE_I18N;
+let LANG = I18N.DEFAULT_LANG;
+const T = (key, params) => I18N.t(key, LANG, params);
+const levelLabel = (level) => (level === "safe" ? T("popupSafe") : T(`level_${level}`));
 
 const LEVEL_COLORS = {
   safe: "var(--safe)",
@@ -20,6 +18,7 @@ const LEVEL_COLORS = {
 
 const $ = (id) => document.getElementById(id);
 let currentReportUrl = null;
+let accountState = null;
 
 // ---------------------------------------------------------------------------
 // Messaging
@@ -38,6 +37,12 @@ function send(message) {
   });
 }
 
+// Verdict for the open tab: domain + what the page asks for (phone, card...).
+async function verdictFor(url) {
+  const verdict = await send({ type: "GET_VERDICT", url });
+  return verdict && verdict.level ? verdict : analyzeUrl(url);
+}
+
 async function analyzeUrl(url) {
   // No tabId: manual checks must not pollute the page's result list.
   const response = await send({ type: "ANALYZE", urls: [url] });
@@ -48,12 +53,12 @@ async function analyzeUrl(url) {
 // Rendering
 // ---------------------------------------------------------------------------
 
-function renderVerdict(result, { title } = {}) {
+function renderVerdict(result, { titleKey } = {}) {
   const card = $("current");
   const verdict = $("current-verdict");
   const note = $("current-note");
 
-  if (title) card.querySelector(".card-label").textContent = title;
+  $("current-title").textContent = T(titleKey || "current");
   $("current-host").textContent = result.hostname || result.url || "";
 
   const level = result.level || "low";
@@ -62,7 +67,7 @@ function renderVerdict(result, { title } = {}) {
   card.className = `card level-${level}`;
   const pill = $("current-level");
   pill.className = `pill ${level}`;
-  pill.textContent = LEVEL_LABELS[level] || level;
+  pill.textContent = levelLabel(level);
 
   $("current-score").textContent = `${score}/100`;
   const bar = $("current-bar");
@@ -72,15 +77,15 @@ function renderVerdict(result, { title } = {}) {
   const list = $("current-reasons");
   list.replaceChildren();
   for (const reason of result.reasons || []) {
-    if (reason === "عمر الدومين غير معروف") continue; // shown in the age line
+    if (I18N.isReason(reason, "ageUnknown")) continue; // shown in the age line
     const li = document.createElement("li");
     li.textContent = reason;
     list.appendChild(li);
   }
 
   $("current-age").textContent = Number.isFinite(result.ageDays)
-    ? `عمر الدومين: ${Math.floor(result.ageDays)} يومًا`
-    : "عمر الدومين: غير معروف";
+    ? T("ageDays", { days: Math.floor(result.ageDays) })
+    : T("ageUnknownLine");
 
   verdict.hidden = false;
   note.hidden = true;
@@ -90,12 +95,15 @@ function renderVerdict(result, { title } = {}) {
   const reportBtn = $("report-btn");
   reportBtn.hidden = !(currentReportUrl && (level === "medium" || level === "high"));
   reportBtn.disabled = false;
-  reportBtn.textContent = "أبلغ FraudShield عن هذا الرابط";
+  reportBtn.textContent = T("reportBtn");
 }
 
-function renderNote(host, text) {
+function renderNote(host, key) {
+  const text = T(key);
+  $("current-title").textContent = T("current");
   $("current-host").textContent = host;
   $("current-verdict").hidden = true;
+  $("report-btn").hidden = true;
   const note = $("current-note");
   note.textContent = text;
   note.hidden = false;
@@ -128,7 +136,7 @@ function renderPageResults(results) {
 
     li.append(dot, host, score);
     li.addEventListener("click", () =>
-      renderVerdict(result, { title: "تفاصيل الرابط" })
+      renderVerdict(result, { titleKey: "linkDetails" })
     );
     list.appendChild(li);
   }
@@ -147,7 +155,7 @@ async function loadActiveTab() {
   }
 
   if (!tab || !tab.url) {
-    renderNote("—", "تعذر قراءة الصفحة الحالية.");
+    renderNote("—", "cantReadTab");
     return;
   }
 
@@ -155,17 +163,17 @@ async function loadActiveTab() {
   try {
     parsed = new URL(tab.url);
   } catch {
-    renderNote("—", "تعذر قراءة الصفحة الحالية.");
+    renderNote("—", "cantReadTab");
     return;
   }
 
   if (parsed.protocol !== "http:" && parsed.protocol !== "https:") {
-    renderNote(parsed.protocol, "هذه الصفحة لا تحتاج إلى فحص.");
+    renderNote(parsed.protocol, "noCheckNeeded");
   } else {
-    renderNote(parsed.hostname, "جارٍ الفحص…");
-    const result = await analyzeUrl(tab.url);
+    renderNote(parsed.hostname, "checking");
+    const result = await verdictFor(tab.url);
     if (result) renderVerdict(result);
-    else renderNote(parsed.hostname, "تعذر فحص هذه الصفحة.");
+    else renderNote(parsed.hostname, "cantCheckPage");
   }
 
   const page = await send({ type: "GET_TAB_RESULTS", tabId: tab.id });
@@ -190,21 +198,21 @@ $("check-form").addEventListener("submit", async (event) => {
   event.preventDefault();
   const url = normalizeInput($("check-input").value);
   if (!url) {
-    renderNote($("check-input").value, "الرابط غير صالح. مثال: adcb.com");
+    renderNote($("check-input").value, "invalidUrl");
     return;
   }
 
   const button = $("check-btn");
   button.disabled = true;
   button.textContent = "…";
-  renderNote(new URL(url).hostname, "جارٍ الفحص…");
+  renderNote(new URL(url).hostname, "checking");
 
   const result = await analyzeUrl(url);
-  if (result) renderVerdict(result, { title: "نتيجة الفحص اليدوي" });
-  else renderNote(new URL(url).hostname, "تعذر فحص الرابط.");
+  if (result) renderVerdict(result, { titleKey: "manualResult" });
+  else renderNote(new URL(url).hostname, "cantCheckLink");
 
   button.disabled = false;
-  button.textContent = "افحص";
+  button.textContent = T("checkBtn");
 });
 
 $("report-btn").addEventListener("click", async () => {
@@ -213,9 +221,83 @@ $("report-btn").addEventListener("click", async () => {
   button.disabled = true;
   button.textContent = "…";
   const result = await send({ type: "REPORT_URL", url: currentReportUrl });
-  button.textContent = result && result.ok
-    ? "تم إرسال البلاغ، شكرًا لك"
-    : "تعذر الاتصال بخادم FraudShield (هل يعمل على المنفذ 3000؟)";
+  button.textContent = result && result.ok ? T("reportSent") : T("reportFailed");
 });
 
-void loadActiveTab();
+// ---------------------------------------------------------------------------
+// Account link
+// ---------------------------------------------------------------------------
+
+function renderAccount(state) {
+  accountState = state;
+  const status = $("account-status");
+  const linked = !!(state && state.linked);
+  $("link-form").hidden = linked;
+  $("unlink-btn").hidden = !linked;
+  if (!linked) {
+    status.textContent = T(state && state.revoked ? "accountRevoked" : "accountUnlinked");
+  } else if (state.enabled === false) {
+    status.textContent = T("accountPaused");
+  } else {
+    status.textContent = T(state.offline ? "accountOffline" : "accountActive");
+  }
+}
+
+$("link-form").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const button = $("link-btn");
+  button.disabled = true;
+  const state = await send({ type: "LINK_ACCOUNT", token: $("token-input").value });
+  button.disabled = false;
+  if (state && state.linked) {
+    $("token-input").value = "";
+    renderAccount(state);
+  } else {
+    $("account-status").textContent = T("accountBadToken");
+  }
+});
+
+$("unlink-btn").addEventListener("click", async () => {
+  renderAccount(await send({ type: "UNLINK_ACCOUNT" }));
+});
+
+function applyLang(lang) {
+  LANG = I18N.resolve(lang);
+  I18N.applyDom(document, LANG);
+  if (accountState !== null) renderAccount(accountState); // re-word the status in the new language
+  for (const button of document.querySelectorAll("[data-lang]")) {
+    button.setAttribute("aria-pressed", String(button.dataset.lang === LANG));
+  }
+}
+
+async function loadSettings() {
+  const toggle = $("block-toggle");
+  const settings = await send({ type: "GET_SETTINGS" });
+  applyLang(settings && settings.lang);
+  toggle.checked = !settings || settings.blockHigh !== false;
+
+  for (const button of document.querySelectorAll("[data-lang]")) {
+    button.addEventListener("click", async () => {
+      if (button.dataset.lang === LANG) return;
+      applyLang(button.dataset.lang);
+      await send({ type: "SET_SETTINGS", lang: LANG });
+      $("reload-hint").hidden = false;
+      // Reasons are produced in the chosen language, so check again.
+      void loadActiveTab();
+    });
+  }
+  toggle.addEventListener("change", () => {
+    void send({ type: "SET_SETTINGS", blockHigh: toggle.checked });
+  });
+}
+
+try {
+  $("version").textContent = `v${chrome.runtime.getManifest().version}`;
+} catch {
+  // Not running as an extension page.
+}
+
+loadSettings().then(() => {
+  void send({ type: "GET_ACCOUNT" }).then(renderAccount);
+  return loadActiveTab();
+});

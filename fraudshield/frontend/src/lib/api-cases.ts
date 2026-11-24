@@ -35,7 +35,7 @@ async function call<T>(path: string, init?: RequestInit & { json?: unknown }, si
     });
   } catch (err) {
     if (err instanceof DOMException && err.name === "AbortError") throw err;
-    throw new ApiError("Could not reach the FraudShield service.");
+    throw new ApiError("Could not reach the Manee service.");
   }
   if (!res.ok) {
     let detail = "";

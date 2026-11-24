@@ -13,7 +13,8 @@ import secrets
 import time
 from pathlib import Path
 
-ROLES = ("analyst", "admin")
+ROLES = ("user", "analyst", "admin")
+STAFF_ROLES = ("analyst", "admin")
 SESSION_SECONDS = 8 * 3600
 COOKIE = "fs_session"
 

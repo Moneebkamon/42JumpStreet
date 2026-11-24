@@ -1,11 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "Fraud Extension",
-  "version": "1.0.0",
+  "name": "Manee | منيع",
+  "version": "1.9.3",
   "description": "كشف الروابط والمواقع الاحتيالية في بحث Google وخرائط Google داخل الإمارات — يعمل محليًا بالكامل.",
   "permissions": [
     "storage",
-    "tabs"
+    "tabs",
+    "webNavigation",
+    "downloads",
+    "alarms"
   ],
   "host_permissions": [
     "https://*/*",
@@ -21,6 +24,16 @@
   "content_scripts": [
     {
       "matches": [
+        "http://localhost:3000/*",
+        "http://127.0.0.1:3000/*"
+      ],
+      "js": [
+        "site-bridge.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
         "*://www.google.com/search*",
         "*://www.google.ae/search*",
         "file:///*search-mock.html",
@@ -30,6 +43,8 @@
         "http://localhost/*test.html"
       ],
       "js": [
+        "content-state.js",
+        "i18n.js",
         "content-search.js"
       ],
       "css": [
@@ -46,17 +61,41 @@
         "http://localhost/*maps-mock.html"
       ],
       "js": [
+        "content-state.js",
+        "i18n.js",
+        "phone-claims.js",
         "content-maps.js"
       ],
       "run_at": "document_idle",
       "css": [
         "content-maps.css"
       ]
+    },
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content-page.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "page-hooks.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
     }
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Fraud Extension",
+    "default_title": "Manee",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",

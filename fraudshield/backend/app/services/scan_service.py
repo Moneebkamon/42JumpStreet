@@ -30,15 +30,15 @@ def _prewarmed(raw_url: str) -> dict | None:
     return domain_watch.cached_result(n.host)
 
 
-def _store(response: dict, deep: bool) -> None:
+def _store(response: dict, deep: bool, user_id: str | None = None) -> None:
     """Persist the scan. A storage problem must never break the scan itself."""
     try:
-        scan_repo.save(response, host=normalize(response["url"]).host, deep=deep)
+        scan_repo.save(response, host=normalize(response["url"]).host, deep=deep, user_id=user_id)
     except Exception:
         log.exception("could not store scan %s", response.get("scan_id"))
 
 
-def scan_url(raw_url: str, deep: bool = False) -> dict:
+def scan_url(raw_url: str, deep: bool = False, user_id: str | None = None) -> dict:
     """Raises ValueError if the URL is unusable. deep=True also opens the page in the sandbox."""
     if not deep and (hit := _prewarmed(raw_url)):
         response = {**hit, "scan_id": uuid.uuid4().hex, "state": "complete", "cached": True}
@@ -46,5 +46,5 @@ def scan_url(raw_url: str, deep: bool = False) -> dict:
     else:
         result = run_pipeline(raw_url, use_network=_network_enabled(), deep=deep)
         response = {"scan_id": uuid.uuid4().hex, "state": "complete", **result}
-    _store(response, deep)
+    _store(response, deep, user_id)
     return response

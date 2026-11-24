@@ -11,7 +11,7 @@ async function getJson<T>(path: string, signal?: AbortSignal): Promise<T> {
     res = await fetch(path, { signal, cache: "no-store" });
   } catch (err) {
     if (err instanceof DOMException && err.name === "AbortError") throw err;
-    throw new ApiError("Could not reach the FraudShield service.");
+    throw new ApiError("Could not reach the Manee service.");
   }
   if (res.status === 401 || res.status === 403) throw new AuthRequiredError("Please sign in with a staff account.");
   if (!res.ok) throw new ApiError("The service returned an error.");
@@ -47,7 +47,7 @@ export async function scanUrl(
     });
   } catch (err) {
     if (err instanceof DOMException && err.name === "AbortError") throw err;
-    throw new ApiError("Could not reach the FraudShield service. Please try again.");
+    throw new ApiError("Could not reach the Manee service. Please try again.");
   }
 
   if (res.status === 422) {
@@ -55,6 +55,9 @@ export async function scanUrl(
   }
   if (res.status === 401) {
     throw new AuthRequiredError("Opening the page in the safe browser is for signed-in staff. Sign in, or untick that option.");
+  }
+  if (res.status === 403) {
+    throw new AuthRequiredError("Deep search is for staff accounts. Untick that option to run a normal check.");
   }
   if (res.status === 429) {
     throw new ApiError("Too many scans in a short time. Please wait a minute and try again.");
@@ -77,7 +80,7 @@ export async function fetchScan(scanId: string, signal?: AbortSignal): Promise<S
     res = await fetch(`/api/v1/scan/${encodeURIComponent(scanId)}`, { signal, cache: "no-store" });
   } catch (err) {
     if (err instanceof DOMException && err.name === "AbortError") throw err;
-    throw new ApiError("Could not reach the FraudShield service.");
+    throw new ApiError("Could not reach the Manee service.");
   }
   if (res.status === 404) throw new NotFoundError("We could not find that scan.");
   if (!res.ok) throw new ApiError("The service returned an error.");
@@ -93,7 +96,7 @@ export async function sendVerdict(scanId: string, label: Verdict): Promise<void>
       body: JSON.stringify({ label }),
     });
   } catch {
-    throw new ApiError("Could not reach the FraudShield service.");
+    throw new ApiError("Could not reach the Manee service.");
   }
   if (!res.ok) throw new ApiError("Could not save your answer. Please try again.");
 }

@@ -51,7 +51,7 @@ export async function call<T>(path: string, method = "GET", json?: unknown): Pro
       body: json === undefined ? undefined : JSON.stringify(json),
     });
   } catch {
-    throw new ApiError("Could not reach the FraudShield service.");
+    throw new ApiError("Could not reach the Manee service.");
   }
   if (!res.ok) {
     let detail = "";

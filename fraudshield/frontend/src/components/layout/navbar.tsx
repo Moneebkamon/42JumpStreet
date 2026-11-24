@@ -3,22 +3,35 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
+import { LanguageSwitch } from "@/components/layout/language-switch";
+import { ButtonLink, ShieldLogo, cn } from "@/components/ui/kit";
 import { announceAuthChange, useMe } from "@/hooks/use-me";
+import type { MessageKey } from "@/i18n/config";
+import { usePrefs } from "@/i18n/provider";
 import { logout } from "@/lib/api-auth";
 
-const PUBLIC_LINKS = [
-  { href: "/", label: "Check a link" },
-  { href: "/scan", label: "Recent scans" },
-  { href: "/report", label: "Report a scam" },
+type NavLink = { href: string; key: MessageKey };
+
+const PUBLIC_LINKS: NavLink[] = [
+  { href: "/", key: "nav.check" },
+  { href: "/report", key: "nav.report" },
 ];
-const STAFF_LINKS = [
-  { href: "/console", label: "Early detection" },
-  { href: "/console/cases", label: "Cases" },
+const MEMBER_LINKS: NavLink[] = [
+  { href: "/dashboard", key: "nav.dashboard" },
+  { href: "/history", key: "nav.history" },
+  // TODO(DELETE LATER - privacy): message watch list is switched off
+  // { href: "/watchlist", key: "nav.watchlist" },
+  { href: "/devices", key: "nav.devices" },
 ];
-const ADMIN_LINKS = [
-  { href: "/admin/rules", label: "Scoring" },
-  { href: "/admin/feedback", label: "Reviews" },
-  { href: "/admin/audit", label: "Audit log" },
+const STAFF_LINKS: NavLink[] = [
+  { href: "/scan", key: "nav.recent" },
+  { href: "/console", key: "nav.console" },
+  { href: "/console/cases", key: "nav.cases" },
+];
+const ADMIN_LINKS: NavLink[] = [
+  { href: "/admin/rules", key: "nav.scoring" },
+  { href: "/admin/feedback", key: "nav.reviews" },
+  { href: "/admin/audit", key: "nav.audit" },
 ];
 
 function isActive(path: string, href: string): boolean {
@@ -30,8 +43,15 @@ function isActive(path: string, href: string): boolean {
 
 function Links({ path }: { path: string }) {
   const router = useRouter();
+  const { t } = usePrefs();
   const { loaded, me } = useMe();
-  const links = [...PUBLIC_LINKS, ...(me ? STAFF_LINKS : []), ...(me?.role === "admin" ? ADMIN_LINKS : [])];
+  const isStaff = me?.role === "analyst" || me?.role === "admin";
+  const links = [
+    ...PUBLIC_LINKS,
+    ...(me ? MEMBER_LINKS : []),
+    ...(isStaff ? STAFF_LINKS : []),
+    ...(me?.role === "admin" ? ADMIN_LINKS : []),
+  ];
 
   async function signOut() {
     await logout();
@@ -40,39 +60,43 @@ function Links({ path }: { path: string }) {
   }
 
   return (
-    <header className="border-b border-zinc-200 dark:border-zinc-800">
-      <nav aria-label="Main" className="mx-auto flex w-full max-w-5xl flex-wrap items-center gap-x-5 gap-y-2 px-4 py-3 text-sm">
-        <Link href="/" className="mr-2 font-semibold tracking-tight">
-          FraudShield
+    <header className="sticky top-0 z-30 border-b border-line bg-background/80 backdrop-blur">
+      <nav aria-label="Main" className="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-x-1 gap-y-2 px-4 py-2.5 text-sm">
+        <Link href="/" className="me-4 flex items-center gap-2 font-semibold tracking-tight">
+          <ShieldLogo className="size-6 text-brand" />
+          <span suppressHydrationWarning>{t("brand")}</span>
         </Link>
         {links.map((l) => (
           <Link
             key={l.href}
             href={l.href}
             aria-current={isActive(path, l.href) ? "page" : undefined}
-            className={
-              isActive(path, l.href)
-                ? "font-medium underline underline-offset-4"
-                : "text-zinc-600 hover:underline dark:text-zinc-400"
-            }
+            className={cn(
+              "rounded-lg px-2.5 py-1.5 transition-colors",
+              isActive(path, l.href) ? "bg-zinc-200/70 font-medium text-foreground dark:bg-zinc-800" : "text-muted hover:text-foreground",
+            )}
           >
-            {l.label}
+            <span suppressHydrationWarning>{t(l.key)}</span>
           </Link>
         ))}
-        <span className="ml-auto flex items-center gap-3 text-xs text-zinc-500">
+        <span className="ms-auto flex items-center gap-2">
+          <LanguageSwitch />
           {loaded && me && me.auth_enabled !== false ? (
             <>
-              <span>
-                {me.username} ({me.role})
+              <span className="hidden text-xs text-muted sm:inline">
+                {me.username} · {t(`role.${me.role}` as MessageKey)}
               </span>
-              <button type="button" onClick={signOut} className="underline">
-                Sign out
+              <button type="button" onClick={signOut} className="rounded-lg border border-line px-3 py-1.5 text-xs font-medium text-muted hover:text-foreground">
+                {t("nav.signout")}
               </button>
             </>
           ) : loaded && !me ? (
-            <Link href="/login" className="underline">
-              Staff sign-in
-            </Link>
+            <>
+              <Link href="/login" className="rounded-lg px-3 py-1.5 text-sm text-muted hover:text-foreground">
+                {t("nav.signin")}
+              </Link>
+              <ButtonLink href="/register">{t("nav.signup")}</ButtonLink>
+            </>
           ) : null}
         </span>
       </nav>
