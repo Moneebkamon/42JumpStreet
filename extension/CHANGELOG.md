@@ -1,9 +1,161 @@
 # Changelog
 
-Every change raises the version in `manifest.json` and `package.json`, gets an entry here, and gets a git tag (`vX.Y.Z`).
+Every change raises the version, gets an entry here, and gets a git tag.
 
-- **Minor** (1.2.0 → 1.3.0): a new feature or a new detection rule.
-- **Patch** (1.2.0 → 1.2.1): a fix or small tweak.
+- **From 2.3 on, versions have two parts:** every change adds one to the second number (2.3 → 2.4 … 2.9), and a big update moves to the next first number (3.0). `manifest.json` holds `X.Y`, `package.json` holds `X.Y.0` (npm needs three parts), and the tag is `vX.Y`.
+- Up to 2.2.0: minor (1.2.0 → 1.3.0) for a feature or rule, patch (1.2.0 → 1.2.1) for a fix.
+
+## [2.4] - 2026-11-24
+
+### Added
+- **Phishing.Database in the accuracy scale, as a test-only set** (`eval/data/phish-phishingdb.json`): fixed samples of 2000 links, 2000 domains, and 600 links that name a UAE body, city or `.ae`. Source: github.com/Phishing-Database/Phishing.Database (MIT), ACTIVE lists as of its last update on 2026-10-02, so many entries are already dead.
+
+### Accuracy scale (URL only)
+| Phishing.Database | Detected |
+|---|---|
+| Links (2000) | 13.1% |
+| Domains (2000) | 33.6% |
+| Links naming UAE / `.ae` (600) | 19.2% |
+
+Why links score so low, out of the 1739 missed: **973 have nothing suspicious in the link at all**, 398 are on free hosting / site builders without a brand in the name, 308 are hacked legitimate sites with the brand only in the path (`/reg-ebill-etisalat/…`), 60 are WordPress-style hacked paths. These need a list lookup or the page scan, not more URL rules. No rule was changed for this set.
+
+## [2.3] - 2026-11-24
+
+### Changed
+- **Two-part versions from now on** (2.3, 2.4 … 2.9, then 3.0 for a big update). `manifest.json` holds `2.3`, `package.json` holds `2.3.0` for npm, and the tag is `v2.3`.
+
+### Added
+- **Domain age in the accuracy scale.** `node eval/fetch-ages.mjs` looks up registry ages with the extension's own `rdap.js` and caches them in `eval/data/rdap-ages.json`; `npm run eval` then shows a second table, **URL + domain age**, the way the browser scores. Data sets moved to `eval/sets.mjs`, shared by both scripts.
+
+### Accuracy scale
+| | URL only | URL + domain age |
+|---|---|---|
+| Global phishing, TRAIN half | 69.3% | **77.3%** (age known for 92.7%) |
+| Global phishing, **TEST half** | 60.0% | **67.3%** (age known for 91.3%) |
+| Flagged high, TEST half | 15.3% | 22.0% |
+| False alarms, top sites (sample of 400) | 0% | 0.5% (2: young `.live` sites) |
+| False alarms, UAE legit sites | 0% | 0% |
+
+### Found
+- **`.ae` and `.gov.ae` domains have no public RDAP record** (51 of the 89 UAE sites had no age). The domain-age check, including "under 30 days = high risk", never fires for `.ae` domains. A new `.ae` scam domain is only caught by its name or its page. Fix later in the backend (the .ae registry's WHOIS, which a browser extension cannot reach).
+
+## [2.2.0] - 2026-11-24
+
+### Added (designed on the TRAIN half only)
+- **Global brand misspelt on purpose** (`steamconmmunity.life`, `e-docssign.net`): +45. Brands of 7+ letters only, one letter off, same first letter. Look-alike tricks count too (`instagrarn` = rn→m). Sibling brands (Mercado Libre / Livre) and brands' own services (`telegra.ph`) are excluded.
+- **Global brand as a subdomain of an unrelated site** (`walletconnect.wallet-veriffy.com`, `bbva.e-docssign.net`): +30. Not on the brand's own site, its country sites (`amazon.co.jp`, `shopee.com.br`), or customer-portal platforms (Zendesk, SharePoint, Salesforce…).
+- **Risk word misspelt by an added or dropped letter** (`veriffy`, `acount`): +15. A swapped letter does not count (`postal` is a real word), nor a plain ending (`updates`, `secured`).
+- **Global brand + risk word in the domain** (`instagram-verify.com`, `paypal-login.net`): +40. The brand alone is not enough (fan sites). Not in the dataset; covered by tests.
+- The scale's legit set now includes 19 real brand subdomains (`developer.paypal.com`, `help.netflix.com`, `aws.amazon.com`…), because the top-5000 list has home pages only.
+- 16 regression tests (178 total).
+
+### Accuracy scale (URL only)
+| | v2.1.0 | v2.2.0 |
+|---|---|---|
+| Global phishing, TRAIN half (150) | 64.0% | **69.3%** |
+| Global phishing, **TEST half** (150) | 56.0% | **60.0%** |
+| Flagged as high (TRAIN / TEST) | 17.3% / 12.0% | 22.0% / 15.3% |
+| UAE scams (14) | 92.9% | 92.9% |
+| False alarms, all legitimate | 1 of 5134 | **1 of 5153** |
+
+The first version of these rules raised false alarms to 16 (Amazon/Shopee country sites, Mercado Libre vs Livre, `telegra.ph`); all were fixed before release.
+
+## [2.1.0] - 2026-11-24
+
+### Added (designed on the TRAIN half of the global phishing set only)
+- **Globally phished brands** (PayPal, Netflix, Instagram, Facebook, WhatsApp, Roblox, Microsoft, Apple/iCloud, Amazon, Binance, Coinbase, MetaMask, Shopee, Mercado Livre, Vodafone, DHL, HSBC…), separate from the UAE list:
+  - **On free hosting** (`instagramrecovery.blogspot.com`, `vodafone-admin-app.netlify.app`): +40. The brand must be a whole word or glued to a risk word / digits, so `pineapple` or `metadata` never count. A code-host account named exactly like the brand (`facebook.github.io`) is the brand's own and is not flagged.
+  - **A single-site brand on another ending** (`roblox.ss`, `roblox.com.bo`, `paypal.co`): +50. Brands' own extra domains (`facebook.net`, `netflix.net`, `roblox.net`, `icloud.com.cn`) are listed as official.
+- **Machine-generated throw-away names on free hosting** (`7h9u4-5zb-xqvi-ynb8i-20-10-2026-aa.pages.dev`): +20.
+- **IP address hidden in a name** (`217-77-5-150.sslip.io`, nip.io…): scored like a raw IP (+45).
+- More free hosts: `workers.dev`, `godaddysites.com`, `web.app`, `firebaseapp.com`, `glitch.me`, `framer.website`.
+- 20 regression tests (162 total).
+
+### Accuracy scale (URL only)
+| | v2.0.3 | v2.1.0 |
+|---|---|---|
+| Global phishing, TRAIN half (150) | 36.7% | **64.0%** |
+| Global phishing, **TEST half** (150, never looked at) | 34.7% | **56.0%** |
+| Flagged as high (TRAIN / TEST) | 0% / 0% | 17.3% / 12.0% |
+| UAE scams (14) | 92.9% | 92.9% |
+| False alarms, all legitimate (5134) | 1 | **1** |
+
+The TEST half rose almost as much as the TRAIN half, so the rules generalise rather than memorise. Caveats: the false-alarm fixes for `facebook.net` & co. were made by looking at the legit set, and the legit free-hosting set is small (27 pages).
+
+## [2.0.3] - 2026-11-24
+
+### Fixed (found by the accuracy scale)
+- **Mashreq's real site `mashreq.com` was flagged as impersonating Mashreq.** Added `mashreq.com`, plus `etihadwe.ae` (Etihad Water & Electricity, not the airline) and `etihadrail.ae`, to the official list.
+- **Sites written in their own script (Thai, Arabic, Chinese…) were flagged as homograph attacks.** The rule now fires only for names disguised as Latin: a label that mixes Latin with another script (`аdcb`, `mаshreq`), or one made entirely of Latin look-alikes (`аррӏе`).
+
+### Added
+- UAE body names **written in Arabic inside a domain** count as impersonation (+45): `شرطة-أبوظبي.com`, `المشرق-تحديث.com`, `سالك-شحن.xyz`. Spelling variants (أ/ا, ة/ه) match. Before, these were only caught by the old blanket non-Latin rule.
+- 14 regression tests (142 total).
+
+### Accuracy scale
+| | v2.0.2 | v2.0.3 |
+|---|---|---|
+| False alarms, all legitimate (5134) | 7 | **1** |
+| False alarms, UAE legit sites (89) | 2.2% | **0.0%** |
+| Detection, UAE scams / global train / global test | 92.9% / 36.7% / 34.7% | unchanged |
+
+The one remaining false alarm is `dubaipolice-museum.example.org` from the team's hard-negative set: a made-up domain with "dubaipolice" in its name. Flagging a non-official domain that carries a police name is intended.
+
+## [2.0.2] - 2026-11-24
+
+### Added
+- **Accuracy scale** (`eval/`, `npm run eval`). Runs the scorer on labelled data and reports detection and false alarms. See `eval/README.md`.
+  - Data: the team's hand-labelled UAE set (32), 300 real OpenPhish URLs split train / test, the top 5000 sites (Tranco), 89 real UAE sites, 27 legitimate pages on free hosting.
+  - Baseline, URL only (no domain age, IP owner or page scan):
+
+| | Detection | | False alarms |
+|---|---|---|---|
+| UAE scams (14) | 92.9% | Top 5000 sites | 0.1% |
+| Global phishing, train (150) | 36.7% | UAE legit sites (89) | 2.2% |
+| Global phishing, test (150) | 34.7% | All legitimate (5134) | 0.1% (7) |
+
+### Found by the scale (not fixed yet)
+- `mashreq.com` (Mashreq's real site) and `etihadwe.ae` (Etihad Water & Electricity) are flagged as impersonation.
+- Legitimate Thai sites with non-Latin domain names are flagged as homograph attacks.
+- About 40% of missed global phishing is on free hosting (pages.dev, blogspot, vercel.app, workers.dev) with no UAE brand in it.
+
+## [2.0.1] - 2026-11-24
+
+### Added
+- Demo helper, hidden on purpose: on the report page, **double-click a report number** (e.g. `FS-0001`) in "My reports" to delete that report. If it was the place or site on the page, the form comes back, so the same scam can be reported again during a demo. Numbers continue from the highest one left, so deleting everything starts again at `FS-0001`.
+
+## [2.0.0] - 2026-11-24
+
+Major version: tonight's work turns FraudShield from a link checker into a tool for the scams that actually hit people in the UAE (fake Maps listings, fake customer-service numbers, fake UAE PASS pages), and lets the user report them.
+
+### Added
+- **🚩 Report button** on the Maps banner (medium/high places), the warning page, and the popup (medium/high sites). It opens `report.html` with the site or place filled in: name, phone, address, score and reasons.
+- **Sign-in before reporting**, so reports are not random or malicious. Protection never needs sign-in.
+  - Demo: "Sign in with UAE PASS (demo)" is one click with no real account. In the real version this is the official UAE PASS sign-in.
+  - The popup shows who is signed in, with "My reports" and "Sign out".
+- **Report page:** optional note ("they called and asked for the OTP"), required consent, report number (`FS-0001`), one report per site or place per user, and a "My reports" list.
+- Demo: reports are saved on this device. After the merge, `sendReport()` in `report.js` posts them to the team backend's citizen-reports API.
+
+### Since 1.5.0 (all tonight)
+- 1.5.1 / 1.6.0: raw IP links are rated by who owns the address (Google's own services vs rented cloud vs home connections).
+- 1.6.1: renamed to FraudShield.
+- 1.7.0: fake UAE PASS sign-in pages are detected and blocked.
+- 1.8.0: a known UAE name with a personal mobile number is high risk in Maps and Search.
+- 1.8.1: Maps reads only the open place (it had shown a "دفع المخالفات" scam as verified official); government payment services with a mobile number are high risk.
+
+## [1.8.1] - 2026-11-24
+
+### Fixed
+- **Maps read the wrong place and called a scam "verified official".** Found on real Google Maps: with the results list and a place open side by side, the scanner took the first heading on the page ("Results") as the name, and, because the place had no website, borrowed the first link on the page, a real police listing's `adpolice.gov.ae`. A "دفع المخالفات" listing with a mobile number showed ✅ 0/100.
+  - The scanner now reads only the open place panel (`[role="main"]` with the place's heading, not the `[role="feed"]` results list).
+  - The website comes only from the place's own "Website" button. The "any link on the page" fallback is removed.
+  - With only the results list open, nothing is shown.
+
+### Added
+- Maps: a **government payment service** in the place name ("دفع المخالفات", "سداد", fines, Salik) with a personal mobile number is +60 (high). Visa / residency / Emirates ID services with a mobile are +35 (medium), because typing centres offer them legitimately.
+- Maps: a government service filed under an unrelated category (warehouse, shop, flat, restaurant…) adds +15.
+- Maps: "Claim this business" (unverified listing) is shown as a reason when the place is already suspicious.
+- Demo: the Maps mock now has a results list with real police websites beside the panel (like real Maps), and a copy of the real "دفع المخالفات" listing (warehouse, 056 number). It scores 75 (high).
 
 ## [1.8.0] - 2026-11-24
 
