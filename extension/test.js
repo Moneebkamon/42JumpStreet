@@ -310,6 +310,79 @@ for (const [text, expected] of phoneCases) {
     JSON.stringify(got) === JSON.stringify(expected), got);
 }
 
+// 14) False alarms found by the accuracy scale (v2.0.3) must not come back.
+for (const host of ["mashreq.com", "www.mashreq.com", "etihadwe.ae", "etihadrail.ae"]) {
+  const r = analyzeDomain(host);
+  check(`${host} -> official (scale false alarm)`, r.level === "safe", r);
+}
+for (const host of ["xn--12c1ezaww.com", "xn--l3ca4b6dsc1b.com", "مطعم-الريف.com"]) {
+  const r = analyzeDomain(host);
+  check(`${host} -> own-script site is not a homograph`, r.level === "low", r);
+}
+// Disguised Latin is still caught: mixed scripts, or all look-alike letters.
+for (const host of ["xn--dcb-5cd.com", "mаshreq.com", "аррӏе.com"]) {
+  const r = analyzeDomain(host);
+  check(`${host} -> still flagged as homograph`, r.level !== "low", r);
+}
+// UAE body names written in Arabic inside a domain.
+for (const host of ["شرطة-أبوظبي.com", "شرطه-ابوظبي-مخالفات.net", "المشرق-تحديث.com", "سالك-شحن.xyz"]) {
+  const r = analyzeDomain(host);
+  check(`${host} -> Arabic brand impersonation flagged`, r.level === "medium" || r.level === "high", r);
+}
+
+// 15) Global brands, free hosting, hidden IPs (v2.1.0, designed on the TRAIN half).
+const flaggedUrl = (u) => {
+  const p = new URL(u);
+  const r = analyzeDomain(p.hostname, { protocol: p.protocol, path: p.pathname + p.search });
+  return { r, flagged: r.level === "medium" || r.level === "high" };
+};
+for (const u of [
+  "https://instagramrecovery.blogspot.com/",
+  "http://vodafone-admin-app.netlify.app/",
+  "https://shopeeid377.blogspot.com/",
+  "https://www.roblox.ss/users/1/profile",
+  "https://roblox.com.bo/games/1",
+  "https://paypal.co/login",
+  "https://7h9u4-5zb-xqvi-ynb8i-20-10-2026-aa.pages.dev/",
+  "https://mercadolivre-mobile.217-77-5-150.sslip.io/"
+]) {
+  const { r, flagged } = flaggedUrl(u);
+  check(`${u} -> flagged (global brand / free hosting / hidden IP)`, flagged, r);
+}
+for (const u of [
+  "https://facebook.github.io/react-native/",
+  "https://microsoft.github.io/monaco-editor/",
+  "https://facebook.net/", "https://netflix.net/", "https://roblox.net/", "https://icloud.com.cn/",
+  "https://www.roblox.com/", "https://www.paypal.com/signin",
+  "https://googleblog.blogspot.com/", "https://pages.github.com/",
+  "https://pineapple-recipes.blogspot.com/", "https://metadata-tools.vercel.app/"
+]) {
+  const { r, flagged } = flaggedUrl(u);
+  check(`${u} -> not flagged (legit)`, !flagged, r);
+}
+
+// 16) Deliberate misspellings and brand subdomains (v2.2.0, TRAIN half only).
+for (const u of [
+  "https://steamconmmunity.life/profile/1",
+  "https://login.e-docssign.net/x",
+  "https://walletconnect.wallet-veriffy.com/solutions/trading",
+  "https://bbva.e-docssign.net/education_redirect_second",
+  "https://paypal.account-check.net/",
+  "https://instagrarn-verify.com/"
+]) {
+  const { r, flagged } = flaggedUrl(u);
+  check(`${u} -> flagged (misspelling / brand subdomain)`, flagged, r);
+}
+for (const u of [
+  "https://amazon.co.jp/", "https://shopee.com.br/", "https://mercadolibre.com.mx/",
+  "https://mercadolivre.com.br/", "https://telegra.ph/", "https://postal-service.com/",
+  "https://updates.example.com/", "https://secured-storage.com/",
+  "https://paypal.zendesk.com/", "https://developer.paypal.com/"
+]) {
+  const { r, flagged } = flaggedUrl(u);
+  check(`${u} -> not flagged (legit)`, !flagged, r);
+}
+
 console.log("");
 console.log(`Results: ${passed} passed, ${failed} failed`);
 if (failed > 0) process.exitCode = 1;
