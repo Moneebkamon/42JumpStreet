@@ -1,4 +1,3 @@
-# TODO(DELETE LATER - privacy): switched off, nothing routes here any more. Reading WhatsApp / SMS / email messages is a privacy risk. Delete with the other files listed in PRIVACY_DELETE_LATER.md.
 """Messages (SMS / WhatsApp) the defender checked for a user, and what it did."""
 import json
 from contextlib import closing

@@ -1,9 +1,10 @@
 {
   "name": "fraudshield-extension",
-  "version": "1.9.3",
+  "version": "2.4.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "eval": "node eval/run.mjs --write"
   }
 }

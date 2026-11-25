@@ -53,8 +53,10 @@ async function analyzeUrl(url) {
 // Rendering
 // ---------------------------------------------------------------------------
 
+
 function renderVerdict(result, { titleKey } = {}) {
   const card = $("current");
+
   const verdict = $("current-verdict");
   const note = $("current-note");
 
@@ -290,6 +292,15 @@ async function loadSettings() {
     void send({ type: "SET_SETTINGS", blockHigh: toggle.checked });
   });
 }
+
+// ---------------------------------------------------------------------------
+// Report button + demo sign-in line
+// ---------------------------------------------------------------------------
+
+$("my-reports").addEventListener("click", () => {
+  chrome.tabs.create({ url: chrome.runtime.getURL("report.html") });
+  window.close();
+});
 
 try {
   $("version").textContent = `v${chrome.runtime.getManifest().version}`;

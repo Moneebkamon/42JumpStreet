@@ -1,7 +1,5 @@
 "use client";
 
-// TODO(DELETE LATER - privacy): switched off, nothing routes here any more. Reading WhatsApp / SMS / email messages is a privacy risk. Delete with the other files listed in PRIVACY_DELETE_LATER.md.
-
 import { useState } from "react";
 
 import { Badge, Button, Card, CardTitle, FIELD, Input, Notice, PageHeader, cn } from "@/components/ui/kit";

@@ -88,7 +88,6 @@ def test_me_requires_sign_in(client):
     assert client.get(f"{API}/me/summary").status_code == 401
 
 
-@pytest.mark.skip(reason="TODO(DELETE LATER - privacy): message checking is switched off")
 def test_contacts_crud_and_limits(client):
     register(client)
     r = client.post(f"{API}/me/contacts", json={"kind": "phone", "value": "0501234567"})
@@ -120,7 +119,6 @@ def _watch_number(c, number="+971501234567", email="sam@example.com"):
     c.post(f"{API}/me/contacts", json={"kind": "phone", "value": number})
 
 
-@pytest.mark.skip(reason="TODO(DELETE LATER - privacy): message checking is switched off")
 def test_whatsapp_webhook_blocks_and_emails(client, monkeypatch, tmp_path):
     monkeypatch.setattr("app.guard.guard_service.scan_url", _fake_scan("likely_fraud", 92))
     _watch_number(client)
@@ -136,7 +134,6 @@ def test_whatsapp_webhook_blocks_and_emails(client, monkeypatch, tmp_path):
     assert client.get(f"{API}/me/history?source=message").json()[0]["band"] == "likely_fraud"
 
 
-@pytest.mark.skip(reason="TODO(DELETE LATER - privacy): message checking is switched off")
 def test_sms_webhook_safe_link_is_not_emailed_and_alerts_can_be_off(client, monkeypatch, tmp_path):
     _watch_number(client)
     monkeypatch.setattr("app.guard.guard_service.scan_url", _fake_scan("safe", 3))
@@ -152,7 +149,6 @@ def test_sms_webhook_safe_link_is_not_emailed_and_alerts_can_be_off(client, monk
     assert not (tmp_path / "outbox").exists()  # alerts off: recorded but no email
 
 
-@pytest.mark.skip(reason="TODO(DELETE LATER - privacy): message checking is switched off")
 def test_webhooks_reject_bad_secret_and_ignore_unwatched_numbers(client, monkeypatch):
     monkeypatch.setattr("app.guard.guard_service.scan_url", _fake_scan("likely_fraud", 92))
     _watch_number(client)
@@ -165,7 +161,6 @@ def test_webhooks_reject_bad_secret_and_ignore_unwatched_numbers(client, monkeyp
     assert client.post(f"{API}/webhooks/sms?secret=", content="To=x", headers={"content-type": "application/x-www-form-urlencoded"}).status_code == 401
 
 
-@pytest.mark.skip(reason="TODO(DELETE LATER - privacy): message checking is switched off")
 def test_outgoing_whatsapp_messages_are_ignored(client, monkeypatch):
     monkeypatch.setattr("app.guard.guard_service.scan_url", _fake_scan("likely_fraud", 92))
     _watch_number(client)
@@ -208,7 +203,6 @@ def _fake_gateway(monkeypatch, state="connecting"):
     return calls
 
 
-@pytest.mark.skip(reason="TODO(DELETE LATER - privacy): message checking is switched off")
 def test_whatsapp_link_flow(client, monkeypatch):
     calls = _fake_gateway(monkeypatch)
     register(client)
@@ -225,7 +219,6 @@ def test_whatsapp_link_flow(client, monkeypatch):
     assert client.get(f"{API}/me/whatsapp/status").json()["status"] == "none"
 
 
-@pytest.mark.skip(reason="TODO(DELETE LATER - privacy): message checking is switched off")
 def test_whatsapp_link_needs_gateway_and_valid_number(client, monkeypatch):
     register(client)
     monkeypatch.delenv("EVOLUTION_API_KEY", raising=False)
@@ -236,7 +229,6 @@ def test_whatsapp_link_needs_gateway_and_valid_number(client, monkeypatch):
     assert TestClient(app).post(f"{API}/me/whatsapp/connect", json={"number": "0568050565"}).status_code == 401
 
 
-@pytest.mark.skip(reason="TODO(DELETE LATER - privacy): message checking is switched off")
 def test_webhook_uses_instance_to_find_the_user(client, monkeypatch):
     _fake_gateway(monkeypatch)
     monkeypatch.setattr("app.guard.guard_service.scan_url", _fake_scan("likely_fraud", 92))

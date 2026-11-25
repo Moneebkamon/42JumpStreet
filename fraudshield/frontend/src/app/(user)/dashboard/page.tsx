@@ -6,13 +6,12 @@ import { useState } from "react";
 import { Badge, BandBadge, ButtonLink, Card, CardTitle, Notice, PageHeader, StatTile, Switch } from "@/components/ui/kit";
 import { useLoad } from "@/hooks/use-load";
 import { usePrefs } from "@/i18n/provider";
-import { fetchHistory, fetchSummary, putSettings } from "@/lib/api-me";
+import { fetchAlerts, fetchHistory, fetchSummary, putSettings } from "@/lib/api-me";
 import { ageLabel } from "@/lib/time";
 
 async function loadAll(signal: AbortSignal) {
-  // TODO(DELETE LATER - privacy): message alerts (fetchAlerts) are switched off
-  const [summary, history] = await Promise.all([fetchSummary(signal), fetchHistory("", signal)]);
-  return { summary, history: history.slice(0, 6) };
+  const [summary, history, alerts] = await Promise.all([fetchSummary(signal), fetchHistory("", signal), fetchAlerts(signal)]);
+  return { summary, history: history.slice(0, 6), alerts: alerts.slice(0, 6) };
 }
 
 export default function DashboardPage() {
@@ -24,7 +23,7 @@ export default function DashboardPage() {
   if (loading) return <p className="text-sm text-muted">{t("common.loading")}</p>;
   if (error || !data) return <Notice tone="error">{error?.message ?? "Could not load your dashboard."}</Notice>;
 
-  const { summary, history } = data;
+  const { summary, history, alerts } = data;
   const enabled = summary.settings.extension_enabled;
 
   async function toggleExtension(next: boolean) {
@@ -84,8 +83,7 @@ export default function DashboardPage() {
           )}
         </Card>
 
-        {/* TODO(DELETE LATER - privacy): message alerts card is switched off
-        <Card>
+                <Card>
           <CardTitle hint={<Link href="/watchlist" className="underline">{t("nav.watchlist")}</Link>}>{t("dash.alerts")}</CardTitle>
           {alerts.length === 0 ? (
             <div className="space-y-3">
@@ -107,7 +105,6 @@ export default function DashboardPage() {
             </ul>
           )}
         </Card>
-        */}
       </div>
     </div>
   );

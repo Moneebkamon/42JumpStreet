@@ -1,4 +1,3 @@
-# TODO(DELETE LATER - privacy): switched off, nothing routes here any more. Reading WhatsApp / SMS / email messages is a privacy risk. Delete with the other files listed in PRIVACY_DELETE_LATER.md.
 """Emails and phone numbers a user asked Manee to watch."""
 import re
 import sqlite3

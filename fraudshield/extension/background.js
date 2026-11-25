@@ -10,6 +10,7 @@ import { getIpOwner } from "./ip-intel.js";
 import { initBlocker, getSettings, tintedIcon } from "./blocker.js";
 import { initDownloadGuard } from "./downloads.js";
 import { TOKEN_KEY, ENABLED_KEY, isEnabled } from "./account-state.js";
+import { initReports } from "./reports.js";
 import "./i18n.js";
 import "./phone-claims.js";
 
@@ -19,6 +20,7 @@ const I18N = globalThis.FE_I18N;
 initBlocker();
 // Pause and check dangerous downloads (see downloads.js).
 initDownloadGuard();
+initReports();
 
 const MAX_CONCURRENT_DOMAINS = 5;
 const MAX_TAB_RESULTS = 250;

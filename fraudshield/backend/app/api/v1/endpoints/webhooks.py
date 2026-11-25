@@ -1,4 +1,3 @@
-# TODO(DELETE LATER - privacy): switched off, nothing routes here any more. Reading WhatsApp / SMS / email messages is a privacy risk. Delete with the other files listed in PRIVACY_DELETE_LATER.md.
 """Inbound message webhooks: WhatsApp (Evolution API) and SMS (Twilio-style). Both are guarded by a shared secret.
 
 Set FRAUDSHIELD_WEBHOOK_SECRET, then give the provider a URL that carries it, either as the header X-Webhook-Secret or

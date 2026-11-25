@@ -1,4 +1,3 @@
-# TODO(DELETE LATER - privacy): switched off, nothing routes here any more. Reading WhatsApp / SMS / email messages is a privacy risk. Delete with the other files listed in PRIVACY_DELETE_LATER.md.
 """Link a member's WhatsApp from the website: enter the number, scan the QR code, done. The gateway key never leaves the server."""
 import os
 

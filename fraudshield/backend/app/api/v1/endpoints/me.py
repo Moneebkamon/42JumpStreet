@@ -75,31 +75,29 @@ def clear_history(user: tuple[str, str] = Depends(require_user)) -> dict:
     return {"deleted": scan_repo.delete_for_user(user[0]) + visit_repo.delete_for_user(user[0])}
 
 
-# TODO(DELETE LATER - privacy): the watch list of phone numbers / emails and the message alerts only existed to check
-# incoming WhatsApp / SMS / email messages, which is switched off.
-# @router.get("/contacts")
-# def list_contacts(user: tuple[str, str] = Depends(require_user)) -> list[dict]:
-#     return watch_repo.list_for(user[0])
-#
-#
-# @router.post("/contacts", status_code=201)
-# def add_contact(body: ContactBody, user: tuple[str, str] = Depends(require_user)) -> dict:
-#     try:
-#         return watch_repo.add(user[0], body.kind, body.value)
-#     except ValueError as exc:
-#         raise HTTPException(status_code=422, detail=str(exc)) from exc
-#
-#
-# @router.delete("/contacts/{contact_id}")
-# def delete_contact(contact_id: int, user: tuple[str, str] = Depends(require_user)) -> dict:
-#     if not watch_repo.remove(user[0], contact_id):
-#         raise HTTPException(status_code=404, detail="contact not found")
-#     return {"ok": True}
-#
-#
-# @router.get("/alerts")
-# def alerts(limit: int = Query(50, ge=1, le=200), user: tuple[str, str] = Depends(require_user)) -> list[dict]:
-#     return message_repo.list_for(user[0], limit=limit)
+@router.get("/contacts")
+def list_contacts(user: tuple[str, str] = Depends(require_user)) -> list[dict]:
+    return watch_repo.list_for(user[0])
+
+
+@router.post("/contacts", status_code=201)
+def add_contact(body: ContactBody, user: tuple[str, str] = Depends(require_user)) -> dict:
+    try:
+        return watch_repo.add(user[0], body.kind, body.value)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
+
+
+@router.delete("/contacts/{contact_id}")
+def delete_contact(contact_id: int, user: tuple[str, str] = Depends(require_user)) -> dict:
+    if not watch_repo.remove(user[0], contact_id):
+        raise HTTPException(status_code=404, detail="contact not found")
+    return {"ok": True}
+
+
+@router.get("/alerts")
+def alerts(limit: int = Query(50, ge=1, le=200), user: tuple[str, str] = Depends(require_user)) -> list[dict]:
+    return message_repo.list_for(user[0], limit=limit)
 
 
 @router.get("/devices")

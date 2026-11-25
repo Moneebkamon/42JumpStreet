@@ -1,4 +1,3 @@
-# TODO(DELETE LATER - privacy): switched off, nothing routes here any more. Reading WhatsApp / SMS / email messages is a privacy risk. Delete with the other files listed in PRIVACY_DELETE_LATER.md.
 """The defender: check links in incoming SMS / WhatsApp messages for the accounts that watch that number.
 
 Only basic (offline) scans run here: the message sender is untrusted, so the server never opens their links.

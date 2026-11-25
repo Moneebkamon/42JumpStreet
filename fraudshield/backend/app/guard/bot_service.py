@@ -1,4 +1,3 @@
-# TODO(DELETE LATER - privacy): switched off, nothing routes here any more. Reading WhatsApp / SMS / email messages is a privacy risk. Delete with the other files listed in PRIVACY_DELETE_LATER.md.
 """The Manee WhatsApp bot: anyone can forward a suspicious message (or paste a link) to Manee's own number and get a
 verdict back in the same chat. Nothing is linked and nothing outside what the sender chose to send is read.
 

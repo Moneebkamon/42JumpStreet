@@ -1,5 +1,5 @@
 /**
- * FraudShield — report page.
+ * Manee — report page.
  *   report.html?d=<draftId>   report the site / place saved by reports.js
  *   report.html               only "My reports"
  *
@@ -226,8 +226,22 @@
     await renderMine(user);
   });
 
-  // DEMO: saved on this device. After the merge, POST to the team backend
-  // (citizen reports) here and keep the local copy for "My reports".
+  // Manee: also sent to the Manee backend (citizen reports) through the background
+  // worker; the local copy is kept for "My reports". Needs a link to report.
+  async function sendToManee(target, note) {
+    const url = target.url || target.website;
+    if (!url) return;
+    const place = target.kind === "place" ? [target.name, target.phone, target.address].filter(Boolean).join(" · ") : "";
+    const text = [place, note].filter(Boolean).join(" | ").slice(0, 900);
+    try {
+      await new Promise((resolve) => {
+        chrome.runtime.sendMessage({ type: "REPORT_URL", url, note: text }, () => resolve());
+      });
+    } catch {
+      // Offline or backend down: the local copy still exists.
+    }
+  }
+
   async function sendReport(user, target, note) {
     const reports = (await store.get(REPORTS_KEY)) || [];
     const last = reports.reduce((max, r) => Math.max(max, Number(String(r.id).slice(3)) || 0), 0);
@@ -243,6 +257,7 @@
     };
     reports.push(report);
     await store.set(REPORTS_KEY, reports.slice(-200));
+    await sendToManee(target, note);
     return report;
   }
 

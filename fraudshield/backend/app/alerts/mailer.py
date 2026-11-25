@@ -1,4 +1,3 @@
-# TODO(DELETE LATER - privacy): switched off, nothing routes here any more. Reading WhatsApp / SMS / email messages is a privacy risk. Delete with the other files listed in PRIVACY_DELETE_LATER.md.
 """Send alert emails. Never raises: a mail problem must not break message checking.
 
 Logic follows the user's beyin-dev email-sender (severity-coloured dark HTML, escaped text, SMTP delivery) but no keys,

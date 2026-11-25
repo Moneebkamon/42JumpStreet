@@ -1,4 +1,3 @@
-# TODO(DELETE LATER - privacy): switched off, nothing routes here any more. Reading WhatsApp / SMS / email messages is a privacy risk. Delete with the other files listed in PRIVACY_DELETE_LATER.md.
 """Manee's WhatsApp gateway client (Evolution API v2, run from infra/evolution). One instance per linked user.
 
 Environment (all optional; with no EVOLUTION_API_KEY WhatsApp linking is simply unavailable):

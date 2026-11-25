@@ -19,8 +19,7 @@ const PUBLIC_LINKS: NavLink[] = [
 const MEMBER_LINKS: NavLink[] = [
   { href: "/dashboard", key: "nav.dashboard" },
   { href: "/history", key: "nav.history" },
-  // TODO(DELETE LATER - privacy): message watch list is switched off
-  // { href: "/watchlist", key: "nav.watchlist" },
+  { href: "/watchlist", key: "nav.watchlist" },
   { href: "/devices", key: "nav.devices" },
 ];
 const STAFF_LINKS: NavLink[] = [

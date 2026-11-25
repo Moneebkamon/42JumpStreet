@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Manee | منيع",
-  "version": "1.9.3",
+  "version": "2.4",
   "description": "كشف الروابط والمواقع الاحتيالية في بحث Google وخرائط Google داخل الإمارات — يعمل محليًا بالكامل.",
   "permissions": [
     "storage",
@@ -107,4 +107,4 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   }
-}
+}
