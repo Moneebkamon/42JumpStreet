@@ -10,7 +10,7 @@ import { LiveFeedTable } from "./live-feed-table";
 
 function Kpi({ label, value, hint }: { label: string; value: string; hint?: string }) {
   return (
-    <div className="rounded-xl border border-zinc-200 px-4 py-3 dark:border-zinc-800">
+    <div className="glass glass rounded-xl border border-zinc-200 px-4 py-3 dark:border-zinc-800">
       <div className="text-xs text-zinc-500">{label}</div>
       <div className="text-2xl font-semibold tabular-nums">{value}</div>
       {hint && <div className="text-xs text-zinc-500">{hint}</div>}
@@ -48,7 +48,7 @@ function LiveStatus({ s }: { s: DiscoveryStats }) {
   }, []);
   const alive = s.last_live_run_at != null && now - Date.parse(s.last_live_run_at) < 90_000;
   return (
-    <p className="rounded-xl border border-zinc-200 px-4 py-3 text-sm dark:border-zinc-800">
+    <p className="glass glass rounded-xl border border-zinc-200 px-4 py-3 text-sm dark:border-zinc-800">
       <span className={`mr-2 inline-block size-2 rounded-full ${alive ? "bg-emerald-500" : "bg-zinc-400"}`} />
       {alive ? "Live certificate stream connected" : "Live certificate stream is off"}
       {s.last_live_run_at ? ` (last activity ${ago(s.last_live_run_at, now)}, ${s.live_events.toLocaleString()} certificates read)` : " (the reader has not run yet)"}

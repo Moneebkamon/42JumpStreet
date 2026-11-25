@@ -43,7 +43,7 @@ export function ScanHistory() {
   }
 
   return (
-    <ul className="max-h-96 overflow-y-auto divide-y divide-zinc-200 rounded-xl border border-zinc-200 dark:divide-zinc-800 dark:border-zinc-800">
+    <ul className="max-h-96 overflow-y-auto divide-y divide-zinc-200 glass rounded-xl border border-zinc-200 dark:divide-zinc-800 dark:border-zinc-800">
       {data.map((s) => (
         <li key={s.scan_id}>
           <Link

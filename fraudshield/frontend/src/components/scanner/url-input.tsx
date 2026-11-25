@@ -40,14 +40,15 @@ export function UrlInput({
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder="Paste a link, for example https://example.com/login"
-          className="min-w-0 flex-1 rounded-xl border border-line bg-card px-4 py-3 text-base outline-none placeholder:text-zinc-500 focus:border-brand focus:ring-2 focus:ring-brand/20"
+          className="min-w-0 flex-1 rounded-xl border border-zinc-300 bg-white px-4 dark:border-zinc-700 dark:bg-zinc-950/70 py-3 font-mono text-[15px] outline-none transition placeholder:font-sans placeholder:text-zinc-500 focus:border-brand/70 focus:ring-4 focus:ring-brand/15"
         />
         <button
           type="submit"
           disabled={busy || !value.trim()}
-          className="rounded-xl bg-brand px-6 py-3 font-medium text-brand-ink transition hover:brightness-110 disabled:opacity-40"
+          className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand to-brand-2 px-6 py-3 font-semibold text-brand-ink shadow-[0_8px_30px_-10px_var(--brand)] transition hover:-translate-y-px hover:shadow-[0_12px_34px_-8px_var(--brand)] disabled:translate-y-0 disabled:opacity-40 disabled:shadow-none"
         >
-          {busy ? "Checking..." : "Check link"}
+          {busy && <span className="size-4 animate-spin rounded-full border-2 border-brand-ink/30 border-t-brand-ink" />}
+          {busy ? "Scanning..." : "Scan link"}
         </button>
       </div>
 

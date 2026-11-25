@@ -60,11 +60,13 @@ function Links({ path }: { path: string }) {
   }
 
   return (
-    <header className="sticky top-0 z-30 border-b border-line bg-background/80 backdrop-blur">
+    <header className="sticky top-0 z-30 bg-background/60 backdrop-blur-xl">
       <nav aria-label="Main" className="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-x-1 gap-y-2 px-4 py-2.5 text-sm">
         <Link href="/" className="me-4 flex items-center gap-2 font-semibold tracking-tight">
-          <ShieldLogo className="size-6 text-brand" />
-          <span suppressHydrationWarning>{t("brand")}</span>
+          <span className="grid size-8 place-items-center rounded-lg bg-brand/10 ring-1 ring-brand/30">
+            <ShieldLogo className="size-5 text-brand drop-shadow-[0_0_6px_var(--brand)]" />
+          </span>
+          <span suppressHydrationWarning className="text-[15px]">{t("brand")}</span>
         </Link>
         {links.map((l) => (
           <Link
@@ -73,7 +75,9 @@ function Links({ path }: { path: string }) {
             aria-current={isActive(path, l.href) ? "page" : undefined}
             className={cn(
               "rounded-lg px-2.5 py-1.5 transition-colors",
-              isActive(path, l.href) ? "bg-zinc-200/70 font-medium text-foreground dark:bg-zinc-800" : "text-muted hover:text-foreground",
+              isActive(path, l.href)
+                ? "bg-brand/10 font-medium text-foreground ring-1 ring-inset ring-brand/30"
+                : "text-muted hover:bg-white/5 hover:text-foreground",
             )}
           >
             <span suppressHydrationWarning>{t(l.key)}</span>
@@ -100,6 +104,7 @@ function Links({ path }: { path: string }) {
           ) : null}
         </span>
       </nav>
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-brand/50 to-transparent" />
     </header>
   );
 }

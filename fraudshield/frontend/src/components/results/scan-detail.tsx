@@ -79,7 +79,7 @@ function ScanDetail({ scanId }: { scanId: string }) {
     <div className="space-y-5">
       <ScanResultCard result={scan} />
 
-      <section className="space-y-2 rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
+      <section className="space-y-2 glass rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
         <h2 className="text-sm font-semibold">Help us improve</h2>
         {scan.feedback ? (
           <p className="text-sm text-zinc-600 dark:text-zinc-400">
@@ -114,7 +114,7 @@ function ScanDetail({ scanId }: { scanId: string }) {
       </section>
 
       {me && (
-      <section className="space-y-2 rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
+      <section className="space-y-2 glass rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
         <h2 className="text-sm font-semibold">For analysts</h2>
         <p className="text-sm text-zinc-600 dark:text-zinc-400">
           Open a case to review this link, freeze evidence and prepare a takedown report.

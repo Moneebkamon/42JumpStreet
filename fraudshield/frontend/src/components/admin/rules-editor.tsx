@@ -103,7 +103,7 @@ export function RulesEditor() {
         <p className="text-sm text-zinc-600 dark:text-zinc-400">
           Points a rule adds when it fires (0 switches it off, at most {view.max_points}). Scores are capped at 100.
         </p>
-        <div className="max-h-96 overflow-auto rounded-xl border border-zinc-200 dark:border-zinc-800">
+        <div className="max-h-96 overflow-auto glass rounded-xl border border-zinc-200 dark:border-zinc-800">
           <table className="w-full min-w-[30rem] text-left text-sm">
             <thead className="sticky top-0 z-10 bg-zinc-50 text-xs uppercase tracking-wide text-zinc-500 dark:bg-zinc-900">
               <tr>
@@ -165,7 +165,7 @@ export function RulesEditor() {
         </div>
       </section>
 
-      <section className="space-y-3 rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
+      <section className="space-y-3 glass rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
         <h2 className="text-sm font-semibold">Check, then save</h2>
         <div className="flex flex-wrap items-end gap-3">
           <button

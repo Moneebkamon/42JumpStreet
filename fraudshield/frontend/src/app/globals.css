@@ -3,51 +3,109 @@
 /* Theme is chosen by data-theme on <html> (set before paint by the script in layout.tsx). Dark is the default. */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
+/*
+ * "Cyber shield" palette: deep navy night, electric cyan as the protective brand colour,
+ * indigo as the secondary accent. Surfaces are slightly translucent glass so the animated
+ * network background shows through softly.
+ */
 :root {
-  --background: #f6f7f9;
-  --foreground: #11141b;
-  --card: #ffffff;
-  --muted: #5b6475;
-  --border: #e3e6ec;
-  --brand: #10b981;
-  --brand-ink: #04130d;
+  --background: #f3f6fb;
+  --foreground: #0b1324;
+  --card: rgb(255 255 255 / 0.82);
+  --card-solid: #ffffff;
+  --muted: #52607a;
+  --border: #d9e1ee;
+  --brand: #0891b2;
+  --brand-2: #6366f1;
+  --brand-ink: #ffffff;
+  --threat: #f43f5e;
 }
 
 [data-theme="dark"] {
-  --background: #0a0c11;
-  --foreground: #e8ebf1;
-  --card: #11141b;
-  --muted: #9aa3b5;
-  --border: #212633;
-  --brand: #34d399;
-  --brand-ink: #04130d;
+  --background: #04070e;
+  --foreground: #e6eefc;
+  --card: rgb(10 17 32 / 0.66);
+  --card-solid: #0a1120;
+  --muted: #8b9ab4;
+  --border: rgb(56 189 248 / 0.18);
+  --brand: #22d3ee;
+  --brand-2: #818cf8;
+  --brand-ink: #021016;
+  --threat: #fb7185;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
+  --color-card-solid: var(--card-solid);
   --color-muted: var(--muted);
   --color-line: var(--border);
   --color-brand: var(--brand);
+  --color-brand-2: var(--brand-2);
   --color-brand-ink: var(--brand-ink);
+  --color-threat: var(--threat);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-/* A cooler, slightly blue grey scale than stock zinc: gives every existing page the new security look. */
+/* A navy-tinted grey scale in place of stock zinc: every existing page picks up the cyber look. */
 @theme {
-  --color-zinc-950: #0a0c11;
-  --color-zinc-900: #11141b;
-  --color-zinc-800: #1b202b;
-  --color-zinc-700: #2a3141;
-  --color-zinc-600: #4b5468;
-  --color-zinc-500: #6b7487;
-  --color-zinc-400: #9aa3b5;
-  --color-zinc-300: #c4cad6;
-  --color-zinc-200: #e3e6ec;
-  --color-zinc-100: #eef0f4;
-  --color-zinc-50: #f6f7f9;
+  --color-zinc-950: #04070e;
+  --color-zinc-900: #0a1120;
+  --color-zinc-800: #131d33;
+  --color-zinc-700: #1f2c47;
+  --color-zinc-600: #3c4b68;
+  --color-zinc-500: #61708c;
+  --color-zinc-400: #8b9ab4;
+  --color-zinc-300: #bac6da;
+  --color-zinc-200: #dde5f1;
+  --color-zinc-100: #ecf1f8;
+  --color-zinc-50: #f5f8fc;
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-pulse-ring: pulse-ring 2.4s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  --animate-shimmer: shimmer 6s linear infinite;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes border-spin {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 
 html {
@@ -68,14 +126,107 @@ html[lang="ar"] body {
   font-family: "Segoe UI", Tahoma, "Noto Sans Arabic", system-ui, sans-serif;
 }
 
+::selection {
+  background: color-mix(in srgb, var(--brand) 35%, transparent);
+  color: var(--foreground);
+}
+
 /* Soft glow behind the hero. */
 .hero-glow {
   background:
-    radial-gradient(60% 50% at 50% 0%, color-mix(in srgb, var(--brand) 18%, transparent), transparent 70%),
-    radial-gradient(40% 40% at 90% 10%, color-mix(in srgb, #3b82f6 10%, transparent), transparent 70%);
+    radial-gradient(55% 45% at 50% 0%, color-mix(in srgb, var(--brand) 16%, transparent), transparent 70%),
+    radial-gradient(35% 35% at 85% 15%, color-mix(in srgb, var(--brand-2) 14%, transparent), transparent 70%);
+}
+
+/* Frosted glass surface. */
+.glass {
+  background: var(--card);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+/* Cyan → indigo gradient text for headlines. */
+.text-gradient {
+  background: linear-gradient(100deg, var(--foreground) 10%, var(--brand) 50%, var(--brand-2) 80%, var(--foreground) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: var(--animate-shimmer);
+}
+
+/* Slowly rotating light along a card's border: used on the scanner. */
+.glow-border {
+  position: relative;
+  isolation: isolate;
+}
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--angle),
+    transparent 0deg,
+    color-mix(in srgb, var(--brand) 85%, transparent) 60deg,
+    transparent 130deg,
+    transparent 200deg,
+    color-mix(in srgb, var(--brand-2) 75%, transparent) 260deg,
+    transparent 330deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-spin 8s linear infinite;
+}
+
+/* Subtle neon glow for primary actions and the brand mark. */
+.glow {
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--brand) 40%, transparent),
+    0 8px 30px -8px color-mix(in srgb, var(--brand) 55%, transparent);
+}
+
+/* Small monospaced kicker label, e.g. "// REAL-TIME PROTECTION". */
+.kicker {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Arabic letters must stay joined: no tracking on kicker labels. */
+html[lang="ar"] .kicker {
+  letter-spacing: 0;
+  font-family: inherit;
+  font-size: 0.75rem;
 }
 
 :focus-visible {
   outline: 2px solid var(--brand);
   outline-offset: 2px;
+}
+
+/* Thin themed scrollbars. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--brand) 25%, transparent) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-gradient,
+  .glow-border::before {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
